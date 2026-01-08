@@ -1,337 +1,386 @@
-:root{
-  --bg:#0b0f17;
-  --text:#e7ecf5;
-  --muted:#a8b2c6;
-  --line:rgba(255,255,255,.10);
-  --a:#ff7a18;
-  --b:#ffb347;
-  --shadow:0 16px 44px rgba(0,0,0,.38);
-  --r:18px;
-  --max:1140px;
-  --font:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartPod USA | AI Smart Vending Placement for Premium Locations</title>
+  <meta name="description" content="Place AI smart vending machines in apartments, gyms, hotels, offices, and healthcare. We install, stock, and maintain. Locations: request placement. Partners: contact us." />
 
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family:var(--font);
-  color:var(--text);
-  background:
-    radial-gradient(1000px 680px at 12% 12%, rgba(255,122,24,.12), transparent 55%),
-    radial-gradient(850px 600px at 90% 10%, rgba(255,179,71,.10), transparent 55%),
-    var(--bg);
-  line-height:1.45;
-}
-a{color:inherit;text-decoration:none}
-.container{max-width:var(--max);margin:0 auto;padding:0 20px}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 
-/* Header */
-.header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(11,15,23,.72);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.header__inner{
-  height:72px;
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-}
+  <!-- Basic social preview -->
+  <meta property="og:title" content="SmartPod USA | AI Smart Vending Placement" />
+  <meta property="og:description" content="Premium AI vending for high-traffic locations. We install, stock, and maintain. Request placement." />
+  <meta property="og:type" content="website" />
+</head>
 
-.brand{display:flex;align-items:center;gap:10px;font-weight:950}
-.brand__mark{
-  width:38px;height:38px;border-radius:12px;
-  display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--a),var(--b));
-  color:#111;
-}
-.brand__name{letter-spacing:.2px}
-.brand--footer{margin-bottom:10px}
+<body>
+<header class="header" id="top">
+  <div class="container header__inner">
+    <a class="brand" href="#top" aria-label="SmartPod USA home">
+      <span class="brand__mark">SP</span>
+      <span class="brand__name">SmartPod USA</span>
+    </a>
 
-.nav{display:flex;align-items:center;gap:14px}
-.nav a{color:var(--muted);font-weight:900;font-size:14px}
-.nav a:hover{color:var(--text)}
+    <nav class="nav">
+      <a href="#how">How it works</a>
+      <a href="#locations">Locations</a>
+      <a href="#why">Why SmartPod</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--ghost" href="#contact">Contact</a>
+      <a class="btn btn--primary" href="#contact">Request Placement</a>
+    </nav>
 
-.menuBtn{
-  display:none;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.04);
-  color:var(--text);
-  padding:10px 12px;
-  border-radius:12px;
-  font-weight:950;
-}
+    <button class="menuBtn" aria-label="Open menu" type="button" onclick="toggleMenu()">Menu</button>
+  </div>
 
-.mobileNav{display:none;border-top:1px solid var(--line);padding:14px 20px 18px;gap:10px}
-.mobileNav a{display:block;padding:10px 0;color:var(--muted);font-weight:900}
-.mobileNav.open{display:grid}
+  <div class="mobileNav" id="mobileNav">
+    <a href="#how" onclick="toggleMenu()">How it works</a>
+    <a href="#locations" onclick="toggleMenu()">Locations</a>
+    <a href="#why" onclick="toggleMenu()">Why SmartPod</a>
+    <a href="#faq" onclick="toggleMenu()">FAQ</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+    <a class="btn btn--primary" href="#contact" onclick="toggleMenu()">Request Placement</a>
+  </div>
+</header>
 
-/* Buttons */
-.btn{
-  height:42px;
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:0 14px;border-radius:12px;
-  font-weight:950;font-size:14px;
-  border:1px solid transparent;
-  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
-}
-.btn:active{transform:translateY(1px)}
-.btn--primary{
-  background:linear-gradient(135deg,var(--a),var(--b));
-  color:#111;
-  box-shadow:0 12px 26px rgba(255,122,24,.16);
-}
-.btn--ghost{
-  background:rgba(255,255,255,.04);
-  border-color:var(--line);
-  color:var(--text);
-}
-.btn--block{width:100%}
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <p class="kicker">AI smart vending • cashless • monitored service</p>
+        <h1>Place premium AI smart vending in your location—without operational burden.</h1>
+        <p class="lead">
+          SmartPod partners with apartments, gyms, hotels, offices, and healthcare facilities. We handle installation,
+          stocking, support, and maintenance so your customers and staff can self-serve 24/7.
+        </p>
 
-/* Hero */
-.hero{padding:56px 0 28px}
-.hero__grid{display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:start}
-.kicker{
-  color:var(--muted);
-  font-weight:950;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-size:12px;
-}
-h1{font-size:42px;line-height:1.08;margin:12px 0}
-.lead{color:var(--muted);font-size:16px;max-width:62ch}
-.hero__cta{display:flex;gap:12px;margin:18px 0}
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#contact">Request Placement</a>
+          <a class="btn btn--ghost" href="#how">See the process</a>
+        </div>
 
-.metrics{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px}
-.metric{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.03);
-  border-radius:16px;
-  padding:10px 12px;
-  min-width:170px;
-}
-.metric__value{font-weight:1000;font-size:18px}
-.metric__label{color:var(--muted);font-size:13px}
-.fine{color:rgba(168,178,198,.88);font-size:12px;margin-top:14px}
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric__value">0$</div>
+            <div class="metric__label">Upfront cost for many sites*</div>
+          </div>
+          <div class="metric">
+            <div class="metric__value">24/7</div>
+            <div class="metric__label">Self-serve access</div>
+          </div>
+          <div class="metric">
+            <div class="metric__value">Managed</div>
+            <div class="metric__label">Stocking + maintenance</div>
+          </div>
+        </div>
 
-/* Panel (original look) */
-.panel{
-  border:1px solid var(--line);
-  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  border-radius:var(--r);
-  box-shadow:var(--shadow);
-  overflow:hidden;
-}
-.panel__top{
-  display:flex;align-items:center;gap:8px;
-  padding:12px 14px;
-  border-bottom:1px solid var(--line);
-  background:rgba(0,0,0,.12);
-}
-.dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.18);border:1px solid var(--line)}
-.panel__title{margin-left:6px;color:var(--muted);font-weight:900;font-size:13px}
-.panel__body{padding:14px}
+        <p class="fine">*Placement depends on traffic, visibility, power access, and service area.</p>
+      </div>
 
-.panelCard{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.03);
-  border-radius:16px;
-  padding:12px;
-  margin-bottom:10px;
-}
-.panelCard__k{color:var(--muted);font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.12em}
-.panelCard__v{margin-top:6px;font-weight:800}
-.panelCTA{margin-top:12px}
-.panelFine{margin:10px 0 0;color:rgba(168,178,198,.86);font-size:12px}
+      <!-- ORIGINAL “device-style” panel (not copied) -->
+      <div class="hero__panel">
+        <div class="panel">
+          <div class="panel__top">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="panel__title">Placement Snapshot</span>
+          </div>
 
-/* Strip */
-.strip{padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
-.strip__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.stripItem{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.03);
-  border-radius:16px;
-  padding:14px;
-}
-.stripItem h3{margin:0 0 8px;font-size:16px}
-.stripItem p{margin:0;color:var(--muted);font-size:14px}
+          <div class="panel__body">
+            <div class="panelCard">
+              <div class="panelCard__k">Typical installs</div>
+              <div class="panelCard__v">Lobby • Breakroom • Gym floor • Waiting area</div>
+            </div>
+            <div class="panelCard">
+              <div class="panelCard__k">Product mix</div>
+              <div class="panelCard__v">Snacks • Drinks • Protein • Essentials</div>
+            </div>
+            <div class="panelCard">
+              <div class="panelCard__k">Operations</div>
+              <div class="panelCard__v">We restock + service on a schedule aligned to demand</div>
+            </div>
 
-/* Sections */
-.section{padding:46px 0}
-.section--alt{
-  background:linear-gradient(180deg, rgba(255,255,255,.02), transparent 60%);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-.section__head h2{margin:0 0 8px;font-size:28px}
-.section__head p{margin:0;color:var(--muted);max-width:78ch}
+            <div class="panelCTA">
+              <a class="btn btn--primary btn--block" href="#contact">Start a placement request</a>
+              <p class="panelFine">Decision-maker contact preferred for fastest review.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* Steps */
-.steps{margin-top:16px;display:grid;gap:12px}
-.step{
-  display:flex;gap:12px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.03);
-  border-radius:16px;
-  padding:14px;
-}
-.step__num{
-  width:34px;height:34px;border-radius:12px;
-  display:grid;place-items:center;
-  background:rgba(255,122,24,.18);
-  border:1px solid rgba(255,122,24,.30);
-  font-weight:1000;
-  flex:0 0 auto;
-}
-.step h3{margin:0 0 6px;font-size:16px}
-.step p{margin:0;color:var(--muted)}
+  <!-- TRUST / PROOF POINTS -->
+  <section class="strip">
+    <div class="container strip__grid">
+      <div class="stripItem">
+        <h3>Professional placement</h3>
+        <p>Clean look and a location-first approach. We coordinate access and service times.</p>
+      </div>
+      <div class="stripItem">
+        <h3>Optimized inventory</h3>
+        <p>We adapt the product mix based on what sells at your venue.</p>
+      </div>
+      <div class="stripItem">
+        <h3>Clear communication</h3>
+        <p>Simple process, direct contact, and fast resolution for issues.</p>
+      </div>
+    </div>
+  </section>
 
-/* Pills + Callout */
-.pills{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
-.pill{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.03);
-  padding:8px 10px;
-  border-radius:999px;
-  font-weight:950;
-  font-size:13px;
-}
-.callout{
-  margin-top:16px;
-  display:flex;align-items:center;justify-content:space-between;gap:14px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.03);
-  border-radius:16px;
-  padding:16px;
-}
-.callout h3{margin:0 0 6px}
-.callout p{margin:0;color:var(--muted)}
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how">
+    <div class="container">
+      <div class="section__head">
+        <h2>How placement works</h2>
+        <p>A straightforward process from request to go-live.</p>
+      </div>
 
-/* Grid cards */
-.grid3{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.card{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.03);
-  border-radius:16px;
-  padding:16px;
-}
-.card h3{margin:0 0 8px;font-size:16px}
-.card p{margin:0;color:var(--muted);font-size:14px}
+      <div class="steps">
+        <article class="step">
+          <div class="step__num">1</div>
+          <div>
+            <h3>Request + qualification</h3>
+            <p>Share your location type, estimated traffic, and preferred placement area.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step__num">2</div>
+          <div>
+            <h3>Site check</h3>
+            <p>We confirm footprint, power, visibility, and access for routine service.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step__num">3</div>
+          <div>
+            <h3>Install + stock</h3>
+            <p>We deliver, install, and launch with a curated starting product mix.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step__num">4</div>
+          <div>
+            <h3>Ongoing operations</h3>
+            <p>Scheduled restocks, maintenance response, and product optimization.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-/* FAQ */
-.faq{margin-top:14px;display:grid;gap:10px}
-details{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:16px;padding:12px 14px}
-summary{cursor:pointer;font-weight:950}
-details p{margin:10px 0 0;color:var(--muted)}
+  <!-- LOCATIONS -->
+  <section class="section section--alt" id="locations">
+    <div class="container">
+      <div class="section__head">
+        <h2>Best-fit locations</h2>
+        <p>We prioritize sites where convenience retail creates measurable value.</p>
+      </div>
 
-/* Contact */
-.contactGrid{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.contactCard{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.03);
-  border-radius:16px;
-  padding:16px;
-}
-.kv{margin:8px 0;color:var(--muted)}
-.muted{color:var(--muted)}
-.divider{height:1px;background:var(--line);margin:14px 0}
-.list{margin:10px 0 0;padding-left:18px;color:var(--muted)}
-.list li{margin:6px 0}
-.tiny{margin:10px 0 0;color:rgba(168,178,198,.86);font-size:12px}
+      <div class="pills">
+        <span class="pill">Apartments / Multifamily</span>
+        <span class="pill">Gyms / Fitness</span>
+        <span class="pill">Hotels</span>
+        <span class="pill">Offices / Workplaces</span>
+        <span class="pill">Healthcare</span>
+        <span class="pill">Campuses</span>
+        <span class="pill">Waiting areas</span>
+      </div>
 
-/* Forms */
-.form{display:grid;gap:10px}
-label{display:grid;gap:6px;font-weight:950;font-size:13px}
-input,select,textarea{
-  width:100%;
-  padding:12px 12px;
-  border-radius:12px;
-  border:1px solid var(--line);
-  background:rgba(0,0,0,.22);
-  color:var(--text);
-  outline:none;
-}
-input:focus,select:focus,textarea:focus{
-  border-color:rgba(255,122,24,.55);
-  box-shadow:0 0 0 4px rgba(255,122,24,.12);
-}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+      <div class="callout">
+        <div>
+          <h3>Basic checklist</h3>
+          <p>Power access • visible placement • steady foot traffic • permission to install</p>
+        </div>
+        <a class="btn btn--primary" href="#contact">Contact us</a>
+      </div>
+    </div>
+  </section>
 
-/* Footer */
-.footer{border-top:1px solid var(--line);padding:24px 0;background:rgba(0,0,0,.10)}
-.footer__inner{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
-.footer__links{display:flex;flex-wrap:wrap;gap:12px;color:var(--muted);font-weight:950;font-size:13px}
-.footer__links a:hover{color:var(--text)}
-.footer__bottom{padding-top:12px;border-top:1px solid var(--line);margin-top:14px}
+  <!-- WHY -->
+  <section class="section" id="why">
+    <div class="container">
+      <div class="section__head">
+        <h2>Why SmartPod</h2>
+        <p>Location-friendly service, modern experience, and managed operations.</p>
+      </div>
 
-/* Responsive */
-@media (max-width:960px){
-  .hero__grid{grid-template-columns:1fr}
-  h1{font-size:36px}
-  .strip__grid{grid-template-columns:1fr}
-  .grid3{grid-template-columns:1fr}
-  .contactGrid{grid-template-columns:1fr}
-  .nav{display:none}
-  .menuBtn{display:inline-flex}
-}
-@media (max-width:520px){
-  .grid2{grid-template-columns:1fr}
-  .callout{flex-direction:column;align-items:flex-start}
-}
-3) app.js (new file)
-function toggleMenu() {
-  document.getElementById("mobileNav").classList.toggle("open");
-}
+      <div class="grid3">
+        <div class="card">
+          <h3>Hands-off for your team</h3>
+          <p>We handle stocking, maintenance, and support so your staff stays focused.</p>
+        </div>
+        <div class="card">
+          <h3>Curated product mix</h3>
+          <p>Snacks, drinks, protein, wellness, and essentials—tailored to your audience.</p>
+        </div>
+        <div class="card">
+          <h3>Optional commission</h3>
+          <p>Some locations may qualify for revenue share based on placement and volume.</p>
+        </div>
+        <div class="card">
+          <h3>Modern payments</h3>
+          <p>Cashless-first checkout for a cleaner operation and better user experience.</p>
+        </div>
+        <div class="card">
+          <h3>Service discipline</h3>
+          <p>Routine visits and responsive maintenance to minimize downtime.</p>
+        </div>
+        <div class="card">
+          <h3>Professional presentation</h3>
+          <p>A clean, premium look designed for high-quality spaces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-document.getElementById("year").textContent = new Date().getFullYear();
+  <!-- FAQ -->
+  <section class="section section--alt" id="faq">
+    <div class="container">
+      <div class="section__head">
+        <h2>FAQ</h2>
+        <p>Common questions from property managers and operators.</p>
+      </div>
 
-const form = document.getElementById("leadForm");
-const statusEl = document.getElementById("formStatus");
+      <div class="faq">
+        <details>
+          <summary>Does it cost us anything to host a machine?</summary>
+          <p>Many qualified locations have no upfront cost. Terms depend on traffic, placement area, and service coverage.</p>
+        </details>
+        <details>
+          <summary>Who stocks and maintains the machine?</summary>
+          <p>SmartPod stocks, services, and maintains the machine. We coordinate access for routine visits.</p>
+        </details>
+        <details>
+          <summary>Can we request specific products?</summary>
+          <p>Yes. We can start with your preferences and adjust inventory based on sales and availability.</p>
+        </details>
+        <details>
+          <summary>How fast can we install?</summary>
+          <p>After qualification and site review, we provide an estimated timeline based on readiness and availability.</p>
+        </details>
+      </div>
+    </div>
+  </section>
 
-// IMPORTANT: set this to YOUR email for the fallback mailto (works immediately)
-const FALLBACK_EMAIL = "placements@smartpodusa.com";
+  <!-- CONTACT (WORKING FORM) -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section__head">
+        <h2>Request placement / Contact</h2>
+        <p>
+          This form works in two ways:
+          (1) immediately via email fallback, and
+          (2) professionally via Formspree once you add your endpoint.
+        </p>
+      </div>
 
-function buildMailto(formData) {
-  const subject = encodeURIComponent("SmartPod placement request");
-  const lines = [];
-  for (const [k, v] of formData.entries()) {
-    lines.push(`${k}: ${String(v).trim()}`);
-  }
-  const body = encodeURIComponent(lines.join("\n"));
-  return `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${body}`;
-}
+      <div class="contactGrid">
+        <div class="contactCard">
+          <h3>Direct contact</h3>
+          <p class="muted">Update these to your real info.</p>
+          <div class="kv"><strong>Email:</strong> <span id="publicEmail">placements@smartpodusa.com</span></div>
+          <div class="kv"><strong>Phone:</strong> (555) 555-5555</div>
+          <div class="kv"><strong>Service area:</strong> Your region / cities</div>
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+          <div class="divider"></div>
 
-  const formspree = form.getAttribute("data-formspree")?.trim();
-  const data = new FormData(form);
+          <h3>What to include</h3>
+          <ul class="list">
+            <li>City/state + location type</li>
+            <li>Estimated daily traffic</li>
+            <li>Preferred placement area</li>
+            <li>Decision-maker contact (best)</li>
+          </ul>
+        </div>
 
-  // If Formspree endpoint is configured, submit via fetch (no page reload)
-  if (formspree) {
-    try {
-      statusEl.textContent = "Sending…";
-      const res = await fetch(formspree, {
-        method: "POST",
-        body: data,
-        headers: { "Accept": "application/json" }
-      });
+        <div class="contactCard">
+          <h3>Send a request</h3>
 
-      if (res.ok) {
-        form.reset();
-        statusEl.textContent = "Sent. Thank you—we’ll contact you within 1–2 business days.";
-        return;
-      }
+          <!-- IMPORTANT:
+               Replace data-formspree with your Formspree endpoint URL.
+               Example: https://formspree.io/f/abcdwxyz
+          -->
+          <form id="leadForm" class="form" data-formspree="">
+            <div class="grid2">
+              <label>Full name
+                <input required name="name" autocomplete="name" />
+              </label>
+              <label>Phone
+                <input required name="phone" autocomplete="tel" />
+              </label>
+            </div>
 
-      // If Formspree fails, fall back to mailto
-      statusEl.textContent = "Form service not available. Opening email fallback…";
-      window.location.href = buildMailto(data);
-    } catch {
-      statusEl.textContent = "Network issue. Opening email fallback…";
-      window.location.href = buildMailto(data);
-    }
-    return;
-  }
+            <label>Email
+              <input required type="email" name="email" autocomplete="email" />
+            </label>
 
-  // No Formspree set: mailto fallback (works immediately)
-  window.location.href = buildMailto(data);
-});
+            <div class="grid2">
+              <label>Location type
+                <select name="location_type">
+                  <option>Apartment / Multifamily</option>
+                  <option>Gym / Fitness</option>
+                  <option>Hotel</option>
+                  <option>Office / Workplace</option>
+                  <option>Healthcare Facility</option>
+                  <option>School / Campus</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label>Daily foot traffic (estimate)
+                <select name="foot_traffic">
+                  <option>Under 50</option>
+                  <option>50–150</option>
+                  <option>150–300</option>
+                  <option>300+</option>
+                </select>
+              </label>
+            </div>
+
+            <label>City + State
+              <input required name="city_state" placeholder="City, State" />
+            </label>
+
+            <label>Message
+              <textarea required name="message" rows="5" placeholder="Placement area, access notes, product preferences, questions."></textarea>
+            </label>
+
+            <button class="btn btn--primary btn--block" type="submit">Send request</button>
+            <p class="tiny" id="formStatus">If Formspree is not configured, this will open your email app as a fallback.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="brand brand--footer">
+          <span class="brand__mark">SP</span>
+          <span class="brand__name">SmartPod USA</span>
+        </div>
+        <p class="muted">AI smart vending placement and operations for premium locations.</p>
+      </div>
+
+      <div class="footer__links">
+        <a href="#how">How it works</a>
+        <a href="#locations">Locations</a>
+        <a href="#why">Why SmartPod</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p class="muted">© <span id="year"></span> SmartPod USA. All rights reserved.</p>
+    </div>
+  </footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
