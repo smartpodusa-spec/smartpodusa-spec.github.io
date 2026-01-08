@@ -31,7 +31,7 @@
       <a href="#why">Why SmartPod</a>
       <a href="#faq">FAQ</a>
       <a class="btn btn--ghost" href="#contact">Contact</a>
-      <a class="btn btn--primary" href="#contact">Request Placement</a>
+      <a class="btn btn--cta" href="#contact">Request Placement</a>
     </nav>
 
     <button class="menuBtn" aria-label="Open menu" type="button" onclick="toggleMenu()">Menu</button>
@@ -43,7 +43,7 @@
     <a href="#why" onclick="toggleMenu()">Why SmartPod</a>
     <a href="#faq" onclick="toggleMenu()">FAQ</a>
     <a href="#contact" onclick="toggleMenu()">Contact</a>
-    <a class="btn btn--primary" href="#contact" onclick="toggleMenu()">Request Placement</a>
+    <a class="btn btn--cta" href="#contact" onclick="toggleMenu()">Request Placement</a>
   </div>
 </header>
 
@@ -273,6 +273,9 @@
       <div class="section__head">
         <h2>Request placement / Contact</h2>
         <p>
+          This form works in two ways:
+          (1) immediately via email fallback, and
+          (2) professionally via Formspree once you add your endpoint.
         </p>
       </div>
 
@@ -280,9 +283,23 @@
         <div class="contactCard">
           <h3>Direct contact</h3>
           <p class="muted">Update these to your real info.</p>
-          <div class="kv"><strong>Email:</strong> <span id="publicEmail">info@smartpodusa.com</span></div>
-          <div class="kv"><strong>Phone:</strong> (800) 434-3310</div>
-          <div class="kv"><strong>Service area:</strong> Hampton Roads</div>
+          <div class="kv"><strong>Email:</strong> <span id="publicEmail">info@smfrtpodusf
+
+
+
+
+
+
+
+
+
+
+
+
+
+.com</span></div>
+          <div class="kv"><strong>Phone:</strong> (555) 555-5555</div>
+          <div class="kv"><strong>Service area:</strong> Virginia Beach/Norfolk/Chesapeake, Suffolk</div>
 
           <div class="divider"></div>
 
@@ -298,9 +315,8 @@
         <div class="contactCard">
           <h3>Send a request</h3>
 
-          <!-- 
-          -->
-            <div class="grid2">
+	<form id="leadForm" class="form" data-formspree="https://formspree.io/f/xkogdqkz">            
+	<div class="grid2">
               <label>Full name
                 <input required name="name" autocomplete="name" />
               </label>
@@ -344,7 +360,7 @@
             </label>
 
             <button class="btn btn--primary btn--block" type="submit">Send request</button>
-            <p class="tiny" id="formStatus"></p>
+            <p class="tiny" id="formStatus">If Formspree is not configured, this will open your email app as a fallback.</p>
           </form>
         </div>
       </div>
