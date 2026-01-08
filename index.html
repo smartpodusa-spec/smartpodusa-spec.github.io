@@ -1,13 +1,433 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>SmartPod USA</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SmartPod USA | AI Smart Vending for Premium Locations</title>
+  <meta name="description" content="AI-enabled smart vending machines for apartments, gyms, hotels, offices, and healthcare. Zero-cost placement. We install, stock, and maintain. Request placement today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <h1>Smart Vending for Modern Properties</h1>
-  <p>We install secure, cashless smart vending machines at no cost to residential and office properties.</p>
-  <p>Contact: info@smartpodusa.com</p>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="SmartPod USA Home">
+        <span class="brand-mark">SP</span>
+        <span class="brand-name">SmartPod USA</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#locations">For Locations</a>
+        <a href="#how">How It Works</a>
+        <a href="#products">Products</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-ghost" href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#host">Request Placement</a>
+      </nav>
+
+      <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">Menu</button>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#locations" onclick="toggleMenu()">For Locations</a>
+      <a href="#how" onclick="toggleMenu()">How It Works</a>
+      <a href="#products" onclick="toggleMenu()">Products</a>
+      <a href="#faq" onclick="toggleMenu()">FAQ</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+      <a class="btn btn-primary" href="#host" onclick="toggleMenu()">Request Placement</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">AI Smart Vending • Cashless • Monitored</p>
+          <h1>Premium smart vending machines that help you serve customers 24/7.</h1>
+          <p class="subhead">
+            Zero-cost placement for qualified locations. We handle delivery, installation, stocking, and maintenance.
+            You get a cleaner amenity experience and optional revenue share.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#host">Request Placement</a>
+            <a class="btn btn-ghost" href="#locations">See Location Benefits</a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-item">
+              <div class="trust-kpi">0$</div>
+              <div class="trust-label">Upfront cost</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-kpi">24/7</div>
+              <div class="trust-label">Self-serve access</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-kpi">Fast</div>
+              <div class="trust-label">Service response</div>
+            </div>
+          </div>
+
+          <p class="fineprint">
+            *Placement subject to location qualification, footprint, and minimum traffic requirements.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <div class="card">
+            <h2 class="card-title">Request Placement</h2>
+            <p class="card-subtitle">Tell us about your location. We reply within 1–2 business days.</p>
+
+            <!-- For best results, replace action="#" with your form endpoint (e.g., Formspree, Google Forms, Jotform). -->
+            <form class="form" action="#" method="post">
+              <div class="grid-2">
+                <label>
+                  Full Name
+                  <input required name="name" placeholder="Jane Smith" />
+                </label>
+                <label>
+                  Phone
+                  <input required name="phone" placeholder="(555) 555-5555" />
+                </label>
+              </div>
+
+              <label>
+                Email
+                <input required type="email" name="email" placeholder="jane@company.com" />
+              </label>
+
+              <div class="grid-2">
+                <label>
+                  Business / Property Name
+                  <input name="company" placeholder="Apartment Community / Gym / Hotel" />
+                </label>
+                <label>
+                  Location Type
+                  <select name="type">
+                    <option>Apartment / Multifamily</option>
+                    <option>Gym / Fitness</option>
+                    <option>Hotel</option>
+                    <option>Office / Workplace</option>
+                    <option>Healthcare Facility</option>
+                    <option>School / Campus</option>
+                    <option>Other</option>
+                  </select>
+                </label>
+              </div>
+
+              <label>
+                Address (City, State)
+                <input required name="address" placeholder="City, State" />
+              </label>
+
+              <div class="grid-2">
+                <label>
+                  Estimated daily foot traffic
+                  <select name="traffic">
+                    <option>Under 50</option>
+                    <option>50–150</option>
+                    <option>150–300</option>
+                    <option>300+</option>
+                  </select>
+                </label>
+                <label>
+                  Preferred placement area
+                  <select name="placement">
+                    <option>Lobby / Entrance</option>
+                    <option>Breakroom</option>
+                    <option>Gym floor</option>
+                    <option>Leasing office</option>
+                    <option>Pool / common area</option>
+                    <option>Other</option>
+                  </select>
+                </label>
+              </div>
+
+              <label>
+                Notes (optional)
+                <textarea name="notes" rows="4" placeholder="Any restrictions, access hours, product preferences, or questions."></textarea>
+              </label>
+
+              <button class="btn btn-primary btn-block" type="submit">Submit Request</button>
+              <p class="form-disclaimer">
+                By submitting, you agree to be contacted about placement and service. No spam.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION BENEFITS -->
+    <section class="section" id="locations">
+      <div class="container">
+        <div class="section-head">
+          <h2>Built for high-quality locations</h2>
+          <p>We partner with property managers and business owners who want a premium amenity—without operational burden.</p>
+        </div>
+
+        <div class="cards">
+          <div class="feature">
+            <h3>Zero-cost placement</h3>
+            <p>No equipment purchase. We install and operate the machine at qualified locations.</p>
+          </div>
+          <div class="feature">
+            <h3>We do the work</h3>
+            <p>Stocking, planograms, pricing, cleaning, repairs, and support handled by our team.</p>
+          </div>
+          <div class="feature">
+            <h3>Modern payments</h3>
+            <p>Cashless checkout with secure payment options. Inventory visibility supports better uptime.</p>
+          </div>
+          <div class="feature">
+            <h3>Curated product mix</h3>
+            <p>Snacks, beverages, protein, wellness, and essentials—customizable to your audience.</p>
+          </div>
+          <div class="feature">
+            <h3>Optional revenue share</h3>
+            <p>For certain locations, we offer commission options based on volume and placement.</p>
+          </div>
+          <div class="feature">
+            <h3>Clean, premium look</h3>
+            <p>Professional design that complements lobbies, gyms, and modern common spaces.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div>
+            <h3>Ideal partners</h3>
+            <p>Apartments • Gyms • Hotels • Offices • Campuses • Healthcare facilities • High-traffic retail waiting areas</p>
+          </div>
+          <a class="btn btn-primary" href="#host">Request Placement</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section alt" id="how">
+      <div class="container">
+        <div class="section-head">
+          <h2>How placement works</h2>
+          <p>A simple process from request to go-live.</p>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <div>
+              <h3>Submit your location</h3>
+              <p>Share location type, traffic, and preferred placement area.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <div>
+              <h3>Qualification + site check</h3>
+              <p>We confirm power access, footprint, visibility, and suitability for product demand.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <div>
+              <h3>Install + stock</h3>
+              <p>We deliver, install, and set the initial product mix based on your audience.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <div>
+              <h3>Ongoing service</h3>
+              <p>Regular restocking, service response, and product optimization based on sales.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-head">
+          <h2>Popular product categories</h2>
+          <p>We tailor inventory to your visitors. Typical options include:</p>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Beverages</span>
+          <span class="chip">Snacks</span>
+          <span class="chip">Protein</span>
+          <span class="chip">Energy + Recovery</span>
+          <span class="chip">Wellness</span>
+          <span class="chip">Travel / Convenience</span>
+          <span class="chip">Personal care</span>
+          <span class="chip">Seasonal items</span>
+        </div>
+
+        <div class="two-col">
+          <div class="panel">
+            <h3>Customization</h3>
+            <p>
+              Product mix can be optimized for your audience (e.g., high-protein for gyms, convenience essentials for hotels,
+              quick snacks for offices, or wellness-focused selections for clinics).
+            </p>
+            <ul class="list">
+              <li>Audience-based planogram</li>
+              <li>Price points aligned to venue</li>
+              <li>Seasonal + rotating best-sellers</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h3>Operational standards</h3>
+            <ul class="list">
+              <li>Routine restocking schedule</li>
+              <li>Maintenance and issue response</li>
+              <li>Cleanliness checks at service visits</li>
+              <li>Sales-based optimization over time</li>
+            </ul>
+            <p class="muted">
+              Note: Exact features depend on machine model and deployment package.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOST FORM ANCHOR -->
+    <section class="section alt" id="host">
+      <div class="container">
+        <div class="section-head">
+          <h2>Request placement</h2>
+          <p>Use the form at the top of the page, or contact us below for a faster discussion.</p>
+        </div>
+
+        <div class="callout">
+          <div>
+            <h3>Fast response</h3>
+            <p>Include location type, city/state, and estimated traffic for quickest qualification.</p>
+          </div>
+          <a class="btn btn-primary" href="#contact">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>FAQ</h2>
+          <p>Common questions from property managers and operators.</p>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>What does it cost the location?</summary>
+            <p>For qualified locations, placement is typically zero upfront cost. Terms may vary by location type, traffic, and placement area.</p>
+          </details>
+          <details>
+            <summary>Do you offer commission or revenue share?</summary>
+            <p>Some locations qualify for a commission structure based on volume and placement. We confirm options during qualification.</p>
+          </details>
+          <details>
+            <summary>What do you need from the location?</summary>
+            <p>Generally: a suitable footprint, standard power access, and reasonable access for stocking and service.</p>
+          </details>
+          <details>
+            <summary>Can we request specific products?</summary>
+            <p>Yes. We aim to match your audience and can adjust the mix over time based on demand and availability.</p>
+          </details>
+          <details>
+            <summary>How quickly can you install?</summary>
+            <p>Timeline depends on qualification, site readiness, and machine availability. We provide an estimated schedule after review.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p>For placement inquiries, include your location type and city/state.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="panel">
+            <h3>Business inquiries</h3>
+            <p class="muted">Replace these placeholders with your real contact details.</p>
+            <div class="contact-item"><strong>Email:</strong> placements@smartpodusa.com</div>
+            <div class="contact-item"><strong>Phone:</strong> (555) 555-5555</div>
+            <div class="contact-item"><strong>Service area:</strong> Your region / cities</div>
+
+            <div class="divider"></div>
+
+            <h3>Location checklist</h3>
+            <ul class="list">
+              <li>High-visibility placement area</li>
+              <li>Steady foot traffic</li>
+              <li>Standard power access</li>
+              <li>Permission from property/operations</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h3>Quick message</h3>
+            <form class="form" action="#" method="post">
+              <label>
+                Name
+                <input required name="name" placeholder="Your name" />
+              </label>
+              <label>
+                Email
+                <input required type="email" name="email" placeholder="you@company.com" />
+              </label>
+              <label>
+                Message
+                <textarea required name="message" rows="5" placeholder="City/state, location type, and best time to reach you."></textarea>
+              </label>
+              <button class="btn btn-primary btn-block" type="submit">Send</button>
+              <p class="form-disclaimer">No spam. Placement requests are reviewed in order received.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <div class="brand footer-brand">
+            <span class="brand-mark">SP</span>
+            <span class="brand-name">SmartPod USA</span>
+          </div>
+          <p class="muted">AI smart vending placement and operations for premium locations.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#locations">For Locations</a>
+          <a href="#how">How It Works</a>
+          <a href="#products">Products</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p class="muted">© <span id="year"></span> SmartPod USA. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const el = document.getElementById('mobileNav');
+      el.classList.toggle('open');
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
