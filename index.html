@@ -1,223 +1,294 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SmartPod USA | AI Smart Vending for Premium Locations</title>
-  <meta name="description" content="AI-enabled smart vending for apartments, gyms, hotels, offices, and healthcare. Zero-cost placement. We install, stock, and maintain. Request placement today." />
+:root{
+  --bg:#0b0f17;
+  --panel:#101827;
+  --text:#e6eaf2;
+  --muted:#a7b0c3;
+  --line:rgba(255,255,255,0.10);
+  --accent:#ff7a18;
+  --accent2:#ffb347;
+  --shadow:0 14px 40px rgba(0,0,0,0.35);
+  --radius:18px;
+  --max:1120px;
+  --font:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--font);
+  background:
+    radial-gradient(1100px 700px at 12% 12%, rgba(255,122,24,0.12), transparent 55%),
+    radial-gradient(900px 600px at 90% 10%, rgba(255,179,71,0.10), transparent 55%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.45;
+}
 
-<body>
-  <header class="header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="SmartPod USA Home">
-        <span class="brand-mark">SP</span>
-        <span class="brand-name">SmartPod USA</span>
-      </a>
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:0 auto;padding:0 20px}
 
-      <nav class="nav">
-        <a href="#locations">For Locations</a>
-        <a href="#how">How It Works</a>
-        <a href="#products">Products</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn btn-ghost" href="#contact">Contact</a>
-        <a class="btn btn-primary" href="#host">Request Placement</a>
-      </nav>
+/* Header */
+.header{
+  position:sticky;top:0;z-index:50;
+  border-bottom:1px solid var(--line);
+  background:rgba(11,15,23,0.72);
+  backdrop-filter:blur(10px);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}
+.brand-mark{
+  width:38px;height:38px;border-radius:12px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#111;font-weight:900;
+}
+.brand-name{letter-spacing:0.2px}
 
-      <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">Menu</button>
-    </div>
+.nav{display:flex;align-items:center;gap:14px}
+.nav a{color:var(--muted);font-weight:700;font-size:14px}
+.nav a:hover{color:var(--text)}
 
-    <div class="mobile-nav" id="mobileNav">
-      <a href="#locations" onclick="toggleMenu()">For Locations</a>
-      <a href="#how" onclick="toggleMenu()">How It Works</a>
-      <a href="#products" onclick="toggleMenu()">Products</a>
-      <a href="#faq" onclick="toggleMenu()">FAQ</a>
-      <a href="#contact" onclick="toggleMenu()">Contact</a>
-      <a class="btn btn-primary" href="#host" onclick="toggleMenu()">Request Placement</a>
-    </div>
-  </header>
+.menu-btn{
+  display:none;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,0.04);
+  color:var(--text);
+  padding:10px 12px;
+  border-radius:12px;
+  font-weight:800;
+}
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">AI Smart Vending • Cashless • Monitored</p>
-          <h1>Premium smart vending machines for modern properties and businesses.</h1>
-          <p class="subhead">
-            Zero-cost placement for qualified locations. We handle delivery, installation, stocking, and maintenance—so you
-            get a premium amenity without the hassle.
-          </p>
+.mobile-nav{
+  display:none;
+  border-top:1px solid var(--line);
+  padding:14px 20px 18px;
+  gap:10px;
+}
+.mobile-nav a{
+  display:block;
+  padding:10px 0;
+  color:var(--muted);
+  font-weight:700;
+}
+.mobile-nav.open{display:grid}
 
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="#host">Request Placement</a>
-            <a class="btn btn-ghost" href="#locations">See Location Benefits</a>
-          </div>
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:42px;padding:0 14px;border-radius:12px;
+  font-weight:900;font-size:14px;
+  border:1px solid transparent;
+  transition:transform 120ms ease, background 120ms ease, border 120ms ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#111;
+  box-shadow:0 10px 24px rgba(255,122,24,0.18);
+}
+.btn-ghost{
+  background:rgba(255,255,255,0.04);
+  border-color:var(--line);
+  color:var(--text);
+}
+.btn-block{width:100%}
 
-          <div class="trust-row">
-            <div class="trust-item">
-              <div class="trust-kpi">0$</div>
-              <div class="trust-label">Upfront cost*</div>
-            </div>
-            <div class="trust-item">
-              <div class="trust-kpi">24/7</div>
-              <div class="trust-label">Self-serve access</div>
-            </div>
-            <div class="trust-item">
-              <div class="trust-kpi">Fast</div>
-              <div class="trust-label">Service response</div>
-            </div>
-          </div>
+/* Hero */
+.hero{padding:56px 0 26px}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:22px;
+  align-items:start;
+}
+.eyebrow{
+  color:var(--muted);
+  font-weight:800;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  font-size:12px;
+}
+h1{font-size:42px;line-height:1.08;margin:12px 0}
+.subhead{color:var(--muted);font-size:16px;max-width:56ch}
+.hero-cta{display:flex;gap:12px;margin:18px 0}
+.trust-row{display:flex;gap:14px;margin-top:8px;flex-wrap:wrap}
+.trust-item{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,0.03);
+  border-radius:16px;
+  padding:10px 12px;
+  min-width:140px;
+}
+.trust-kpi{font-weight:1000;font-size:18px}
+.trust-label{color:var(--muted);font-size:13px}
+.fineprint{color:rgba(167,176,195,0.85);font-size:12px;margin-top:14px}
 
-          <p class="fineprint">
-            *Placement subject to location qualification, footprint, and minimum traffic requirements.
-          </p>
-        </div>
+/* Cards / Sections */
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:18px;
+}
+.card-title{margin:0 0 6px;font-size:18px}
+.card-subtitle{margin:0 0 12px;color:var(--muted);font-size:14px}
 
-        <div class="hero-card">
-          <div class="card">
-            <h2 class="card-title">Request Placement</h2>
-            <p class="card-subtitle">Tell us about your location. We respond within 1–2 business days.</p>
+.section{padding:46px 0}
+.section.alt{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent 60%);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.section-head h2{margin:0 0 8px;font-size:28px}
+.section-head p{margin:0;color:var(--muted);max-width:70ch}
 
-            <!-- Replace action="#" with your form endpoint (Formspree / Jotform / Google Forms) -->
-            <form class="form" action="#" method="post">
-              <div class="grid-2">
-                <label>
-                  Full Name
-                  <input required name="name" placeholder="Jane Smith" />
-                </label>
-                <label>
-                  Phone
-                  <input required name="phone" placeholder="(555) 555-5555" />
-                </label>
-              </div>
+.cards{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.feature{
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+}
+.feature h3{margin:0 0 8px;font-size:16px}
+.feature p{margin:0;color:var(--muted);font-size:14px}
 
-              <label>
-                Email
-                <input required type="email" name="email" placeholder="jane@company.com" />
-              </label>
+.callout{
+  margin-top:16px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px;
+  padding:16px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,0.03);
+}
+.callout h3{margin:0 0 6px}
+.callout p{margin:0;color:var(--muted)}
 
-              <div class="grid-2">
-                <label>
-                  Property / Business Name
-                  <input name="company" placeholder="Apartment • Gym • Hotel • Office" />
-                </label>
-                <label>
-                  Location Type
-                  <select name="type">
-                    <option>Apartment / Multifamily</option>
-                    <option>Gym / Fitness</option>
-                    <option>Hotel</option>
-                    <option>Office / Workplace</option>
-                    <option>Healthcare Facility</option>
-                    <option>School / Campus</option>
-                    <option>Other</option>
-                  </select>
-                </label>
-              </div>
+.steps{
+  margin:18px 0 0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  gap:12px;
+}
+.steps li{
+  display:flex;gap:12px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,0.03);
+  border-radius:16px;
+  padding:14px;
+}
+.step-num{
+  width:34px;height:34px;border-radius:12px;
+  display:grid;place-items:center;
+  background:rgba(255,122,24,0.18);
+  border:1px solid rgba(255,122,24,0.30);
+  font-weight:1000;
+}
+.steps h3{margin:0 0 6px;font-size:16px}
+.steps p{margin:0;color:var(--muted)}
 
-              <label>
-                Address (City, State)
-                <input required name="address" placeholder="City, State" />
-              </label>
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.chip{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,0.03);
+  padding:8px 10px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:13px;
+}
 
-              <div class="grid-2">
-                <label>
-                  Estimated daily foot traffic
-                  <select name="traffic">
-                    <option>Under 50</option>
-                    <option>50–150</option>
-                    <option>150–300</option>
-                    <option>300+</option>
-                  </select>
-                </label>
-                <label>
-                  Preferred placement area
-                  <select name="placement">
-                    <option>Lobby / Entrance</option>
-                    <option>Breakroom</option>
-                    <option>Gym floor</option>
-                    <option>Leasing office</option>
-                    <option>Common area</option>
-                    <option>Other</option>
-                  </select>
-                </label>
-              </div>
+.two-col{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.panel{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,0.03);
+  border-radius:16px;
+  padding:16px;
+}
+.panel h3{margin:0 0 8px}
+.muted{color:var(--muted)}
+.divider{height:1px;background:var(--line);margin:14px 0}
 
-              <label>
-                Notes (optional)
-                <textarea name="notes" rows="4" placeholder="Restrictions, access hours, product preferences, questions."></textarea>
-              </label>
+.list{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+.list li{margin:6px 0}
 
-              <button class="btn btn-primary btn-block" type="submit">Submit Request</button>
-              <p class="form-disclaimer">By submitting, you agree to be contacted about placement. No spam.</p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+.faq{margin-top:14px;display:grid;gap:10px}
+details{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,0.03);
+  border-radius:16px;
+  padding:12px 14px;
+}
+summary{cursor:pointer;font-weight:900}
+details p{color:var(--muted);margin:10px 0 0}
 
-    <!-- LOCATION BENEFITS -->
-    <section class="section" id="locations">
-      <div class="container">
-        <div class="section-head">
-          <h2>Designed for high-quality locations</h2>
-          <p>We partner with property managers and operators who want a premium amenity with minimal operational burden.</p>
-        </div>
+.contact-grid{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.contact-item{margin:8px 0;color:var(--muted)}
 
-        <div class="cards">
-          <div class="feature">
-            <h3>Zero-cost placement</h3>
-            <p>No equipment purchase. We place and operate the machine at qualified locations.</p>
-          </div>
-          <div class="feature">
-            <h3>We handle operations</h3>
-            <p>Stocking, pricing, cleaning, maintenance, and support managed by our team.</p>
-          </div>
-          <div class="feature">
-            <h3>Modern payments</h3>
-            <p>Cashless checkout. Inventory visibility supports higher uptime and fewer outages.</p>
-          </div>
-          <div class="feature">
-            <h3>Curated product mix</h3>
-            <p>Snacks, beverages, protein, wellness, and essentials—customized to your audience.</p>
-          </div>
-          <div class="feature">
-            <h3>Optional revenue share</h3>
-            <p>Some locations qualify for commission based on volume and placement.</p>
-          </div>
-          <div class="feature">
-            <h3>Premium presentation</h3>
-            <p>A clean, modern design that complements lobbies, gyms, and common spaces.</p>
-          </div>
-        </div>
+/* Forms */
+.form{display:grid;gap:10px}
+label{display:grid;gap:6px;font-weight:800;font-size:13px}
+input,select,textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,0.22);
+  color:var(--text);
+  outline:none;
+}
+input::placeholder,textarea::placeholder{color:rgba(167,176,195,0.7)}
+input:focus,select:focus,textarea:focus{
+  border-color:rgba(255,122,24,0.55);
+  box-shadow:0 0 0 4px rgba(255,122,24,0.12);
+}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-disclaimer{margin:0;color:rgba(167,176,195,0.85);font-size:12px}
 
-        <div class="callout">
-          <div>
-            <h3>Ideal partners</h3>
-            <p>Apartments • Gyms • Hotels • Offices • Campuses • Healthcare facilities • High-traffic waiting areas</p>
-          </div>
-          <a class="btn btn-primary" href="#host">Request Placement</a>
-        </div>
-      </div>
-    </section>
+/* Footer */
+.footer{
+  border-top:1px solid var(--line);
+  padding:24px 0;
+  background:rgba(0,0,0,0.10);
+}
+.footer-inner{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
+}
+.footer-links{display:flex;flex-wrap:wrap;gap:12px;color:var(--muted);font-weight:800;font-size:13px}
+.footer-links a:hover{color:var(--text)}
+.footer-bottom{padding-top:12px;border-top:1px solid var(--line);margin-top:14px}
+.footer-brand{margin-bottom:10px}
 
-    <!-- HOW IT WORKS -->
-    <section class="section alt" id="how">
-      <div class="container">
-        <div class="section-head">
-          <h2>How it works</h2>
-          <p>Simple steps from request to go-live.</p>
-        </div>
-
-        <ol class="steps">
-          <li>
-            <span class="step-num">1</span>
-            <div>
-              <h3>Submit your location</h3>
-              <p>Share
+/* Responsive */
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  h1{font-size:36px}
+  .cards{grid-template-columns:1fr}
+  .two-col{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .nav{display:none}
+  .menu-btn{display:inline-flex}
+}
+@media (max-width:520px){
+  .grid-2{grid-template-columns:1fr}
+  .callout{flex-direction:column;align-items:flex-start}
+}
