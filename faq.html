@@ -83,3 +83,8 @@
 <script src="app.js"></script>
 </body>
 </html>
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".faq details[open]").forEach(d => d.removeAttribute("open"));
+});
+</script>
