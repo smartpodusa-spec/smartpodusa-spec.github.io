@@ -34,7 +34,7 @@
   <div class="mobileNav" id="mobileNav">
     <a href="how-it-works.html" onclick="toggleMenu()">How placement works</a>
     <a href="faq.html" onclick="toggleMenu()">FAQ</a>
-    <a href="products.html" onclick="toggleMenu()">Product Suggestions ()</a>
+    <a href="products.html" onclick="toggleMenu()">Product Suggestions (QR)</a>
     <a href="contact.html" onclick="toggleMenu()">Contact</a>
     <a class="btn btn--cta" href="contact.html" onclick="toggleMenu()">Request Placement</a>
   </div>
@@ -45,11 +45,11 @@
     <div class="container dividerTop">
       <div class="section__head">
         <h1>Product suggestions</h1>
-        <p>Scan the  code on-site or submit a request below.</p>
+        <p>Scan the QR code on-site or submit a request below.</p>
       </div>
 
       <div class="contactGrid">
-        <!--  Card -->
+        <!-- QR Card -->
         <div class="contactCard">
           <h3>QR code</h3>
           <p class="muted">Print this QR on your machine so customers can request items in seconds.</p>
@@ -74,7 +74,6 @@
         <div class="contactCard">
           <h3>Submit a suggestion</h3>
 
-          <!-- If you want these to go to a DIFFERENT inbox/form, replace the data-formspree URL -->
           <form id="suggestForm" class="form" data-formspree="https://formspree.io/f/xkogdqkz">
             <div class="grid2">
               <label>Product type
@@ -91,13 +90,11 @@
               </label>
             </div>
 
-            <!-- Quick picks -->
             <div class="chipBlock">
               <div class="chipTitle">Quick picks (tap to add)</div>
               <div id="chips" class="chips"></div>
             </div>
 
-            <!-- Search (client-side) -->
             <label>Search popular items (optional)
               <input id="search" type="text" placeholder="Type: Celsius, Fairlife, Poppi, Quest, RXBAR, etc." autocomplete="off" />
             </label>
@@ -149,12 +146,12 @@
   </footer>
 </main>
 
-<!-- QR library -->
+<!-- QR library MUST load before the init script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="app.js"></script>
 
-<!-- Page-specific logic (kept in this file so you can paste once) -->
 <script>
+window.addEventListener("DOMContentLoaded", () => {
   // Category + chip presets
   const DATA = {
     "Drinks": {
@@ -175,21 +172,17 @@
     }
   };
 
-  // Local (offline) "popular items" list for search suggestions
   const POPULAR = [
-    // Drinks
     "Celsius (various)", "Alani Nu (various)", "Red Bull (various)", "Monster (various)", "Starbucks Frappuccino",
     "La Colombe Cold Brew", "Fairlife Core Power 26g", "Premier Protein Shake", "Poppi (various)", "Liquid I.V.",
     "BodyArmor", "Gatorade Zero", "Smartwater", "Spindrift",
-    // Snacks
     "Quest Protein Bar", "RXBAR", "KIND Bar", "Clif Bar", "Built Bar",
     "Quest Tortilla Chips", "Popchips", "SkinnyPop", "Wonderful Pistachios", "Planters Mixed Nuts",
     "Jack Link's Jerky", "Chomps", "Trail Mix (various)",
-    // Food
     "Uncrustables", "Protein pack", "Overnight oats", "Greek yogurt (single-serve)"
   ];
 
-  function $(id){ return document.getElementById(id); }
+  const $ = (id) => document.getElementById(id);
 
   const typeEl = $("productType");
   const catEl = $("category");
@@ -217,8 +210,7 @@
       b.textContent = label;
       b.addEventListener("click", ()=>{
         const current = itemsEl.value.trim();
-        const add = label;
-        itemsEl.value = current ? (current + (current.endsWith(";") ? " " : "; ") + add) : add;
+        itemsEl.value = current ? (current + (current.endsWith(";") ? " " : "; ") + label) : label;
         itemsEl.focus();
       });
       chipsEl.appendChild(b);
@@ -249,7 +241,6 @@
     });
   }
 
-  // Initialize UI
   fillCategories(typeEl.value);
   fillChips(typeEl.value);
 
@@ -261,28 +252,25 @@
   searchEl.addEventListener("input", (e)=> renderSearch(e.target.value));
 
   // QR
-  (function initQR(){
-    const qrEl = document.getElementById("qrCode");
-    const qrLink = document.getElementById("qrLink");
-    if (!qrEl || typeof QRCode === "undefined") return;
-    const url = window.location.href;
-    qrLink.textContent = url;
+  const qrEl = $("qrCode");
+  const qrLink = $("qrLink");
+  if (qrEl && typeof QRCode !== "undefined") {
+    const url = window.location.origin + "/products.html";
+    if (qrLink) qrLink.textContent = url;
     qrEl.innerHTML = "";
     new QRCode(qrEl, { text: url, width: 190, height: 190 });
-  })();
+  }
 
-  // Formspree submit (does not interfere with your contact form)
-  (function initSuggestForm(){
-    const form = document.getElementById("suggestForm");
-    const status = document.getElementById("suggestStatus");
-    if (!form) return;
-
+  // Form submit
+  const form = $("suggestForm");
+  const status = $("suggestStatus");
+  if (form) {
     form.addEventListener("submit", async (e)=>{
       e.preventDefault();
-      status.textContent = "Sending…";
+      if (status) status.textContent = "Sending…";
 
       const endpoint = form.getAttribute("data-formspree");
-      if (!endpoint) { status.textContent = "Form endpoint missing."; return; }
+      if (!endpoint) { if (status) status.textContent = "Form endpoint missing."; return; }
 
       try{
         const res = await fetch(endpoint, {
@@ -290,21 +278,21 @@
           headers: { "Accept": "application/json" },
           body: new FormData(form)
         });
+
         if (res.ok){
           form.reset();
           fillCategories(typeEl.value);
           fillChips(typeEl.value);
-          status.textContent = "Sent. Thank you.";
+          if (status) status.textContent = "Sent. Thank you.";
         } else {
-          status.textContent = "Unable to send. Please try again.";
+          if (status) status.textContent = "Unable to send. Please try again.";
         }
       } catch {
-        status.textContent = "Network error. Please try again.";
+        if (status) status.textContent = "Network error. Please try again.";
       }
     });
-  })();
+  }
+});
 </script>
 </body>
 </html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="app.js"></script>
