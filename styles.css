@@ -584,3 +584,14 @@ input:focus,select:focus,textarea:focus{
   cursor:pointer;
 }
 .suggestRow:hover{background:rgba(255,255,255,.08)}
+/* Prevent divider overlays from cutting through step cards */
+.dividerTop{ position: relative; }
+.dividerTop::before{
+  pointer-events:none;
+  z-index:0;
+}
+
+.steps, .processSteps, .step, .processStep{
+  position: relative;
+  z-index: 1;
+}
