@@ -602,3 +602,4 @@ input:focus,select:focus,textarea:focus{
   position: relative;
   z-index: 1;
 }
+.process{ padding-bottom: 32px; }
