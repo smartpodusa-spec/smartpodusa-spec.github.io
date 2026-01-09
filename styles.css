@@ -509,3 +509,16 @@ input:focus,select:focus,textarea:focus{
   .tItem{grid-template-columns: 1fr}
   .split{grid-template-columns: 1fr}
 }
+/* Footer divider alignment (container-only) */
+.footer .dividerTop{
+  padding-top: 22px;  /* slightly tighter than sections */
+}
+
+.footer .dividerTop::before{
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,.14),
+    transparent
+  );
+}
