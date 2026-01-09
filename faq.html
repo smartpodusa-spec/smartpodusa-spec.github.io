@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ | SmartPod USA</title>
+  <meta name="description" content="SmartPod USA FAQ: cost, stocking and maintenance, product requests, and installation timing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark">SP</span>
+      <span class="brand__name">SmartPod USA</span>
+    </a>
+    <nav class="nav">
+      <a href="how-it-works.html">How placement works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="products.html">Product Suggestions (QR)</a>
+      <a class="btn btn--ghost" href="contact.html">Contact</a>
+      <a class="btn btn--cta" href="contact.html">Request Placement</a>
+    </nav>
+    <button class="menuBtn" type="button" onclick="toggleMenu()">Menu</button>
+  </div>
+  <div class="mobileNav" id="mobileNav">
+    <a href="how-it-works.html" onclick="toggleMenu()">How placement works</a>
+    <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+    <a href="products.html" onclick="toggleMenu()">Product Suggestions (QR)</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    <a class="btn btn--cta" href="contact.html" onclick="toggleMenu()">Request Placement</a>
+  </div>
+</header>
+
+<main>
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h1>FAQ</h1>
+        <p>Common questions from property managers and operators.</p>
+      </div>
+
+      <div class="faq">
+        <details open>
+          <summary>Does it cost us anything to host a machine?</summary>
+          <p>Many qualified locations have no upfront cost. Terms depend on traffic, placement area, and service coverage.</p>
+        </details>
+        <details>
+          <summary>Who stocks and maintains the machine?</summary>
+          <p>SmartPod stocks, services, and maintains the machine. Access is coordinated for routine visits.</p>
+        </details>
+        <details>
+          <summary>Can we request specific products?</summary>
+          <p>Yes. We can start with preferences and adjust inventory based on sales and availability.</p>
+        </details>
+        <details>
+          <summary>How fast can we install?</summary>
+          <p>After qualification and site review, an estimated timeline is provided based on readiness and availability.</p>
+        </details>
+      </div>
+
+      <div class="callout" style="margin-top:18px;">
+        <div>
+          <h3>Request placement</h3>
+          <p>Send venue type, city/state, and estimated traffic for review.</p>
+        </div>
+        <a class="btn btn--primary" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__bottom">
+      <p class="muted">© <span id="year"></span> SmartPod USA. All rights reserved.</p>
+    </div>
+  </footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
