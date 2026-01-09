@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartPod USA | AI Smart Vending Placement</title>
+  <meta name="description" content="Premium AI smart vending for apartments, gyms, hotels, offices, and healthcare. We install, stock, and maintain. Request placement." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+
+  <meta property="og:title" content="SmartPod USA | AI Smart Vending Placement" />
+  <meta property="og:description" content="Premium AI vending for high-traffic locations. We install, stock, and maintain. Request placement." />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+<header class="header" id="top">
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="SmartPod USA home">
+      <span class="brand__mark">SP</span>
+      <span class="brand__name">SmartPod USA</span>
+    </a>
+
+    <nav class="nav">
+      <a href="how-it-works.html">How placement works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="products.html">Product Suggestions (QR)</a>
+      <a class="btn btn--ghost" href="contact.html">Contact</a>
+      <a class="btn btn--cta" href="contact.html">Request Placement</a>
+    </nav>
+
+    <button class="menuBtn" aria-label="Open menu" type="button" onclick="toggleMenu()">Menu</button>
+  </div>
+
+  <div class="mobileNav" id="mobileNav">
+    <a href="how-it-works.html" onclick="toggleMenu()">How placement works</a>
+    <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+    <a href="products.html" onclick="toggleMenu()">Product Suggestions (QR)</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    <a class="btn btn--cta" href="contact.html" onclick="toggleMenu()">Request Placement</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <p class="kicker">AI smart vending • cashless • monitored service</p>
+        <h1>Premium AI smart vending for high-traffic locations—managed end to end.</h1>
+        <p class="lead">
+          SmartPod partners with apartments, gyms, hotels, offices, and healthcare facilities.
+          We handle installation, stocking, support, and maintenance so people can self-serve 24/7.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="contact.html">Request Placement</a>
+          <a class="btn btn--ghost" href="how-it-works.html">How it works</a>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric__value">$0</div>
+            <div class="metric__label">Upfront cost for many sites*</div>
+          </div>
+          <div class="metric">
+            <div class="metric__value">24/7</div>
+            <div class="metric__label">Self-serve access</div>
+          </div>
+          <div class="metric">
+            <div class="metric__value">Managed</div>
+            <div class="metric__label">Stocking + maintenance</div>
+          </div>
+        </div>
+
+        <p class="fine">*Placement depends on traffic, visibility, power access, and service area.</p>
+      </div>
+
+      <div class="hero__panel">
+        <div class="panel">
+          <div class="panel__top">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="panel__title">Placement Snapshot</span>
+          </div>
+
+          <div class="panel__body">
+            <div class="panelCard">
+              <div class="panelCard__k">Typical installs</div>
+              <div class="panelCard__v">Lobby • Breakroom • Gym floor • Waiting area</div>
+            </div>
+            <div class="panelCard">
+              <div class="panelCard__k">Product mix</div>
+              <div class="panelCard__v">Snacks • Drinks • Protein • Essentials</div>
+            </div>
+            <div class="panelCard">
+              <div class="panelCard__k">Operations</div>
+              <div class="panelCard__v">Restock + service aligned to demand</div>
+            </div>
+
+            <div class="panelCTA">
+              <a class="btn btn--primary btn--block" href="contact.html">Start a placement request</a>
+              <p class="panelFine">Decision-maker contact preferred for fastest review.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Quick links</h2>
+        <p>Dedicated pages so nothing feels compressed.</p>
+      </div>
+
+      <div class="grid3">
+        <a class="card" href="how-it-works.html">
+          <h3>How placement works</h3>
+          <p>Request → site check → install → operations.</p>
+        </a>
+        <a class="card" href="products.html">
+          <h3>Product Suggestions (QR)</h3>
+          <p>Generate a QR code and collect requests.</p>
+        </a>
+        <a class="card" href="contact.html">
+          <h3>Request placement</h3>
+          <p>Send venue details for review.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="brand brand--footer">
+          <span class="brand__mark">SP</span>
+          <span class="brand__name">SmartPod USA</span>
+        </div>
+        <p class="muted">AI smart vending placement and operations for premium locations.</p>
+      </div>
+
+      <div class="footer__links">
+        <a href="how-it-works.html">How placement works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="products.html">Product Suggestions</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p class="muted">© <span id="year"></span> SmartPod USA. All rights reserved.</p>
+    </div>
+  </footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
