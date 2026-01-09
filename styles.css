@@ -596,3 +596,9 @@ input:focus,select:focus,textarea:focus{
   z-index: 1;
 }
 .steps{ padding-bottom: 24px; }
+/* Fix step overlap / divider bleed on How It Works page */
+.process,
+.section{
+  position: relative;
+  z-index: 1;
+}
