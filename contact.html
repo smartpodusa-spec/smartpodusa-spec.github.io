@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Request Placement / Contact | SmartPod USA</title>
+  <meta name="description" content="Request SmartPod USA placement or contact us." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark">SP</span>
+      <span class="brand__name">SmartPod USA</span>
+    </a>
+    <nav class="nav">
+      <a href="how-it-works.html">How placement works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="products.html">Product Suggestions (QR)</a>
+      <a class="btn btn--ghost" href="contact.html">Contact</a>
+      <a class="btn btn--cta" href="contact.html">Request Placement</a>
+    </nav>
+    <button class="menuBtn" type="button" onclick="toggleMenu()">Menu</button>
+  </div>
+  <div class="mobileNav" id="mobileNav">
+    <a href="how-it-works.html" onclick="toggleMenu()">How placement works</a>
+    <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+    <a href="products.html" onclick="toggleMenu()">Product Suggestions (QR)</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    <a class="btn btn--cta" href="contact.html" onclick="toggleMenu()">Request Placement</a>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h1>Request placement / Contact</h1>
+        <p>Include: city/state, venue type, estimated daily traffic, preferred placement area, and decision-maker contact.</p>
+      </div>
+
+      <div class="contactGrid">
+        <div class="contactCard">
+          <h3>Direct contact</h3>
+          <div class="kv"><strong>Email:</strong> <span id="publicEmail">info@smartpodusa.com</span></div>
+          <div class="kv"><strong>Phone:</strong> (800) 434-3310</div>
+          <div class="kv"><strong>Service area:</strong> Virginia Beach</div>
+
+          <div class="divider"></div>
+
+          <h3>What to include</h3>
+          <ul class="list">
+            <li>City/state + location type</li>
+            <li>Estimated daily traffic</li>
+            <li>Preferred placement area</li>
+            <li>Decision-maker contact (best)</li>
+          </ul>
+        </div>
+
+        <div class="contactCard">
+          <h3>Send a request</h3>
+
+          <form id="leadForm" class="form" data-formspree="https://formspree.io/f/xkogdqkz">
+            <div class="grid2">
+              <label>Full name
+                <input required name="name" autocomplete="name" />
+              </label>
+              <label>Phone
+                <input required name="phone" autocomplete="tel" />
+              </label>
+            </div>
+
+            <label>Email
+              <input required type="email" name="email" autocomplete="email" />
+            </label>
+
+            <div class="grid2">
+              <label>Location type
+                <select name="location_type">
+                  <option>Apartment / Multifamily</option>
+                  <option>Gym / Fitness</option>
+                  <option>Hotel</option>
+                  <option>Office / Workplace</option>
+                  <option>Healthcare Facility</option>
+                  <option>School / Campus</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label>Daily foot traffic (estimate)
+                <select name="foot_traffic">
+                  <option>Under 50</option>
+                  <option>50–150</option>
+                  <option>150–300</option>
+                  <option>300+</option>
+                </select>
+              </label>
+            </div>
+
+            <label>City + State
+              <input required name="city_state" placeholder="City, State" />
+            </label>
+
+            <label>Message
+              <textarea required name="message" rows="5" placeholder="Placement area, access notes, product preferences, questions."></textarea>
+            </label>
+
+            <button class="btn btn--primary btn--block" type="submit">Send request</button>
+            <p class="tiny" id="formStatus"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__bottom">
+      <p class="muted">© <span id="year"></span> SmartPod USA. All rights reserved.</p>
+    </div>
+  </footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
