@@ -1,18 +1,17 @@
-function toggleMenu() {
-  const el = document.getElementById("mobileNav");
-  if (!el) return;
-  el.classList.toggle("isOpen");
-}
+(function initSuggestFormAndQR(){
+  // QR
+  const qrEl = document.getElementById("qrCode");
+  const qrLink = document.getElementById("qrLink");
+  if (qrEl && typeof QRCode !== "undefined") {
+    const url = window.location.href;
+    if (qrLink) qrLink.textContent = url;
+    qrEl.innerHTML = "";
+    new QRCode(qrEl, { text: url, width: 180, height: 180 });
+  }
 
-(function initYear() {
-  const y = document.getElementById("year");
-  if (y) y.textContent = new Date().getFullYear();
-})();
-
-/* Formspree submit (works on contact page) */
-(function initFormspree() {
-  const form = document.getElementById("leadForm");
-  const status = document.getElementById("formStatus");
+  // Suggestion form (products.html)
+  const form = document.getElementById("suggestForm");
+  const status = document.getElementById("suggestStatus");
   if (!form) return;
 
   form.addEventListener("submit", async (e) => {
@@ -34,7 +33,7 @@ function toggleMenu() {
 
       if (res.ok) {
         form.reset();
-        if (status) status.textContent = "Sent. We’ll respond shortly.";
+        if (status) status.textContent = "Sent. Thank you.";
       } else {
         if (status) status.textContent = "Unable to send. Please try again.";
       }
