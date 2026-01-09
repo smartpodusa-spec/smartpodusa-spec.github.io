@@ -1,1 +1,308 @@
-<a href="products.html">Product Suggestions</a>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Suggestions (QR) | SmartPod USA</title>
+  <meta name="description" content="Suggest drinks, snacks, and prepackaged food for SmartPod USA. Scan the QR code or submit a request." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="SmartPod USA home">
+      <span class="brand__mark">SP</span>
+      <span class="brand__name">SmartPod USA</span>
+    </a>
+
+    <nav class="nav">
+      <a href="how-it-works.html">How placement works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="products.html">Product Suggestions (QR)</a>
+      <a class="btn btn--ghost" href="contact.html">Contact</a>
+      <a class="btn btn--cta" href="contact.html">Request Placement</a>
+    </nav>
+
+    <button class="menuBtn" aria-label="Open menu" type="button" onclick="toggleMenu()">Menu</button>
+  </div>
+
+  <div class="mobileNav" id="mobileNav">
+    <a href="how-it-works.html" onclick="toggleMenu()">How placement works</a>
+    <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+    <a href="products.html" onclick="toggleMenu()">Product Suggestions (QR)</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    <a class="btn btn--cta" href="contact.html" onclick="toggleMenu()">Request Placement</a>
+  </div>
+</header>
+
+<main>
+  <section class="section section--alt">
+    <div class="container dividerTop">
+      <div class="section__head">
+        <h1>Product suggestions</h1>
+        <p>Scan the QR code on-site or submit a request below.</p>
+      </div>
+
+      <div class="contactGrid">
+        <!-- QR Card -->
+        <div class="contactCard">
+          <h3>QR code</h3>
+          <p class="muted">Print this QR on your machine so customers can request items in seconds.</p>
+
+          <div class="qrWrap">
+            <div id="qrCode"></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="kv"><strong>Link:</strong> <span id="qrLink" class="muted"></span></div>
+
+          <div class="divider"></div>
+          <h3>Quick tips</h3>
+          <ul class="list">
+            <li>Include brand + flavor + size if known</li>
+            <li>Add “sugar-free” / “caffeine-free” if relevant</li>
+            <li>One request can include multiple items</li>
+          </ul>
+        </div>
+
+        <!-- Form Card -->
+        <div class="contactCard">
+          <h3>Submit a suggestion</h3>
+
+          <!-- If you want these to go to a DIFFERENT inbox/form, replace the data-formspree URL -->
+          <form id="suggestForm" class="form" data-formspree="https://formspree.io/f/xkogdqkz">
+            <div class="grid2">
+              <label>Product type
+                <select id="productType" name="product_type" required>
+                  <option value="Drinks">Drinks</option>
+                  <option value="Snacks">Snacks</option>
+                  <option value="Prepackaged Food">Prepackaged Food</option>
+                  <option value="Essentials">Essentials</option>
+                </select>
+              </label>
+
+              <label>Category
+                <select id="category" name="category" required></select>
+              </label>
+            </div>
+
+            <!-- Quick picks -->
+            <div class="chipBlock">
+              <div class="chipTitle">Quick picks (tap to add)</div>
+              <div id="chips" class="chips"></div>
+            </div>
+
+            <!-- Search (client-side) -->
+            <label>Search popular items (optional)
+              <input id="search" type="text" placeholder="Type: Celsius, Fairlife, Poppi, Quest, RXBAR, etc." autocomplete="off" />
+            </label>
+            <div id="suggestedList" class="suggestedList" aria-live="polite"></div>
+
+            <label>Suggested item(s)
+              <textarea id="items" required name="suggested_items" rows="5"
+                placeholder="Example: Celsius Peach Vibe 12oz; Fairlife Core Power 26g; Quest Chili Lime Tortilla Chips"></textarea>
+            </label>
+
+            <div class="grid2">
+              <label>Venue (optional)
+                <input name="venue" placeholder="Gym / Hotel / Office (optional)" />
+              </label>
+              <label>Machine ID (optional)
+                <input name="machine_id" placeholder="Sticker ID (optional)" />
+              </label>
+            </div>
+
+            <button class="btn btn--primary btn--block" type="submit">Send suggestion</button>
+            <p class="tiny" id="suggestStatus"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner dividerTop">
+      <div>
+        <div class="brand brand--footer">
+          <span class="brand__mark">SP</span>
+          <span class="brand__name">SmartPod USA</span>
+        </div>
+        <p class="muted">AI smart vending placement and operations for premium locations.</p>
+      </div>
+
+      <div class="footer__links">
+        <a href="how-it-works.html">How placement works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="products.html">Product Suggestions</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p class="muted">© <span id="year"></span> SmartPod USA. All rights reserved.</p>
+    </div>
+  </footer>
+</main>
+
+<!-- QR library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="app.js"></script>
+
+<!-- Page-specific logic (kept in this file so you can paste once) -->
+<script>
+  // Category + chip presets
+  const DATA = {
+    "Drinks": {
+      categories: ["Water / Hydration", "Energy Drinks", "Coffee / Tea", "Soda / Sparkling", "Juice", "Protein / Shakes"],
+      chips: ["Water", "Electrolyte drink", "Energy drink", "Cold brew", "Iced coffee", "Protein shake", "Sparkling water", "Diet soda"]
+    },
+    "Snacks": {
+      categories: ["Protein Bars", "Chips / Crunchy", "Sweet Snacks", "Nuts / Trail Mix", "Jerky", "Healthy Snacks"],
+      chips: ["Protein bar", "Chips", "Trail mix", "Jerky", "Fruit snack", "Granola", "Nuts", "Popcorn"]
+    },
+    "Prepackaged Food": {
+      categories: ["Sandwiches / Wraps", "Salads / Bowls", "Microwave Meals", "Breakfast", "High-protein Meals"],
+      chips: ["Wrap", "Sandwich", "Salad bowl", "Breakfast item", "Microwave meal", "Protein meal"]
+    },
+    "Essentials": {
+      categories: ["Pain relief", "Personal care", "Hygiene", "Convenience"],
+      chips: ["Pain reliever", "Deodorant", "Hand sanitizer", "Wipes", "Gum", "Phone charger"]
+    }
+  };
+
+  // Local (offline) "popular items" list for search suggestions
+  const POPULAR = [
+    // Drinks
+    "Celsius (various)", "Alani Nu (various)", "Red Bull (various)", "Monster (various)", "Starbucks Frappuccino",
+    "La Colombe Cold Brew", "Fairlife Core Power 26g", "Premier Protein Shake", "Poppi (various)", "Liquid I.V.",
+    "BodyArmor", "Gatorade Zero", "Smartwater", "Spindrift",
+    // Snacks
+    "Quest Protein Bar", "RXBAR", "KIND Bar", "Clif Bar", "Built Bar",
+    "Quest Tortilla Chips", "Popchips", "SkinnyPop", "Wonderful Pistachios", "Planters Mixed Nuts",
+    "Jack Link's Jerky", "Chomps", "Trail Mix (various)",
+    // Food
+    "Uncrustables", "Protein pack", "Overnight oats", "Greek yogurt (single-serve)"
+  ];
+
+  function $(id){ return document.getElementById(id); }
+
+  const typeEl = $("productType");
+  const catEl = $("category");
+  const chipsEl = $("chips");
+  const searchEl = $("search");
+  const listEl = $("suggestedList");
+  const itemsEl = $("items");
+
+  function fillCategories(type){
+    catEl.innerHTML = "";
+    DATA[type].categories.forEach(c=>{
+      const opt = document.createElement("option");
+      opt.value = c;
+      opt.textContent = c;
+      catEl.appendChild(opt);
+    });
+  }
+
+  function fillChips(type){
+    chipsEl.innerHTML = "";
+    DATA[type].chips.forEach(label=>{
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip";
+      b.textContent = label;
+      b.addEventListener("click", ()=>{
+        const current = itemsEl.value.trim();
+        const add = label;
+        itemsEl.value = current ? (current + (current.endsWith(";") ? " " : "; ") + add) : add;
+        itemsEl.focus();
+      });
+      chipsEl.appendChild(b);
+    });
+  }
+
+  function renderSearch(q){
+    const query = q.trim().toLowerCase();
+    listEl.innerHTML = "";
+    if (!query) return;
+
+    const hits = POPULAR.filter(x => x.toLowerCase().includes(query)).slice(0, 8);
+    if (!hits.length) return;
+
+    hits.forEach(item=>{
+      const row = document.createElement("button");
+      row.type = "button";
+      row.className = "suggestRow";
+      row.textContent = item;
+      row.addEventListener("click", ()=>{
+        const current = itemsEl.value.trim();
+        itemsEl.value = current ? (current + (current.endsWith(";") ? " " : "; ") + item) : item;
+        listEl.innerHTML = "";
+        searchEl.value = "";
+        itemsEl.focus();
+      });
+      listEl.appendChild(row);
+    });
+  }
+
+  // Initialize UI
+  fillCategories(typeEl.value);
+  fillChips(typeEl.value);
+
+  typeEl.addEventListener("change", ()=>{
+    fillCategories(typeEl.value);
+    fillChips(typeEl.value);
+  });
+
+  searchEl.addEventListener("input", (e)=> renderSearch(e.target.value));
+
+  // QR
+  (function initQR(){
+    const qrEl = document.getElementById("qrCode");
+    const qrLink = document.getElementById("qrLink");
+    if (!qrEl || typeof QRCode === "undefined") return;
+    const url = window.location.href;
+    qrLink.textContent = url;
+    qrEl.innerHTML = "";
+    new QRCode(qrEl, { text: url, width: 190, height: 190 });
+  })();
+
+  // Formspree submit (does not interfere with your contact form)
+  (function initSuggestForm(){
+    const form = document.getElementById("suggestForm");
+    const status = document.getElementById("suggestStatus");
+    if (!form) return;
+
+    form.addEventListener("submit", async (e)=>{
+      e.preventDefault();
+      status.textContent = "Sending…";
+
+      const endpoint = form.getAttribute("data-formspree");
+      if (!endpoint) { status.textContent = "Form endpoint missing."; return; }
+
+      try{
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: new FormData(form)
+        });
+        if (res.ok){
+          form.reset();
+          fillCategories(typeEl.value);
+          fillChips(typeEl.value);
+          status.textContent = "Sent. Thank you.";
+        } else {
+          status.textContent = "Unable to send. Please try again.";
+        }
+      } catch {
+        status.textContent = "Network error. Please try again.";
+      }
+    });
+  })();
+</script>
+</body>
+</html>
