@@ -603,3 +603,10 @@ input:focus,select:focus,textarea:focus{
   z-index: 1;
 }
 .process{ padding-bottom: 32px; }
+.process-steps {
+  overflow: hidden;
+}
+
+.process-step {
+  margin-top: 0;
+}
