@@ -610,3 +610,7 @@ input:focus,select:focus,textarea:focus{
 .process-step {
   margin-top: 0;
 }
+/* FIX: remove alternate section tint on the How placement works steps area */
+.section--alt{
+  background: transparent !important;
+}
