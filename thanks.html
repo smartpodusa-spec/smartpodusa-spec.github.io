@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You | SmartPod USA</title>
+  <meta name="description" content="Thank you for your submission to SmartPod USA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="SmartPod USA home">
+      <span class="brand__mark">SP</span>
+      <span class="brand__name">SmartPod USA</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="how-it-works.html">How it works</a>
+      <a href="products.html">Products</a>
+      <a href="faq.html">FAQ</a>
+      <a class="btn btn--cta" href="contact.html">Request Placement</a>
+    </nav>
+
+    <button class="menuBtn" type="button" onclick="toggleMenu()">Menu</button>
+  </div>
+
+  <div class="mobileNav" id="mobileNav">
+    <a href="how-it-works.html" onclick="toggleMenu()">How it works</a>
+    <a href="products.html" onclick="toggleMenu()">Products</a>
+    <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+    <a class="btn btn--cta" href="contact.html" onclick="toggleMenu()">Request Placement</a>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h1>Thank you</h1>
+        <p class="muted">We received your submission and will follow up.</p>
+      </div>
+
+      <div class="callout">
+        <div>
+          <h3>Next step</h3>
+          <p>If you have photos of the placement area, include them in a reply to our follow-up email.</p>
+        </div>
+        <a class="btn btn--primary" href="index.html">Back to home</a>
+      </div>
+
+      <div style="margin-top:16px;">
+        <a class="btn btn--ghost" href="how-it-works.html">How it works</a>
+        <a class="btn btn--ghost" href="contact.html" style="margin-left:10px;">Submit another request</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__bottom">
+      <p class="muted">© <span id="year"></span> SmartPod USA. All rights reserved.</p>
+    </div>
+  </footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
