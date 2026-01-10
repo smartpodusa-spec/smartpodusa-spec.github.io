@@ -1,20 +1,25 @@
+<!-- =========================
+FILE: index.html
+========================= -->
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>SmartPod USA | Fully Managed Smart Vending for Premium Locations</title>
+  <meta name="description" content="SmartPod USA provides fully managed smart vending as an on-site amenity for apartments, gyms, hotels, offices, and healthcare. We install, stock, and maintain—so your team stays hands-off." />
+
+  <!-- OPTIONAL: Google Search Console verification (keep if you use it) -->
   <meta name="google-site-verification" content="fi2VF6gbjSiW7ehzfZHH0k-0FCY2G0Ttwzw5_Ap10zE" />
 
-  <title>SmartPod USA | AI Smart Vending Machines for Premium Locations</title>
-  <meta name="description" content="SmartPod USA provides AI-powered smart vending machines for apartments, gyms, hotels, offices, and healthcare facilities. We handle placement, stocking, and maintenance." />
-
-  <meta property="og:title" content="SmartPod USA | AI Smart Vending Placement" />
-  <meta property="og:description" content="Premium AI vending for high-traffic locations. We install, stock, and maintain. Request placement." />
+  <meta property="og:title" content="SmartPod USA | Fully Managed Smart Vending" />
+  <meta property="og:description" content="A premium, hands-off snack and beverage amenity for modern locations. SmartPod installs, stocks, and maintains." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -26,10 +31,10 @@
       <span class="brand__name">SmartPod USA</span>
     </a>
 
-    <nav class="nav">
-      <a href="how-it-works.html">How placement works</a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="how-it-works.html">How it works</a>
+      <a href="products.html">Products</a>
       <a href="faq.html">FAQ</a>
-      <a href="products.html">Product Suggestions (QR)</a>
       <a class="btn btn--cta" href="contact.html">Request Placement</a>
     </nav>
 
@@ -37,72 +42,74 @@
   </div>
 
   <div class="mobileNav" id="mobileNav">
-    <a href="how-it-works.html" onclick="toggleMenu()">How placement works</a>
+    <a href="how-it-works.html" onclick="toggleMenu()">How it works</a>
+    <a href="products.html" onclick="toggleMenu()">Products</a>
     <a href="faq.html" onclick="toggleMenu()">FAQ</a>
-    <a href="products.html" onclick="toggleMenu()">Product Suggestions (QR)</a>
-    <a href="contact.html" onclick="toggleMenu()">Contact</a>
     <a class="btn btn--cta" href="contact.html" onclick="toggleMenu()">Request Placement</a>
   </div>
 </header>
 
 <main>
+  <!-- HERO -->
   <section class="hero">
     <div class="container hero__grid">
       <div class="hero__copy">
-        <p class="kicker">AI smart vending • cashless • monitored service</p>
-        <h1>Fully managed premium AI smart vending</h1>
+        <p class="kicker">Amenity-first • Fully managed • Stocked and serviced</p>
+
+        <h1>Premium smart vending—managed end-to-end for your location</h1>
+
         <p class="lead">
-          SmartPod partners with apartments, gyms, hotels, offices, and healthcare facilities.
-          We handle installation, stocking, support, and maintenance so people can self-serve 24/7.
+          SmartPod adds a modern snack and beverage experience for residents, members, staff, and guests.
+          We handle installation, stocking, and service so your team stays hands-off.
         </p>
 
         <div class="hero__cta">
           <a class="btn btn--primary" href="contact.html">Request Placement</a>
-          <a class="btn btn--ghost" href="how-it-works.html">How it works</a>
+          <a class="btn btn--ghost" href="how-it-works.html">See how it works</a>
         </div>
 
         <div class="metrics">
           <div class="metric">
-            <div class="metric__value">$0</div>
-            <div class="metric__label">Upfront cost for many sites*</div>
+            <div class="metric__value">Hands-off</div>
+            <div class="metric__label">We stock + service</div>
           </div>
           <div class="metric">
-            <div class="metric__value">24/7</div>
-            <div class="metric__label">Self-serve access</div>
+            <div class="metric__value">Curated</div>
+            <div class="metric__label">Snacks + drinks + protein</div>
           </div>
           <div class="metric">
-            <div class="metric__value">Managed</div>
-            <div class="metric__label">Stocking + maintenance</div>
+            <div class="metric__value">Fast review</div>
+            <div class="metric__label">Clear fit criteria</div>
           </div>
         </div>
 
-        <p class="fine">*Placement depends on traffic, visibility, power access, and service area.</p>
+        <p class="fine">Placement depends on traffic, visibility, power access, and service area.</p>
       </div>
 
+      <!-- RIGHT PANEL -->
       <div class="hero__panel">
         <div class="panel">
           <div class="panel__top">
             <span class="dot"></span><span class="dot"></span><span class="dot"></span>
             <span class="panel__title">Placement Snapshot</span>
           </div>
-
           <div class="panel__body">
             <div class="panelCard">
-              <div class="panelCard__k">Typical installs</div>
+              <div class="panelCard__k">Best placement areas</div>
               <div class="panelCard__v">Lobby • Breakroom • Gym floor • Waiting area</div>
             </div>
             <div class="panelCard">
-              <div class="panelCard__k">Product mix</div>
-              <div class="panelCard__v">Snacks • Drinks • Protein • Essentials</div>
+              <div class="panelCard__k">Who this is for</div>
+              <div class="panelCard__v">Locations that want a premium amenity (not vending operators)</div>
             </div>
             <div class="panelCard">
-              <div class="panelCard__k">Operations</div>
-              <div class="panelCard__v">Restock + service aligned to demand</div>
+              <div class="panelCard__k">What you get</div>
+              <div class="panelCard__v">Install + stocking + ongoing service by SmartPod</div>
             </div>
 
             <div class="panelCTA">
               <a class="btn btn--primary btn--block" href="contact.html">Start a placement request</a>
-              <p class="panelFine">Decision-maker contact preferred for fastest review.</p>
+              <p class="panelFine">Decision-maker contact helps speed review.</p>
             </div>
           </div>
         </div>
@@ -110,26 +117,114 @@
     </div>
   </section>
 
-  <section class="section section--alt">
+  <!-- BENEFITS -->
+  <section class="section">
     <div class="container">
       <div class="section__head">
-        <h2>Quick links</h2>
-        <p></p>
+        <h2>Designed for location teams</h2>
+        <p>Simple, predictable operations—without extra work for your staff.</p>
       </div>
 
       <div class="grid3">
-        <a class="card" href="how-it-works.html">
-          <h3>How placement works</h3>
-          <p>Request → site check → install → operations.</p>
-        </a>
-        <a class="card" href="products.html">
-          <h3>Product Suggestions (QR)</h3>
-          <p>Generate a QR code and collect requests.</p>
-        </a>
-        <a class="card" href="contact.html">
-          <h3>Request placement</h3>
+        <div class="card">
+          <h3>Hands-off operations</h3>
+          <p>SmartPod manages stocking, rotations, and service visits.</p>
+        </div>
+        <div class="card">
+          <h3>Curated product mix</h3>
+          <p>Snacks, drinks, protein, and everyday grab-and-go favorites.</p>
+        </div>
+        <div class="card">
+          <h3>Reliable service</h3>
+          <p>Restock cadence and maintenance response aligned to demand and access.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div>
+          <h3>Want SmartPod at your location?</h3>
+          <p>Share venue details and we’ll confirm fit.</p>
+        </div>
+        <a class="btn btn--primary" href="contact.html">Request Placement</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATIONS -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Locations we serve</h2>
+        <p>SmartPod is an amenity for high-visibility, consistent-traffic environments.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>Apartments</h3>
+          <p>Lobby convenience for residents and guests.</p>
+        </div>
+        <div class="card">
+          <h3>Gyms</h3>
+          <p>Drinks + protein for members before and after workouts.</p>
+        </div>
+        <div class="card">
+          <h3>Offices</h3>
+          <p>Breakroom access for staff and visitors.</p>
+        </div>
+        <div class="card">
+          <h3>Hotels</h3>
+          <p>24/7 self-serve options for guests.</p>
+        </div>
+        <div class="card">
+          <h3>Healthcare</h3>
+          <p>Waiting-area convenience where appropriate.</p>
+        </div>
+        <div class="card">
+          <h3>Other venues</h3>
+          <p>Tell us your venue type—we’ll review fit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS PREVIEW -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>How placement works</h2>
+        <p>A clear, professional process so expectations are aligned before installation.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tItem">
+          <div class="tBadge">Step 1</div>
+          <div class="tBody">
+            <h3>Placement request</h3>
+            <p class="muted">Venue type, location, estimated daily traffic, and preferred placement area.</p>
+          </div>
+        </div>
+        <div class="tItem">
+          <div class="tBadge">Step 2</div>
+          <div class="tBody">
+            <h3>Qualification review</h3>
+            <p class="muted">Fit based on visibility, power access, service coverage, and access for visits.</p>
+          </div>
+        </div>
+        <div class="tItem">
+          <div class="tBadge">Step 3</div>
+          <div class="tBody">
+            <h3>Install + launch</h3>
+            <p class="muted">Delivery, placement, initial stock, and go-live readiness check.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div>
+          <h3>Ready to request placement?</h3>
           <p>Send venue details for review.</p>
-        </a>
+        </div>
+        <a class="btn btn--primary" href="contact.html">Request Placement</a>
       </div>
     </div>
   </section>
@@ -141,14 +236,14 @@
           <span class="brand__mark">SP</span>
           <span class="brand__name">SmartPod USA</span>
         </div>
-        <p class="muted">AI smart vending placement and operations for premium locations.</p>
+        <p class="muted">Fully managed smart vending as an on-site amenity for premium locations.</p>
       </div>
 
       <div class="footer__links">
-        <a href="how-it-works.html">How placement works</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="products.html">Products</a>
         <a href="faq.html">FAQ</a>
-        <a href="products.html">Product Suggestions</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">Request Placement</a>
       </div>
     </div>
 
@@ -161,4 +256,3 @@
 <script src="app.js"></script>
 </body>
 </html>
-
