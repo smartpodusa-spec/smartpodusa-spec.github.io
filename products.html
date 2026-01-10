@@ -1,10 +1,14 @@
+<!-- =========================
+FILE: products.html
+========================= -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Product Suggestions (QR) | SmartPod USA</title>
-  <meta name="description" content="Suggest drinks, snacks, and prepackaged food for SmartPod USA. Scan the QR code or submit a request." />
+
+  <title>Products | SmartPod USA</title>
+  <meta name="description" content="SmartPod stocks curated snacks, drinks, protein options, and grab-and-go favorites. Submit product preferences for your location." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,278 +24,120 @@
       <span class="brand__name">SmartPod USA</span>
     </a>
 
-    <nav class="nav">
-      <a href="how-it-works.html">How placement works</a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="how-it-works.html">How it works</a>
+      <a href="products.html" aria-current="page">Products</a>
       <a href="faq.html">FAQ</a>
-      <a href="products.html">Product Suggestions (QR)</a>
       <a class="btn btn--cta" href="contact.html">Request Placement</a>
     </nav>
 
-    <button class="menuBtn" aria-label="Open menu" type="button" onclick="toggleMenu()">Menu</button>
+    <button class="menuBtn" type="button" onclick="toggleMenu()">Menu</button>
   </div>
 
   <div class="mobileNav" id="mobileNav">
-    <a href="how-it-works.html" onclick="toggleMenu()">How placement works</a>
+    <a href="how-it-works.html" onclick="toggleMenu()">How it works</a>
+    <a href="products.html" onclick="toggleMenu()">Products</a>
     <a href="faq.html" onclick="toggleMenu()">FAQ</a>
-    <a href="products.html" onclick="toggleMenu()">Product Suggestions (QR)</a>
-    <a href="contact.html" onclick="toggleMenu()">Contact</a>
     <a class="btn btn--cta" href="contact.html" onclick="toggleMenu()">Request Placement</a>
   </div>
 </header>
 
 <main>
-  <section class="section section--alt">
-    <div class="container dividerTop">
+  <section class="section">
+    <div class="container">
       <div class="section__head">
-        <h1>Product suggestions</h1>
-        <p>Scan the QR code on-site or submit a request below.</p>
+        <h1>Products your customers actually want</h1>
+        <p class="muted">We stock popular snacks, drinks, protein options, and grab-and-go favorites. Product mix can be tailored by venue type and demand.</p>
       </div>
 
-      <div class="contactGrid">
-        <!-- QR Card -->
-        <div class="contactCard">
-          <h3>QR code</h3>
-          <p class="muted">Print this QR on your machine so customers can request items in seconds.</p>
-
-          <div class="qrWrap">
-            <div id="qrCode"></div>
-          </div>
-
-          <div class="divider"></div>
-          <div class="kv"><strong>Link:</strong> <span id="qrLink" class="muted"></span></div>
-
-          <div class="divider"></div>
-          <h3>Quick tips</h3>
-          <ul class="list">
-            <li>Include brand + flavor + size if known</li>
-            <li>Add “sugar-free” / “caffeine-free” if relevant</li>
-            <li>One request can include multiple items</li>
-          </ul>
+      <div class="grid3">
+        <div class="card">
+          <h3>Drinks</h3>
+          <p>Water, electrolyte, coffee/energy, and everyday favorites (where appropriate).</p>
         </div>
-
-        <!-- Form Card -->
-        <div class="contactCard">
-          <h3>Submit a suggestion</h3>
-
-          <form id="suggestForm" class="form" data-formspree="https://formspree.io/f/xkogdqkz">
-            <div class="grid2">
-              <label>Product type
-                <select id="productType" name="product_type" required>
-                  <option value="Drinks">Drinks</option>
-                  <option value="Snacks">Snacks</option>
-                  <option value="Prepackaged Food">Prepackaged Food</option>
-                  <option value="Essentials">Essentials</option>
-                </select>
-              </label>
-
-              <label>Category
-                <select id="category" name="category" required></select>
-              </label>
-            </div>
-
-            <div class="chipBlock">
-              <div class="chipTitle">Quick picks (tap to add)</div>
-              <div id="chips" class="chips"></div>
-            </div>
-
-            <label>Search popular items (optional)
-              <input id="search" type="text" placeholder="Type: Celsius, Fairlife, Poppi, Quest, RXBAR, etc." autocomplete="off" />
-            </label>
-            <div id="suggestedList" class="suggestedList" aria-live="polite"></div>
-
-            <label>Suggested item(s)
-              <textarea id="items" required name="suggested_items" rows="5"
-                placeholder="Example: Celsius Peach Vibe 12oz; Fairlife Core Power 26g; Quest Chili Lime Tortilla Chips"></textarea>
-            </label>
-
-            <div class="grid2">
-              <label>Venue (optional)
-                <input name="venue" placeholder="Gym / Hotel / Office (optional)" />
-              </label>
-              <label>Machine ID (optional)
-                <input name="machine_id" placeholder="Sticker ID (optional)" />
-              </label>
-            </div>
-
-            <button class="btn btn--primary btn--block" type="submit">Send suggestion</button>
-            <p class="tiny" id="suggestStatus"></p>
-          </form>
+        <div class="card">
+          <h3>Snacks</h3>
+          <p>Sweet + salty staples, plus better-for-you options.</p>
         </div>
+        <div class="card">
+          <h3>Protein</h3>
+          <p>Bars and shakes for busy schedules and gym settings.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div>
+          <h3>Want a specific mix?</h3>
+          <p>Send preferences below (brand + flavor + size helps).</p>
+        </div>
+        <a class="btn btn--primary" href="contact.html">Request Placement</a>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container footer__inner dividerTop">
-      <div>
-        <div class="brand brand--footer">
-          <span class="brand__mark">SP</span>
-          <span class="brand__name">SmartPod USA</span>
+  <!-- SUGGESTION FORM -->
+  <section class="section section--alt">
+    <div class="container dividerTop">
+      <div class="section__head">
+        <h2>Submit product preferences</h2>
+        <p class="muted">For venues with SmartPod installed (or in review). One request can include multiple items.</p>
+      </div>
+
+      <!-- IMPORTANT:
+           This is a basic mailto form by default. If you use Formspree or another service,
+           replace the action="" with your endpoint and remove "mailto:" approach.
+      -->
+      <form class="form" method="post" action="mailto:youremail@example.com" enctype="text/plain">
+        <div class="grid2">
+          <label>
+            Product type
+            <select name="Product Type">
+              <option>Drinks</option>
+              <option>Snacks</option>
+              <option>Protein</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>
+            Category
+            <input name="Category" placeholder="e.g., Water / Hydration, Energy, Chips, Bars" />
+          </label>
         </div>
-        <p class="muted">AI smart vending placement and operations for premium locations.</p>
-      </div>
 
-      <div class="footer__links">
-        <a href="how-it-works.html">How placement works</a>
-        <a href="faq.html">FAQ</a>
-        <a href="products.html">Product Suggestions</a>
-        <a href="contact.html">Contact</a>
-      </div>
+        <label>
+          Suggested item(s)
+          <textarea name="Suggested Items" placeholder="Example: Celsius Peach Vibe 12oz; Fairlife Core Power 26g; Quest Chili Lime Tortilla Chips"></textarea>
+        </label>
+
+        <div class="grid2">
+          <label>
+            Venue (optional)
+            <input name="Venue" placeholder="Gym / Hotel / Office / Apartments (optional)" />
+          </label>
+
+          <label>
+            Location (optional)
+            <input name="City/State" placeholder="City, State (optional)" />
+          </label>
+        </div>
+
+        <button class="btn btn--primary btn--block" type="submit">Send preferences</button>
+
+        <p class="tiny" style="margin-top:10px;">
+          If you want QR stickers for on-site requests, use the private print page (not linked publicly).
+        </p>
+      </form>
     </div>
+  </section>
 
+  <footer class="footer">
     <div class="container footer__bottom">
       <p class="muted">© <span id="year"></span> SmartPod USA. All rights reserved.</p>
     </div>
   </footer>
 </main>
 
-<!-- QR library MUST load before the init script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="app.js"></script>
-
-<script>
-window.addEventListener("DOMContentLoaded", () => {
-  // Category + chip presets
-  const DATA = {
-    "Drinks": {
-      categories: ["Water / Hydration", "Energy Drinks", "Coffee / Tea", "Soda / Sparkling", "Juice", "Protein / Shakes"],
-      chips: ["Water", "Electrolyte drink", "Energy drink", "Cold brew", "Iced coffee", "Protein shake", "Sparkling water", "Diet soda"]
-    },
-    "Snacks": {
-      categories: ["Protein Bars", "Chips / Crunchy", "Sweet Snacks", "Nuts / Trail Mix", "Jerky", "Healthy Snacks"],
-      chips: ["Protein bar", "Chips", "Trail mix", "Jerky", "Fruit snack", "Granola", "Nuts", "Popcorn"]
-    },
-    "Prepackaged Food": {
-      categories: ["Sandwiches / Wraps", "Salads / Bowls", "Microwave Meals", "Breakfast", "High-protein Meals"],
-      chips: ["Wrap", "Sandwich", "Salad bowl", "Breakfast item", "Microwave meal", "Protein meal"]
-    },
-    "Essentials": {
-      categories: ["Pain relief", "Personal care", "Hygiene", "Convenience"],
-      chips: ["Pain reliever", "Deodorant", "Hand sanitizer", "Wipes", "Gum", "Phone charger"]
-    }
-  };
-
-  const POPULAR = [
-    "Celsius (various)", "Alani Nu (various)", "Red Bull (various)", "Monster (various)", "Starbucks Frappuccino",
-    "La Colombe Cold Brew", "Fairlife Core Power 26g", "Premier Protein Shake", "Poppi (various)", "Liquid I.V.",
-    "BodyArmor", "Gatorade Zero", "Smartwater", "Spindrift",
-    "Quest Protein Bar", "RXBAR", "KIND Bar", "Clif Bar", "Built Bar",
-    "Quest Tortilla Chips", "Popchips", "SkinnyPop", "Wonderful Pistachios", "Planters Mixed Nuts",
-    "Jack Link's Jerky", "Chomps", "Trail Mix (various)",
-    "Uncrustables", "Protein pack", "Overnight oats", "Greek yogurt (single-serve)"
-  ];
-
-  const $ = (id) => document.getElementById(id);
-
-  const typeEl = $("productType");
-  const catEl = $("category");
-  const chipsEl = $("chips");
-  const searchEl = $("search");
-  const listEl = $("suggestedList");
-  const itemsEl = $("items");
-
-  function fillCategories(type){
-    catEl.innerHTML = "";
-    DATA[type].categories.forEach(c=>{
-      const opt = document.createElement("option");
-      opt.value = c;
-      opt.textContent = c;
-      catEl.appendChild(opt);
-    });
-  }
-
-  function fillChips(type){
-    chipsEl.innerHTML = "";
-    DATA[type].chips.forEach(label=>{
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "chip";
-      b.textContent = label;
-      b.addEventListener("click", ()=>{
-        const current = itemsEl.value.trim();
-        itemsEl.value = current ? (current + (current.endsWith(";") ? " " : "; ") + label) : label;
-        itemsEl.focus();
-      });
-      chipsEl.appendChild(b);
-    });
-  }
-
-  function renderSearch(q){
-    const query = q.trim().toLowerCase();
-    listEl.innerHTML = "";
-    if (!query) return;
-
-    const hits = POPULAR.filter(x => x.toLowerCase().includes(query)).slice(0, 8);
-    if (!hits.length) return;
-
-    hits.forEach(item=>{
-      const row = document.createElement("button");
-      row.type = "button";
-      row.className = "suggestRow";
-      row.textContent = item;
-      row.addEventListener("click", ()=>{
-        const current = itemsEl.value.trim();
-        itemsEl.value = current ? (current + (current.endsWith(";") ? " " : "; ") + item) : item;
-        listEl.innerHTML = "";
-        searchEl.value = "";
-        itemsEl.focus();
-      });
-      listEl.appendChild(row);
-    });
-  }
-
-  fillCategories(typeEl.value);
-  fillChips(typeEl.value);
-
-  typeEl.addEventListener("change", ()=>{
-    fillCategories(typeEl.value);
-    fillChips(typeEl.value);
-  });
-
-  searchEl.addEventListener("input", (e)=> renderSearch(e.target.value));
-
-  // QR
-  const qrEl = $("qrCode");
-  const qrLink = $("qrLink");
-  if (qrEl && typeof QRCode !== "undefined") {
-    const url = window.location.origin + "/products.html";
-    if (qrLink) qrLink.textContent = url;
-    qrEl.innerHTML = "";
-    new QRCode(qrEl, { text: url, width: 190, height: 190 });
-  }
-
-  // Form submit
-  const form = $("suggestForm");
-  const status = $("suggestStatus");
-  if (form) {
-    form.addEventListener("submit", async (e)=>{
-      e.preventDefault();
-      if (status) status.textContent = "Sending…";
-
-      const endpoint = form.getAttribute("data-formspree");
-      if (!endpoint) { if (status) status.textContent = "Form endpoint missing."; return; }
-
-      try{
-        const res = await fetch(endpoint, {
-          method: "POST",
-          headers: { "Accept": "application/json" },
-          body: new FormData(form)
-        });
-
-        if (res.ok){
-          form.reset();
-          fillCategories(typeEl.value);
-          fillChips(typeEl.value);
-          if (status) status.textContent = "Sent. Thank you.";
-        } else {
-          if (status) status.textContent = "Unable to send. Please try again.";
-        }
-      } catch {
-        if (status) status.textContent = "Network error. Please try again.";
-      }
-    });
-  }
-});
-</script>
 </body>
 </html>
