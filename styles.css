@@ -614,3 +614,7 @@ input:focus,select:focus,textarea:focus{
 .section--alt{
   background: transparent !important;
 }
+/* Hide QR code from public site (admin/print use only) */
+.qr-admin-only{
+  display: none !important;
+}
