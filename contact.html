@@ -1,37 +1,43 @@
+<!-- =========================
+FILE: contact.html  (Request Placement)
+========================= -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Request Placement / Contact | SmartPod USA</title>
-  <meta name="description" content="Request SmartPod USA placement or contact us." />
+
+  <title>Request Placement | SmartPod USA</title>
+  <meta name="description" content="Request SmartPod placement. Share venue details and placement area so we can confirm fit and follow up." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
 
+<body>
 <header class="header">
   <div class="container header__inner">
-    <a class="brand" href="index.html">
+    <a class="brand" href="index.html" aria-label="SmartPod USA home">
       <span class="brand__mark">SP</span>
       <span class="brand__name">SmartPod USA</span>
     </a>
-    <nav class="nav">
-      <a href="how-it-works.html">How placement works</a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="how-it-works.html">How it works</a>
+      <a href="products.html">Products</a>
       <a href="faq.html">FAQ</a>
-      <a href="products.html">Product Suggestions (QR)</a>
-      <a class="btn btn--ghost" href="contact.html">Contact</a>
-      <a class="btn btn--cta" href="contact.html">Request Placement</a>
+      <a class="btn btn--cta" href="contact.html" aria-current="page">Request Placement</a>
     </nav>
+
     <button class="menuBtn" type="button" onclick="toggleMenu()">Menu</button>
   </div>
+
   <div class="mobileNav" id="mobileNav">
-    <a href="how-it-works.html" onclick="toggleMenu()">How placement works</a>
+    <a href="how-it-works.html" onclick="toggleMenu()">How it works</a>
+    <a href="products.html" onclick="toggleMenu()">Products</a>
     <a href="faq.html" onclick="toggleMenu()">FAQ</a>
-    <a href="products.html" onclick="toggleMenu()">Product Suggestions (QR)</a>
-    <a href="contact.html" onclick="toggleMenu()">Contact</a>
     <a class="btn btn--cta" href="contact.html" onclick="toggleMenu()">Request Placement</a>
   </div>
 </header>
@@ -40,78 +46,126 @@
   <section class="section">
     <div class="container">
       <div class="section__head">
-        <h1>Request placement / Contact</h1>
-        <p>Include: city/state, venue type, estimated daily traffic, preferred placement area, and decision-maker contact.</p>
+        <h1>Request placement</h1>
+        <p class="muted">Share a few details. We’ll review fit and follow up.</p>
       </div>
 
       <div class="contactGrid">
         <div class="contactCard">
-          <h3>Direct contact</h3>
-          <div class="kv"><strong>Email:</strong> <span id="publicEmail">info@smartpodusa.com</span></div>
-          <div class="kv"><strong>Phone:</strong> (800) 434-3310</div>
-          <div class="kv"><strong>Service area:</strong> Virginia Beach</div>
-
+          <h3>Placement request form</h3>
+          <p class="muted">Provide accurate details for the fastest review.</p>
           <div class="divider"></div>
 
-          <h3>What to include</h3>
-          <ul class="list">
-            <li>City/state + location type</li>
-            <li>Estimated daily traffic</li>
-            <li>Preferred placement area</li>
-            <li>Decision-maker contact (best)</li>
-          </ul>
-        </div>
-
-        <div class="contactCard">
-          <h3>Send a request</h3>
-
-          <form id="leadForm" class="form" data-formspree="https://formspree.io/f/xkogdqkz">
+          <!-- Replace action with your Formspree endpoint if you use it -->
+          <form class="form" method="post" action="mailto:youremail@example.com" enctype="text/plain">
             <div class="grid2">
-              <label>Full name
-                <input required name="name" autocomplete="name" />
+              <label>
+                Full name
+                <input name="Name" placeholder="First Last" required />
               </label>
-              <label>Phone
-                <input required name="phone" autocomplete="tel" />
+              <label>
+                Role / Title
+                <input name="Role" placeholder="Property Manager, Owner, Office Manager" required />
               </label>
             </div>
 
-            <label>Email
-              <input required type="email" name="email" autocomplete="email" />
-            </label>
+            <div class="grid2">
+              <label>
+                Email
+                <input type="email" name="Email" placeholder="name@company.com" required />
+              </label>
+              <label>
+                Phone (optional)
+                <input name="Phone" placeholder="(optional)" />
+              </label>
+            </div>
 
             <div class="grid2">
-              <label>Location type
-                <select name="location_type">
-                  <option>Apartment / Multifamily</option>
+              <label>
+                Venue name
+                <input name="Venue Name" placeholder="Building / Gym / Office / Hotel name" required />
+              </label>
+              <label>
+                Venue type
+                <select name="Venue Type" required>
+                  <option value="">Select…</option>
+                  <option>Apartments / Multifamily</option>
                   <option>Gym / Fitness</option>
+                  <option>Office</option>
                   <option>Hotel</option>
-                  <option>Office / Workplace</option>
-                  <option>Healthcare Facility</option>
-                  <option>School / Campus</option>
+                  <option>Healthcare</option>
                   <option>Other</option>
                 </select>
               </label>
-              <label>Daily foot traffic (estimate)
-                <select name="foot_traffic">
-                  <option>Under 50</option>
-                  <option>50–150</option>
-                  <option>150–300</option>
-                  <option>300+</option>
+            </div>
+
+            <label>
+              Venue address (city/state minimum)
+              <input name="Venue Address" placeholder="Street (optional), City, State, ZIP" required />
+            </label>
+
+            <div class="grid2">
+              <label>
+                Estimated daily foot traffic
+                <select name="Estimated Daily Foot Traffic" required>
+                  <option value="">Select…</option>
+                  <option>Under 50/day</option>
+                  <option>50–150/day</option>
+                  <option>150–300/day</option>
+                  <option>300+/day</option>
+                </select>
+              </label>
+              <label>
+                Placement area
+                <input name="Placement Area" placeholder="Lobby, breakroom, gym floor, waiting area" required />
+              </label>
+            </div>
+
+            <div class="grid2">
+              <label>
+                Power available near placement?
+                <select name="Power Available" required>
+                  <option value="">Select…</option>
+                  <option>Yes</option>
+                  <option>No / Not sure</option>
+                </select>
+              </label>
+              <label>
+                Service access
+                <select name="Service Access" required>
+                  <option value="">Select…</option>
+                  <option>Easy access during business hours</option>
+                  <option>Limited access / appointment required</option>
+                  <option>Not sure</option>
                 </select>
               </label>
             </div>
 
-            <label>City + State
-              <input required name="city_state" placeholder="City, State" />
-            </label>
-
-            <label>Message
-              <textarea required name="message" rows="5" placeholder="Placement area, access notes, product preferences, questions."></textarea>
+            <label>
+              Notes (optional)
+              <textarea name="Notes" placeholder="Anything that helps: photos available, preferred install window, special access instructions, etc."></textarea>
             </label>
 
             <button class="btn btn--primary btn--block" type="submit">Send request</button>
-            <p class="tiny" id="formStatus"></p>
+            <p class="tiny" style="margin-top:10px;">After submission, we review fit and follow up with next steps.</p>
           </form>
+        </div>
+
+        <div class="contactCard">
+          <h3>What happens next</h3>
+          <p class="muted">A simple flow designed for location teams.</p>
+          <div class="divider"></div>
+
+          <ol class="list">
+            <li>We review venue details and proposed placement area.</li>
+            <li>We confirm site readiness requirements (space, power, access).</li>
+            <li>We coordinate delivery, install, and initial stocking.</li>
+            <li>SmartPod manages restock and service over time.</li>
+          </ol>
+
+          <div class="divider"></div>
+          <h3>Prefer to share photos?</h3>
+          <p class="muted">A photo of the placement area helps speed qualification (optional).</p>
         </div>
       </div>
     </div>
