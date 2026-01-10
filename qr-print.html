@@ -1,0 +1,47 @@
+<!-- =========================
+FILE: qr-print.html  (private, not linked publicly)
+Place your QR image file next to it as: qr.png
+========================= -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartPod QR | Print</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+    body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#ffffff;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    .wrap{
+      text-align:center;
+    }
+    img{
+      width:320px;
+      height:320px;
+      image-rendering:pixelated;
+      border:10px solid #fff;
+      box-shadow:0 10px 30px rgba(0,0,0,.18);
+    }
+    p{
+      margin:14px 0 0;
+      color:#111;
+      font-weight:700;
+    }
+    .tiny{font-weight:600;color:#444;font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img src="qr.png" alt="SmartPod QR code" />
+    <p>Scan to submit product requests</p>
+    <div class="tiny">Print this and place on the machine.</div>
+  </div>
+</body>
+</html>
