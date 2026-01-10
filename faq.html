@@ -1,73 +1,103 @@
+<!-- =========================
+FILE: faq.html
+========================= -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>FAQ | SmartPod USA</title>
-  <meta name="description" content="SmartPod USA FAQ: cost, stocking and maintenance, product requests, and installation timing." />
+  <meta name="description" content="Answers for location teams: placement criteria, site requirements, restocking, service, and what to expect after requesting SmartPod." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
 
+<body>
 <header class="header">
   <div class="container header__inner">
-    <a class="brand" href="index.html">
+    <a class="brand" href="index.html" aria-label="SmartPod USA home">
       <span class="brand__mark">SP</span>
       <span class="brand__name">SmartPod USA</span>
     </a>
-    <nav class="nav">
-      <a href="how-it-works.html">How placement works</a>
-      <a href="faq.html">FAQ</a>
-      <a href="products.html">Product Suggestions (QR)</a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="how-it-works.html">How it works</a>
+      <a href="products.html">Products</a>
+      <a href="faq.html" aria-current="page">FAQ</a>
       <a class="btn btn--cta" href="contact.html">Request Placement</a>
     </nav>
+
     <button class="menuBtn" type="button" onclick="toggleMenu()">Menu</button>
   </div>
+
   <div class="mobileNav" id="mobileNav">
-    <a href="how-it-works.html" onclick="toggleMenu()">How placement works</a>
+    <a href="how-it-works.html" onclick="toggleMenu()">How it works</a>
+    <a href="products.html" onclick="toggleMenu()">Products</a>
     <a href="faq.html" onclick="toggleMenu()">FAQ</a>
-    <a href="products.html" onclick="toggleMenu()">Product Suggestions (QR)</a>
-    <a href="contact.html" onclick="toggleMenu()">Contact</a>
     <a class="btn btn--cta" href="contact.html" onclick="toggleMenu()">Request Placement</a>
   </div>
 </header>
 
 <main>
-  <section class="section section--alt">
+  <section class="section">
     <div class="container">
       <div class="section__head">
         <h1>FAQ</h1>
-        <p></p>
+        <p class="muted">Answers for property and facility teams evaluating SmartPod as an amenity.</p>
       </div>
 
       <div class="faq">
-        <details open>
-          <summary>Does it cost us anything to host a machine?</summary>
-          <p>Many qualified locations have no upfront cost. Terms depend on traffic, placement area, and service coverage.</p>
-        </details>
         <details>
-          <summary>Who stocks and maintains the machine?</summary>
-          <p>SmartPod stocks, services, and maintains the machine. Access is coordinated for routine visits.</p>
+          <summary>What is SmartPod?</summary>
+          <p>SmartPod is a fully managed on-site vending amenity. We install the unit, stock consumable products, and provide ongoing service.</p>
         </details>
+
         <details>
-          <summary>Can we request specific products?</summary>
-          <p>Yes. We can start with preferences and adjust inventory based on sales and availability.</p>
+          <summary>Do you sell vending machines to operators?</summary>
+          <p>No. SmartPod is designed for locations that want the amenity. We are not selling machines or a “vending business opportunity.”</p>
         </details>
+
         <details>
-          <summary>How fast can we install?</summary>
-          <p>After qualification and site review, an estimated timeline is provided based on readiness and availability.</p>
+          <summary>What does a location need to provide?</summary>
+          <p>A high-visibility placement area, nearby power access, and reasonable access for restock/service visits. A point-of-contact helps coordination.</p>
+        </details>
+
+        <details>
+          <summary>How do you decide if a location qualifies?</summary>
+          <p>We review venue type, estimated daily traffic, visibility, placement area, and service coverage. We may ask for a photo of the proposed placement area.</p>
+        </details>
+
+        <details>
+          <summary>How often do you restock?</summary>
+          <p>Restocking depends on demand and access. We aim for a predictable cadence and adjust based on product movement and availability.</p>
+        </details>
+
+        <details>
+          <summary>Who handles maintenance and service?</summary>
+          <p>SmartPod coordinates maintenance and support. If an on-site issue occurs, we work with your point-of-contact to schedule service access.</p>
+        </details>
+
+        <details>
+          <summary>Can we request certain products?</summary>
+          <p>Yes. Use the Products page to submit preferences (brand + flavor + size helps). We evaluate fit based on demand and availability.</p>
+        </details>
+
+        <details>
+          <summary>How long does install take after approval?</summary>
+          <p>Timing depends on scheduling and site readiness. After approval, we coordinate delivery and installation steps with your team.</p>
         </details>
       </div>
 
-      <div class="callout" style="margin-top:18px;">
+      <div class="callout">
         <div>
-          <h3>Request placement</h3>
-          <p>Send venue type, city/state, and estimated traffic for review.</p>
+          <h3>Ready to request placement?</h3>
+          <p>Share venue details for review.</p>
         </div>
-        <a class="btn btn--primary" href="contact.html">Contact</a>
+        <a class="btn btn--primary" href="contact.html">Request Placement</a>
       </div>
     </div>
   </section>
@@ -82,8 +112,3 @@
 <script src="app.js"></script>
 </body>
 </html>
-<script>
-window.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".faq details[open]").forEach(d => d.removeAttribute("open"));
-});
-</script>
