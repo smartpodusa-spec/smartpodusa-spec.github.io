@@ -618,3 +618,29 @@ input:focus,select:focus,textarea:focus{
 .qr-admin-only{
   display: none !important;
 }
+/* ===== HARD FIX: Step 5 background mismatch ===== */
+
+/* Force the entire Process Overview area to share ONE background */
+.process,
+.process-overview,
+.steps,
+.timeline {
+  background: transparent !important;
+}
+
+/* Lock all step cards to the SAME surface color */
+.step,
+.tItem {
+  background: rgba(20, 25, 35, 0.92) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+/* Prevent next section gradient from bleeding upward */
+.section--alt {
+  background: transparent !important;
+}
+
+/* Add breathing room so section transition is invisible */
+.steps {
+  padding-bottom: 32px;
+}
