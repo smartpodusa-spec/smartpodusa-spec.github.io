@@ -1,9 +1,22 @@
-function toggleMenu(){
-  const nav = document.getElementById("mobileNav");
-  if (nav) nav.classList.toggle("isOpen");
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-});
+<!-- =========================
+FILE: sitemap.xml
+Update URLs if you add/remove pages
+========================= -->
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.smartpodusa.com/</loc>
+  </url>
+  <url>
+    <loc>https://www.smartpodusa.com/how-it-works.html</loc>
+  </url>
+  <url>
+    <loc>https://www.smartpodusa.com/products.html</loc>
+  </url>
+  <url>
+    <loc>https://www.smartpodusa.com/faq.html</loc>
+  </url>
+  <url>
+    <loc>https://www.smartpodusa.com/contact.html</loc>
+  </url>
+</urlset>
