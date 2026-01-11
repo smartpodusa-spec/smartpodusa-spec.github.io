@@ -4,20 +4,20 @@ FILE: sitemap.xml
 Update URLs if you add/remove pages
 ========================= -->
 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.smartpodusa.com/</loc>
+    <loc>https://smartpodusa.com/</loc>
   </url>
   <url>
-    <loc>https://www.smartpodusa.com/how-it-works.html</loc>
+    <loc>https://smartpodusa.com/how-it-works.html</loc>
   </url>
   <url>
-    <loc>https://www.smartpodusa.com/products.html</loc>
+    <loc>https://smartpodusa.com/products.html</loc>
   </url>
   <url>
-    <loc>https://www.smartpodusa.com/faq.html</loc>
+    <loc>https://smartpodusa.com/faq.html</loc>
   </url>
   <url>
-    <loc>https://www.smartpodusa.com/contact.html</loc>
+    <loc>https://smartpodusa.com/contact.html</loc>
   </url>
 </urlset>
