@@ -2,115 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FAQ | SmartPod USA</title>
-  <meta name="description" content="Frequently asked questions about SmartPod placement and operations." />
-
+  <meta name="description" content="SmartPod FAQ: costs, placement, requirements, and operations." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
 
-<header class="header">
-  <div class="container header__inner">
-    <a class="brand" href="index.html" aria-label="Home">
-      <span class="brand__mark" aria-hidden="true"><img class="brand__logo" src="assets/logo-sp-gold.png" alt=""></span>
-      <span class="brand__text"><span class="brand__name">SmartPod USA</span><span class="brand__tag">Fully Managed Smart Vending</span></span>
-    </a>
+<body data-theme="onyx">
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="SmartPod USA home">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__stack">
+          <span class="brand__name">SmartPod USA</span>
+          <span class="brand__tag">Fully Managed Smart Vending</span>
+        </span>
+      </a>
 
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="solutions.html">Solutions</a>
-      <a href="venues.html">Venues</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      <nav class="nav" aria-label="Primary">
+        <a data-nav href="how-it-works.html">How it works</a>
+        <a data-nav href="faq.html">FAQ</a>
+        <a data-nav href="contact.html">Contact</a>
+      </nav>
 
-    <div class="header__actions">
-      <a class="btn btn--primary" href="contact.html">Request placement</a>
-      <button class="btn btn--ghost menuBtn" type="button" data-menu-open>Menu</button>
-    </div>
-  </div>
-</header>
-
-<div class="drawer" data-drawer>
-  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
-    <div class="drawer__top">
-      <div class="drawerBrand">
-        <span class="brand__mark brand__mark--sm" aria-hidden="true"><img src="assets/logo-sp-gold.png" alt=""></span>
-        <div><div class="drawerBrand__title">SmartPod USA</div><div class="drawerBrand__sub">Fully Managed Smart Vending</div></div>
+      <div class="header__actions">
+        <a class="btn btn--gold" href="request.html" data-nav>Request placement</a>
+        <button class="btn btn--ghost" id="menuOpen" type="button">Menu</button>
       </div>
-      <button class="btn btn--ghost" type="button" data-menu-close>Close</button>
     </div>
-    <div class="drawer__nav">
-      <a href="solutions.html">Solutions</a>
-      <a href="venues.html">Venues</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-      <a href="contact.html" class="drawer__primary">Request placement</a>
+  </header>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="drawer__top">
+        <div class="drawer__title">Menu</div>
+        <button class="btn" id="menuClose" type="button">Close</button>
+      </div>
+      <nav class="drawer__nav" aria-label="Menu links">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="solutions.html">Solutions</a>
+        <a data-nav href="venues.html">Venues</a>
+        <a data-nav href="how-it-works.html">How it works</a>
+        <a data-nav href="faq.html">FAQ</a>
+        <a data-nav href="contact.html">Contact</a>
+        <a data-nav href="request.html">Request placement</a>
+      </nav>
     </div>
   </div>
-</div>
 
-<main>
-  <section class="pageHero">
+  <main class="section">
     <div class="container">
-      <div class="pageHero__box">
-        <div class="pageHero__kicker">FAQ</div>
-        <h1 class="pageHero__title">Clear answers.</h1>
-        <p class="pageHero__sub">If something is venue-specific, we confirm details during placement review.</p>
+      <div class="kicker">FAQ</div>
+      <h1 class="hero__title">Clear answers. <span class="sheen">No clutter.</span></h1>
+      <p class="p">If something is venue-specific, we confirm details during placement review.</p>
 
-        <div class="faq">
-          <div class="faqItem">
-            <div class="faqQ">Does it cost the venue to host a machine?</div>
-            <p class="faqA">Costs and terms vary by venue and service scope; we confirm during the fit review.</p>
-          </div>
+      <div class="faq">
+        <details open>
+          <summary>Does it cost the venue to host a machine?</summary>
+          <p>Terms vary by venue and service scope; we confirm during the fit review.</p>
+        </details>
+        <details>
+          <summary>What do you need from the location?</summary>
+          <p>Basic access, power (if needed), and a servicing path; details confirmed during review.</p>
+        </details>
+        <details>
+          <summary>How do you decide what to stock?</summary>
+          <p>We start with a curated baseline, then adjust based on demand and feedback.</p>
+        </details>
+        <details>
+          <summary>Do you handle maintenance and support?</summary>
+          <p>Yes. We handle servicing and support as part of managed operations.</p>
+        </details>
+        <details>
+          <summary>Can a location request specific items?</summary>
+          <p>Yes. Add preferences in the placement request form, and we’ll review during fit.</p>
+        </details>
+      </div>
 
-          <div class="faqItem">
-            <div class="faqQ">What do you need from the location?</div>
-            <p class="faqA">A suitable placement area, nearby power, and reasonable access for servicing.</p>
-          </div>
-
-          <div class="faqItem">
-            <div class="faqQ">Can products be tailored per location?</div>
-            <p class="faqA">Yes. We curate based on the venue and adjust over time using demand and feedback.</p>
-          </div>
-
-          <div class="faqItem">
-            <div class="faqQ">How do placement requests work?</div>
-            <p class="faqA">Submit the form, we confirm fit, then schedule install and ongoing operations.</p>
-          </div>
-        </div>
-
-        <div style="margin-top:16px">
-          <a class="btn btn--primary" href="contact.html">Request placement</a>
-          <a class="btn" href="how-it-works.html">How it works</a>
-        </div>
+      <div class="formActions">
+        <a class="btn btn--gold" href="request.html">Request placement</a>
+        <a class="btn" href="contact.html">Contact</a>
       </div>
     </div>
-  </section>
-</main>
+  </main>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footerBrand">
-      <span class="brand__mark brand__mark--sm" aria-hidden="true"><img src="assets/logo-sp-gold.png" alt=""></span>
-      <div><div class="footerBrand__title">SmartPod USA</div><div class="footerBrand__sub">Fully Managed Smart Vending</div></div>
+  <footer class="footer">
+    <div class="container footer__row">
+      <div class="footer__left">© <span data-year></span> SmartPod USA. All rights reserved.</div>
+      <div class="footer__links">
+        <a data-nav href="solutions.html">Solutions</a>
+        <a data-nav href="venues.html">Venues</a>
+        <a data-nav href="how-it-works.html">How it works</a>
+        <a data-nav href="faq.html">FAQ</a>
+        <a data-nav href="contact.html">Contact</a>
+      </div>
     </div>
-    <div class="footerLinks">
-      <a href="solutions.html">Solutions</a>
-      <a href="venues.html">Venues</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
-  <div class="container footer__bottom">© <span data-year></span> SmartPod USA. All rights reserved.</div>
-</footer>
+  </footer>
 
-<script src="site.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
