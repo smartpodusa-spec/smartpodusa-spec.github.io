@@ -1,51 +1,52 @@
 /* =========================================================
-SmartPod USA — Premium, clean, segmented dark theme
-- Single continuous background (no harsh banding)
-- Section “frames” with clear borders
-- Brighter accents + improved spacing/readability
+SmartPod USA — Reference-style dark blue + gold palette
+Palette (from your screenshot):
+#030432 (deep navy), #0E285C (blue), #F2A249 (gold),
+#FFFFFF (white), #4F4F6E (slate)
 ========================================================= */
 
 :root{
-  --bg0:#070b14;
-  --bg1:#0b1220;
-  --panel:rgba(255,255,255,.055);
-  --panel2:rgba(255,255,255,.075);
-  --stroke:rgba(255,255,255,.12);
-  --stroke2:rgba(255,255,255,.18);
+  --navy:#030432;
+  --blue:#0E285C;
+  --gold:#F2A249;
+  --white:#FFFFFF;
+  --slate:#4F4F6E;
 
-  --text:rgba(255,255,255,.92);
-  --muted:rgba(255,255,255,.72);
-  --muted2:rgba(255,255,255,.55);
+  --bg0: var(--navy);
+  --bg1: #06124a;
+  --panel: rgba(255,255,255,.06);
+  --panel2: rgba(255,255,255,.085);
+  --stroke: rgba(255,255,255,.12);
+  --stroke2: rgba(255,255,255,.18);
 
-  --accent1:#6ee7ff;
-  --accent2:#a78bfa;
-  --gold:#d7b46a;
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.74);
+  --muted2: rgba(255,255,255,.62);
 
-  --radius:18px;
-  --radius-sm:14px;
+  --radius: 18px;
+  --radius-sm: 14px;
+  --shadow: 0 18px 45px rgba(0,0,0,.45);
+  --shadow2: 0 10px 24px rgba(0,0,0,.38);
 
-  --shadow:0 18px 45px rgba(0,0,0,.45);
-  --shadow2:0 10px 24px rgba(0,0,0,.38);
-
-  --ring:0 0 0 4px rgba(110,231,255,.14);
-  --max:1120px;
+  --ring: 0 0 0 4px rgba(242,162,73,.18);
+  --max: 1120px;
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  color:var(--text);
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,iul, "Apple Color Emoji","Segoe UI Emoji";
+  color: var(--text);
   background:
-    radial-gradient(1100px 520px at 14% 0%, rgba(110,231,255,.16), transparent 60%),
-    radial-gradient(900px 520px at 86% 12%, rgba(167,139,250,.16), transparent 55%),
-    radial-gradient(700px 420px at 50% 110%, rgba(215,180,106,.08), transparent 55%),
-    linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 55%, var(--bg0) 100%);
+    radial-gradient(1100px 520px at 14% 0%, rgba(242,162,73,.14), transparent 60%),
+    radial-gradient(900px 520px at 86% 12%, rgba(14,40,92,.55), transparent 55%),
+    radial-gradient(700px 420px at 50% 110%, rgba(242,162,73,.10), transparent 55%),
+    linear-gradient(180deg, var(--bg0) 0%, var(--blue) 55%, var(--bg0) 100%);
   overflow-x:hidden;
 }
 
-/* subtle grid texture (optional but premium) */
+/* subtle premium texture */
 body::before{
   content:"";
   position:fixed;
@@ -56,7 +57,20 @@ body::before{
     linear-gradient(to bottom, rgba(255,255,255,.03) 1px, transparent 1px);
   background-size: 64px 64px;
   opacity:.12;
-  mask-image: radial-gradient(800px 450px at 50% 25%, black 45%, transparent 72%);
+  mask-image: radial-gradient(800px 450px at 50% 22%, black 45%, transparent 72%);
+}
+
+/* gold “swoosh” accents using gradients (no stock images) */
+body::after{
+  content:"";
+  position:fixed;
+  inset:-20%;
+  pointer-events:none;
+  background:
+    radial-gradient(800px 320px at 75% 20%, rgba(242,162,73,.18), transparent 60%),
+    radial-gradient(900px 380px at 20% 65%, rgba(242,162,73,.10), transparent 62%);
+  filter: blur(0px);
+  opacity:.65;
 }
 
 a{color:inherit;text-decoration:none}
@@ -71,7 +85,7 @@ Header / Nav
   top:0;
   z-index:50;
   backdrop-filter: blur(14px);
-  background: rgba(6,10,18,.62);
+  background: rgba(3,4,50,.70);
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 .header__inner{
@@ -85,28 +99,44 @@ Header / Nav
 .brand{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:12px;
   min-width:220px;
 }
+
+/* “Limit logo use + can’t see it” fix:
+   Put logo in a small high-contrast mark container */
+.brand__mark{
+  width:52px;
+  height:52px;
+  border-radius: 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(242,162,73,.28);
+  box-shadow: 0 12px 24px rgba(0,0,0,.35);
+}
+.brand__mark--sm{ width:46px; height:46px; border-radius: 14px; }
 .brand__logo{
-  width:46px;
+  width:34px;
   height:auto;
   filter: drop-shadow(0 10px 16px rgba(0,0,0,.55));
 }
+
 .brand__text{
   display:flex;
   flex-direction:column;
   line-height:1.05;
 }
 .brand__name{
-  font-weight:950;
+  font-weight:900;
   letter-spacing:.01em;
   font-size:14px;
 }
 .brand__tag{
   font-size:12px;
   color:var(--muted2);
-  font-weight:800;
+  font-weight:700;
 }
 
 .nav{
@@ -117,15 +147,15 @@ Header / Nav
   justify-content:center;
 }
 .nav a{
-  color:var(--muted);
-  font-weight:900;
+  color: var(--muted);
+  font-weight:800;
   font-size:13px;
   padding:8px 10px;
   border-radius:12px;
   border:1px solid transparent;
 }
 .nav a:hover{
-  color:var(--text);
+  color: var(--white);
   background: rgba(255,255,255,.06);
   border-color: rgba(255,255,255,.08);
 }
@@ -144,8 +174,8 @@ Header / Nav
   border-radius:14px;
   border:1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
-  color:var(--text);
-  font-weight:950;
+  color: var(--white);
+  font-weight:800;
   font-size:13px;
   cursor:pointer;
   transition: transform .12s ease, background .2s ease, border-color .2s ease;
@@ -156,11 +186,11 @@ Header / Nav
   border-color: rgba(255,255,255,.18);
 }
 .btn--primary{
-  border-color: rgba(110,231,255,.26);
-  background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(167,139,250,.14));
+  border-color: rgba(242,162,73,.40);
+  background: linear-gradient(135deg, rgba(242,162,73,.22), rgba(14,40,92,.22));
 }
 .btn--primary:hover{
-  border-color: rgba(110,231,255,.42);
+  border-color: rgba(242,162,73,.62);
 }
 .btn--ghost{
   background: transparent;
@@ -172,10 +202,10 @@ Header / Nav
   gap:8px;
   padding:6px 10px;
   border-radius:999px;
-  border:1px solid rgba(215,180,106,.28);
-  background: rgba(215,180,106,.10);
-  color: rgba(255,255,255,.88);
-  font-weight:950;
+  border:1px solid rgba(242,162,73,.28);
+  background: rgba(242,162,73,.10);
+  color: rgba(255,255,255,.92);
+  font-weight:800;
   font-size:12px;
   letter-spacing:.02em;
 }
@@ -198,7 +228,7 @@ Header / Nav
   top:0;
   height:100%;
   width:min(420px, 92vw);
-  background: rgba(8,12,22,.92);
+  background: rgba(3,4,50,.92);
   border-left:1px solid rgba(255,255,255,.10);
   backdrop-filter: blur(14px);
   padding:16px;
@@ -219,10 +249,14 @@ Header / Nav
   border-radius:14px;
   border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.05);
-  color:var(--text);
-  font-weight:900;
+  color: var(--white);
+  font-weight:800;
 }
 .drawer__nav a:hover{background:rgba(255,255,255,.07)}
+.drawer__nav .drawer__primary{
+  border-color: rgba(242,162,73,.40);
+  background: linear-gradient(135deg, rgba(242,162,73,.20), rgba(14,40,92,.22));
+}
 .drawer__footer{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
 
 /* =========================================================
@@ -234,30 +268,28 @@ h2{font-size: clamp(26px, 3.2vw, 40px); line-height:1.08; letter-spacing:-.02em}
 h3{font-size: 18px; line-height:1.2; letter-spacing:-.01em}
 p{margin:0 0 12px; color:var(--muted); line-height:1.6}
 .kicker{
-  color: rgba(255,255,255,.86);
-  font-weight:950;
-  font-size:13px;
-  letter-spacing:.08em;
+  color: rgba(255,255,255,.88);
+  font-weight:800;
+  font-size:12px;
+  letter-spacing:.10em;
   text-transform:uppercase;
 }
-.gradText{
-  background: linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,.86) 35%, rgba(110,231,255,.92) 70%, rgba(167,139,250,.92) 100%);
+.heroTitle{
+  background: linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,.92) 45%, rgba(242,162,73,.95) 100%);
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
 }
 .sublead{
   font-size:16px;
-  color:rgba(255,255,255,.76);
+  color: rgba(255,255,255,.78);
   max-width:78ch;
 }
 
 /* =========================================================
 Hero
 ========================================================= */
-.hero{
-  padding:44px 0 22px;
-}
+.hero{ padding:44px 0 22px; }
 .hero__grid{
   display:grid;
   grid-template-columns: 1.15fr .85fr;
@@ -274,7 +306,7 @@ Hero
 .hero__bullets{
   margin-top:14px;
   padding-left:18px;
-  color:rgba(255,255,255,.78);
+  color: rgba(255,255,255,.80);
 }
 .hero__bullets li{margin:8px 0}
 .hero__cta{
@@ -301,11 +333,11 @@ Hero
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 .panel__title{
-  font-weight:950;
+  font-weight:800;
   font-size:12px;
-  letter-spacing:.08em;
+  letter-spacing:.10em;
   text-transform:uppercase;
-  color:rgba(255,255,255,.78);
+  color: rgba(255,255,255,.78);
 }
 .panel__body{padding:14px}
 .panelNote{
@@ -316,11 +348,11 @@ Hero
 }
 .panelNote h3{margin:0 0 6px}
 .panelNote p{margin:0;color:var(--muted)}
-.checklist{margin:10px 0 0;padding-left:18px;color:rgba(255,255,255,.78)}
+.checklist{margin:10px 0 0;padding-left:18px;color: rgba(255,255,255,.80)}
 .checklist li{margin:6px 0}
 
 /* =========================================================
-Sections with clear “borders” (fixes clumping)
+Sections with clear “borders”
 ========================================================= */
 .section{padding:34px 0}
 .section__frame{
@@ -330,9 +362,7 @@ Sections with clear “borders” (fixes clumping)
   box-shadow: var(--shadow2);
   overflow:hidden;
 }
-.section__inner{
-  padding: 22px;
-}
+.section__inner{ padding: 22px; }
 
 /* section header row */
 .sectionHead{
@@ -346,7 +376,20 @@ Sections with clear “borders” (fixes clumping)
 .sectionLine{
   height:1px;
   margin:14px 0 18px;
-  background: linear-gradient(to right, transparent, rgba(255,255,255,.16), transparent);
+  background: linear-gradient(to right, transparent, rgba(242,162,73,.35), transparent);
+}
+
+.sectionCtaRow{
+  margin-top:16px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+}
+.sectionCtaText{
+  margin:0;
+  color: rgba(255,255,255,.74);
 }
 
 /* =========================================================
@@ -376,71 +419,25 @@ Cards / grids
 }
 .pill{
   font-size:12px;
-  font-weight:950;
-  color: rgba(255,255,255,.86);
+  font-weight:800;
+  color: rgba(255,255,255,.92);
   padding:6px 10px;
   border-radius:999px;
-  border:1px solid rgba(110,231,255,.22);
-  background: rgba(110,231,255,.10);
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
 }
 .pill--gold{
-  border-color: rgba(215,180,106,.30);
-  background: rgba(215,180,106,.10);
+  border-color: rgba(242,162,73,.35);
+  background: rgba(242,162,73,.12);
 }
 
 /* =========================================================
-Timeline (How it works)
-========================================================= */
-.timeline{display:grid;gap:12px}
-.tItem{
-  display:grid;
-  grid-template-columns: 110px 1fr;
-  gap:14px;
-  padding:16px;
-  border-radius: var(--radius);
-  border:1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.06);
-}
-.tBadge{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px 12px;
-  border-radius: 999px;
-  font-weight: 950;
-  font-size: 12px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  background: rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  color: rgba(255,255,255,.86);
-}
-.tBody p{margin:6px 0 0}
-
-/* =========================================================
-FAQ
-========================================================= */
-.faq details{
-  padding:14px 16px;
-  border-radius: var(--radius);
-  border:1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.06);
-  margin-bottom:12px;
-}
-.faq summary{
-  cursor:pointer;
-  font-weight:950;
-  color: rgba(255,255,255,.92);
-}
-.faq p{margin-top:10px}
-
-/* =========================================================
-Forms / contact
+Forms
 ========================================================= */
 .form label{
   display:block;
-  font-weight:900;
-  color: rgba(255,255,255,.78);
+  font-weight:700;
+  color: rgba(255,255,255,.82);
   font-size:13px;
   margin-bottom:10px;
 }
@@ -450,8 +447,8 @@ input,select,textarea{
   padding:12px 12px;
   border-radius:14px;
   border:1px solid rgba(255,255,255,.14);
-  background: rgba(8,12,22,.55);
-  color:var(--text);
+  background: rgba(3,4,50,.55);
+  color: var(--text);
   font:inherit;
 }
 textarea{resize:vertical;min-height:120px}
@@ -459,7 +456,7 @@ input::placeholder,textarea::placeholder{color:rgba(255,255,255,.35)}
 input:focus,select:focus,textarea:focus{
   outline:none;
   box-shadow: var(--ring);
-  border-color: rgba(110,231,255,.38);
+  border-color: rgba(242,162,73,.55);
 }
 
 .contactGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
@@ -477,8 +474,14 @@ input:focus,select:focus,textarea:focus{
   border:1px solid rgba(255,255,255,.12);
   background: rgba(0,0,0,.16);
 }
-.kvRow b{display:block;font-size:12px;color:rgba(255,255,255,.70);letter-spacing:.08em;text-transform:uppercase}
-.kvRow span{display:block;margin-top:4px;color:rgba(255,255,255,.90);font-weight:900}
+.kvRow b{
+  display:block;
+  font-size:12px;
+  color: rgba(255,255,255,.72);
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+.kvRow span{display:block;margin-top:4px;color: rgba(255,255,255,.92);font-weight:700}
 
 /* =========================================================
 Footer
@@ -500,7 +503,6 @@ Footer
   gap:10px;
   align-items:center;
 }
-.footerBrand img{width:44px;height:auto;opacity:.92}
 .footerLinks{
   display:flex;
   gap:10px;
@@ -508,15 +510,15 @@ Footer
   justify-content:flex-end;
 }
 .footerLinks a{
-  color:var(--muted);
-  font-weight:900;
+  color: var(--muted);
+  font-weight:800;
   font-size:13px;
   padding:6px 8px;
   border-radius:12px;
   border:1px solid transparent;
 }
 .footerLinks a:hover{
-  color:var(--text);
+  color: var(--white);
   background: rgba(255,255,255,.06);
   border-color: rgba(255,255,255,.08);
 }
@@ -530,7 +532,6 @@ Responsive
   .grid3{grid-template-columns:1fr}
   .grid2{grid-template-columns:1fr}
   .contactGrid{grid-template-columns:1fr}
-  .tItem{grid-template-columns:1fr}
   .section__inner{padding:18px}
 }
 @media (max-width:860px){
