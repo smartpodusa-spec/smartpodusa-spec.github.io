@@ -1,23 +1,32 @@
-(() => {
-  const toggle = document.getElementById("navToggle");
-  const mobile = document.getElementById("mobileNav");
-  const year = document.getElementById("year");
+(function () {
+  const drawer = document.querySelector("[data-drawer]");
+  const openBtn = document.querySelector("[data-menu-open]");
+  const closeBtn = document.querySelector("[data-menu-close]");
 
-  if (year) year.textContent = String(new Date().getFullYear());
+  function openDrawer() {
+    if (!drawer) return;
+    drawer.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeDrawer() {
+    if (!drawer) return;
+    drawer.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
 
-  if (!toggle || !mobile) return;
+  if (openBtn) openBtn.addEventListener("click", openDrawer);
+  if (closeBtn) closeBtn.addEventListener("click", closeDrawer);
 
-  toggle.addEventListener("click", () => {
-    const expanded = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!expanded));
-    mobile.hidden = expanded;
-  });
-
-  // Close mobile nav after link click
-  mobile.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", () => {
-      toggle.setAttribute("aria-expanded", "false");
-      mobile.hidden = true;
+  if (drawer) {
+    drawer.addEventListener("click", (e) => {
+      if (e.target === drawer) closeDrawer();
     });
-  });
+    drawer.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", closeDrawer);
+    });
+  }
+
+  // Footer year
+  const y = document.querySelector("[data-year]");
+  if (y) y.textContent = String(new Date().getFullYear());
 })();
