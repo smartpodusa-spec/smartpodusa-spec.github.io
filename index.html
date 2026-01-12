@@ -4,179 +4,168 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SmartPod USA | Fully Managed Smart Vending</title>
-  <meta name="description" content="SmartPod installs, stocks, and services premium smart vending for modern locations. Request placement, confirm fit, and go live fast." />
+  <meta name="description" content="SmartPod USA provides fully managed smart vending for premium locations. We install, stock, service, and optimize." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
 
-  <!-- Header -->
+<body data-theme="onyx">
   <header class="header">
     <div class="container header__inner">
       <a class="brand" href="index.html" aria-label="SmartPod USA home">
-        <span class="brand__text">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__stack">
           <span class="brand__name">SmartPod USA</span>
           <span class="brand__tag">Fully Managed Smart Vending</span>
         </span>
       </a>
 
+      <!-- Top nav (Solutions/Venues removed from top) -->
       <nav class="nav" aria-label="Primary">
-        <a href="how-it-works.html">How it works</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#venues">Venues</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+        <a data-nav href="how-it-works.html">How it works</a>
+        <a data-nav href="faq.html">FAQ</a>
+        <a data-nav href="contact.html">Contact</a>
       </nav>
 
       <div class="header__actions">
-        <a class="btn btn--primary" href="contact.html#placement">Request placement</a>
-        <button class="btn btn--ghost menuBtn" type="button" data-menu-open>Menu</button>
+        <a class="btn btn--gold" href="request.html" data-nav>Request placement</a>
+        <button class="btn btn--ghost" id="menuOpen" type="button">Menu</button>
       </div>
     </div>
   </header>
 
   <!-- Drawer -->
-  <div class="drawer" data-drawer>
+  <div class="drawer" id="drawer" aria-hidden="true">
     <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
       <div class="drawer__top">
         <div>
-          <div style="font-weight:800; letter-spacing:-.01em">SmartPod USA</div>
-          <div style="font-size:12px; color:rgba(255,255,255,.56); margin-top:2px">Fully Managed Smart Vending</div>
+          <div class="drawer__title">SmartPod USA</div>
         </div>
-        <button class="btn btn--ghost" type="button" data-menu-close>Close</button>
+        <button class="btn" id="menuClose" type="button">Close</button>
       </div>
 
-      <div class="drawer__links">
-        <a href="how-it-works.html">How it works</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#venues">Venues</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-        <a href="contact.html#placement">Request placement</a>
+      <nav class="drawer__nav" aria-label="Menu links">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="solutions.html">Solutions</a>
+        <a data-nav href="venues.html">Venues</a>
+        <a data-nav href="how-it-works.html">How it works</a>
+        <a data-nav href="faq.html">FAQ</a>
+        <a data-nav href="contact.html">Contact</a>
+        <a data-nav href="request.html">Request placement</a>
+      </nav>
+
+      <div class="drawer__foot">
+        Minimal, fully managed, venue-first placement.
       </div>
     </div>
   </div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero__grid">
-      <div>
-        <div class="kicker">Direct placement • Fully managed</div>
-        <h1 class="hero__title">High-tech smart vending placement for <span class="goldShine">premium</span> locations.</h1>
-        <p class="sublead">
-          SmartPod installs, curates, restocks, and services — so your location gets 24/7 convenience without staff workload.
-        </p>
-
-        <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap">
-          <a class="btn btn--primary" href="contact.html#placement">Request placement</a>
-          <a class="btn" href="how-it-works.html">How it works</a>
-        </div>
-
-        <ul class="list" style="margin-top:16px">
-          <li><span class="dot"></span> Hands-off: stocking + service included</li>
-          <li><span class="dot"></span> Cashless: tap, chip, swipe, wallet</li>
-          <li><span class="dot"></span> Curated product mix matched to your venue</li>
-        </ul>
-      </div>
-
-      <aside class="hero__card">
-        <div class="kicker" style="margin-bottom:8px">Why SmartPod</div>
-
-        <div class="card" style="margin-bottom:10px">
-          <h3>Professional placement</h3>
-          <p>Clean setup with clear signage and a consistent guest experience.</p>
-        </div>
-
-        <div class="card" style="margin-bottom:10px">
-          <h3>Managed operations</h3>
-          <p>Restocking, support, and ongoing service handled end-to-end.</p>
-        </div>
-
-        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:6px">
-          <span class="pill pill--gold">Premium mix</span>
-          <span class="pill">Better-for-you options</span>
-          <span class="pill">Smart reporting</span>
-        </div>
-
-        <div style="margin-top:12px">
-          <a class="btn btn--primary" href="solutions.html">View solutions</a>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <div class="container"><div class="sep"></div></div>
-
-  <!-- Solutions (anchor only on homepage; full page = solutions.html) -->
-  <section class="section" id="solutions">
-    <div class="container">
-      <div class="section__head">
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
         <div>
-          <h2>Solutions</h2>
-          <p class="sublead">A premium amenity with reliable operations — customized per venue.</p>
+          <div class="kicker">DIRECT PLACEMENT • FULLY MANAGED</div>
+
+          <h1 class="hero__title">
+            Premium smart vending for <span class="sheen">modern</span> spaces.
+          </h1>
+
+          <p class="hero__sub">
+            We install, curate, restock, and service—so your location adds 24/7 convenience without staff workload.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--gold" href="request.html">Request placement</a>
+            <a class="btn" href="how-it-works.html">How it works</a>
+          </div>
+
+          <ul class="bullets" aria-label="Key points">
+            <li>Hands-off operations</li>
+            <li>Cashless + secure</li>
+            <li>Curated product mix</li>
+            <li>Ongoing service + optimization</li>
+          </ul>
         </div>
-        <a class="btn" href="solutions.html">Full solutions</a>
+
+        <aside class="panel">
+          <div class="panel__k">WHY SMARTPOD</div>
+          <h3>Clean, premium amenity</h3>
+          <p>
+            A reliable on-site option that supports residents, guests, and staff with simple access.
+          </p>
+          <ul>
+            <li>Professional placement + signage</li>
+            <li>Restocking + support included</li>
+            <li>Product mix tailored to fit</li>
+          </ul>
+          <div style="margin-top:14px;">
+            <a class="btn btn--gold" href="solutions.html">View solutions</a>
+          </div>
+        </aside>
       </div>
+    </section>
 
-      <div class="grid3">
-        <div class="card">
-          <h3>Apartments</h3>
-          <p>Modern convenience for residents with clean, managed service.</p>
+    <section class="section">
+      <div class="container">
+        <h2 class="h2">Built for premium locations.</h2>
+        <p class="p">One consistent experience—without adding tasks to your team.</p>
+
+        <div class="grid2">
+          <div class="card">
+            <h3>Installation</h3>
+            <p>We coordinate placement, access, and setup for a clean finish.</p>
+          </div>
+          <div class="card">
+            <h3>Stocking</h3>
+            <p>We restock and adjust inventory to match demand.</p>
+          </div>
+          <div class="card">
+            <h3>Service</h3>
+            <p>We handle maintenance and support to keep it reliable.</p>
+          </div>
+          <div class="card">
+            <h3>Optimization</h3>
+            <p>We refine the assortment based on usage and feedback.</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>Hotels</h3>
-          <p>24/7 grab-and-go with curated products and minimal staff impact.</p>
+
+        <hr class="sep" />
+
+        <h2 class="h2">Common questions.</h2>
+        <p class="p">Clear answers—no extra pages unless needed.</p>
+        <div class="faq">
+          <details>
+            <summary>Does it cost the venue to host a machine?</summary>
+            <p>Terms vary by venue and service scope; we confirm during the fit review.</p>
+          </details>
+          <details>
+            <summary>What do you need from the location?</summary>
+            <p>Basic access, power (if needed), and a service path; details confirmed during review.</p>
+          </details>
+          <details>
+            <summary>Can the product mix be customized?</summary>
+            <p>Yes. We tailor the assortment to your audience and adjust based on usage.</p>
+          </details>
         </div>
-        <div class="card">
-          <h3>Offices</h3>
-          <p>Cashless refreshments that keep teams moving throughout the day.</p>
+
+        <div style="margin-top:14px;">
+          <a class="btn" href="faq.html">Full FAQ</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Venues (anchor only on homepage; full page = venues.html) -->
-  <section class="section" id="venues">
-    <div class="container">
-      <div class="section__head">
-        <div>
-          <h2>Venues</h2>
-          <p class="sublead">Designed for high-traffic common areas.</p>
-        </div>
-        <a class="btn" href="venues.html">See venues</a>
-      </div>
-
-      <div class="grid2">
-        <div class="card">
-          <h3>Installation</h3>
-          <p>We coordinate placement, access, and setup for a clean finish.</p>
-        </div>
-        <div class="card">
-          <h3>Service</h3>
-          <p>We handle maintenance and support to keep it reliable.</p>
-        </div>
-      </div>
-
-      <div style="margin-top:14px">
-        <a class="btn btn--primary" href="contact.html#placement">Request placement</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="container"><div class="sep"></div></div>
-
-  <!-- Footer -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <div>
-        <div style="font-weight:800">SmartPod USA</div>
-        <small>© <span data-year></span> SmartPod USA. All rights reserved.</small>
-      </div>
-      <div style="display:flex; gap:14px; flex-wrap:wrap">
-        <a href="solutions.html">Solutions</a>
-        <a href="venues.html">Venues</a>
-        <a href="how-it-works.html">How it works</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+    <div class="container footer__row">
+      <div class="footer__left">© <span data-year></span> SmartPod USA. All rights reserved.</div>
+      <div class="footer__links">
+        <a data-nav href="solutions.html">Solutions</a>
+        <a data-nav href="venues.html">Venues</a>
+        <a data-nav href="how-it-works.html">How it works</a>
+        <a data-nav href="faq.html">FAQ</a>
+        <a data-nav href="contact.html">Contact</a>
       </div>
     </div>
   </footer>
