@@ -2,126 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Venues | SmartPod USA</title>
-  <meta name="description" content="Venues that are a great fit for SmartPod placement." />
-
+  <meta name="description" content="SmartPod venues: apartments, gyms, hotels, offices, and more." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
 
-<header class="header">
-  <div class="container header__inner">
-    <a class="brand" href="index.html" aria-label="Home">
-      <span class="brand__mark" aria-hidden="true"><img class="brand__logo" src="assets/logo-sp-gold.png" alt=""></span>
-      <span class="brand__text"><span class="brand__name">SmartPod USA</span><span class="brand__tag">Fully Managed Smart Vending</span></span>
-    </a>
+<body data-theme="lattice">
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="SmartPod USA home">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__stack">
+          <span class="brand__name">SmartPod USA</span>
+          <span class="brand__tag">Fully Managed Smart Vending</span>
+        </span>
+      </a>
 
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="solutions.html">Solutions</a>
-      <a href="venues.html">Venues</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      <nav class="nav" aria-label="Primary">
+        <a data-nav href="how-it-works.html">How it works</a>
+        <a data-nav href="faq.html">FAQ</a>
+        <a data-nav href="contact.html">Contact</a>
+      </nav>
 
-    <div class="header__actions">
-      <a class="btn btn--primary" href="contact.html">Request placement</a>
-      <button class="btn btn--ghost menuBtn" type="button" data-menu-open>Menu</button>
-    </div>
-  </div>
-</header>
-
-<div class="drawer" data-drawer>
-  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
-    <div class="drawer__top">
-      <div class="drawerBrand">
-        <span class="brand__mark brand__mark--sm" aria-hidden="true"><img src="assets/logo-sp-gold.png" alt=""></span>
-        <div><div class="drawerBrand__title">SmartPod USA</div><div class="drawerBrand__sub">Fully Managed Smart Vending</div></div>
+      <div class="header__actions">
+        <a class="btn btn--gold" href="request.html" data-nav>Request placement</a>
+        <button class="btn btn--ghost" id="menuOpen" type="button">Menu</button>
       </div>
-      <button class="btn btn--ghost" type="button" data-menu-close>Close</button>
     </div>
-    <div class="drawer__nav">
-      <a href="solutions.html">Solutions</a>
-      <a href="venues.html">Venues</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-      <a href="contact.html" class="drawer__primary">Request placement</a>
+  </header>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="drawer__top">
+        <div class="drawer__title">Menu</div>
+        <button class="btn" id="menuClose" type="button">Close</button>
+      </div>
+      <nav class="drawer__nav" aria-label="Menu links">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="solutions.html">Solutions</a>
+        <a data-nav href="venues.html">Venues</a>
+        <a data-nav href="how-it-works.html">How it works</a>
+        <a data-nav href="faq.html">FAQ</a>
+        <a data-nav href="contact.html">Contact</a>
+        <a data-nav href="request.html">Request placement</a>
+      </nav>
     </div>
   </div>
-</div>
 
-<main>
-  <section class="pageHero">
+  <main class="section">
     <div class="container">
-      <div class="pageHero__box">
-        <div class="pageHero__kicker">Venues</div>
-        <h1 class="pageHero__title">Designed for high-traffic common areas.</h1>
-        <p class="pageHero__sub">We confirm fit using visibility, access, servicing path, and consistent daily traffic.</p>
+      <div class="kicker">VENUES</div>
+      <h1 class="hero__title">Designed for <span class="sheen">high-traffic</span> common areas.</h1>
+      <p class="p">We confirm fit (traffic, access, power, servicing path), then manage the rest.</p>
 
-        <div class="stepGrid">
-          <div class="step">
-            <div class="stepNum">A</div>
-            <h3>Apartments</h3>
-            <p>Lobby, clubhouse, and fitness center placement.</p>
-          </div>
-          <div class="step">
-            <div class="stepNum">B</div>
-            <h3>Gyms</h3>
-            <p>Hydration and quick options for members.</p>
-          </div>
-          <div class="step">
-            <div class="stepNum">C</div>
-            <h3>Offices</h3>
-            <p>Breakrooms and shared areas for staff.</p>
-          </div>
-          <div class="step">
-            <div class="stepNum">D</div>
-            <h3>Hotels</h3>
-            <p>24/7 convenience for guests and late arrivals.</p>
-          </div>
-          <div class="step">
-            <div class="stepNum">E</div>
-            <h3>Healthcare</h3>
-            <p>Common areas for staff and visitors.</p>
-          </div>
-          <div class="step">
-            <div class="stepNum">F</div>
-            <h3>Other venues</h3>
-            <p>We review fit case-by-case.</p>
-          </div>
-        </div>
+      <div class="grid2">
+        <div class="card"><h3>Apartments</h3><p>Resident amenity in lobbies, gyms, and clubrooms.</p></div>
+        <div class="card"><h3>Gyms + studios</h3><p>Convenience for members—fast checkout and curated mix.</p></div>
+        <div class="card"><h3>Hotels</h3><p>Guest-friendly access with consistent stocking and service.</p></div>
+        <div class="card"><h3>Offices</h3><p>Breakroom support without added staff workload.</p></div>
+      </div>
 
-        <div style="margin-top:16px">
-          <a class="btn btn--primary" href="contact.html">Request placement</a>
-          <a class="btn" href="how-it-works.html">How it works</a>
-        </div>
+      <div class="formActions">
+        <a class="btn btn--gold" href="request.html">Request placement</a>
+        <a class="btn" href="how-it-works.html">How it works</a>
       </div>
     </div>
-  </section>
-</main>
+  </main>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footerBrand">
-      <span class="brand__mark brand__mark--sm" aria-hidden="true"><img src="assets/logo-sp-gold.png" alt=""></span>
-      <div><div class="footerBrand__title">SmartPod USA</div><div class="footerBrand__sub">Fully Managed Smart Vending</div></div>
+  <footer class="footer">
+    <div class="container footer__row">
+      <div class="footer__left">© <span data-year></span> SmartPod USA. All rights reserved.</div>
+      <div class="footer__links">
+        <a data-nav href="solutions.html">Solutions</a>
+        <a data-nav href="venues.html">Venues</a>
+        <a data-nav href="how-it-works.html">How it works</a>
+        <a data-nav href="faq.html">FAQ</a>
+        <a data-nav href="contact.html">Contact</a>
+      </div>
     </div>
-    <div class="footerLinks">
-      <a href="solutions.html">Solutions</a>
-      <a href="venues.html">Venues</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
-  <div class="container footer__bottom">© <span data-year></span> SmartPod USA. All rights reserved.</div>
-</footer>
+  </footer>
 
-<script src="site.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
