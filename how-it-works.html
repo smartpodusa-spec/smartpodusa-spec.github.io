@@ -1,163 +1,146 @@
 <!doctype html>
-<!-- =========================
-FILE: how-it-works.html
-========================= -->
-
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>How It Works | SmartPod USA</title>
-  <meta name="description" content="A clear placement process for SmartPod: review, site readiness, install, and ongoing operations—built for property and facility teams." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <meta name="description" content="How SmartPod USA operates fully managed smart vending: request, fit review, install, stock, and service." />
   <link rel="stylesheet" href="styles.css" />
 </head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="SmartPod USA home">
+        <img class="brand__logo" src="/assets/logo-sp-gold.png" alt="SmartPod USA logo" />
+        <span class="brand__text">
+          <span class="brand__name">SmartPod USA</span>
+          <span class="brand__tag">Fully Managed Smart Vending</span>
+        </span>
+      </a>
 
-<body class="how-placement">
-<header class="header">
-  <div class="container header__inner">
-    <a class="brand" href="index.html" aria-label="SmartPod USA home">
-      <span class="brand__mark">SP</span>
-      <span class="brand__name">SmartPod USA</span>
-    </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="how-it-works.html">How it works</a>
+        <a href="index.html#solutions">Solutions</a>
+        <a href="index.html#venues">Venues</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="how-it-works.html" aria-current="page">How it works</a>
-      <a href="products.html">Products</a>
-      <a href="faq.html">FAQ</a>
-      <a class="btn btn--cta" href="contact.html">Request Placement</a>
-    </nav>
+      <div class="header__actions">
+        <a class="btn btn--primary" href="contact.html#placement">Request placement</a>
+        <button class="btn btn--ghost menuBtn" type="button" data-menu-open>Menu</button>
+      </div>
+    </div>
+  </header>
 
-    <button class="menuBtn" type="button" onclick="toggleMenu()">Menu</button>
+  <div class="drawer" data-drawer>
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="drawer__top">
+        <div class="footerBrand">
+          <img src="/assets/logo-sp-gold.png" alt="SmartPod USA logo" />
+          <div>
+            <div style="font-weight:950">SmartPod USA</div>
+            <div style="color:rgba(255,255,255,.55);font-weight:800;font-size:12px">Fully Managed Smart Vending</div>
+          </div>
+        </div>
+        <button class="btn btn--ghost" type="button" data-menu-close>Close</button>
+      </div>
+      <div class="drawer__nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#solutions">Solutions</a>
+        <a href="index.html#venues">Venues</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html#placement">Request placement</a>
+      </div>
+    </div>
   </div>
 
-  <div class="mobileNav" id="mobileNav">
-    <a href="how-it-works.html" onclick="toggleMenu()">How it works</a>
-    <a href="products.html" onclick="toggleMenu()">Products</a>
-    <a href="faq.html" onclick="toggleMenu()">FAQ</a>
-    <a class="btn btn--cta" href="contact.html" onclick="toggleMenu()">Request Placement</a>
-  </div>
-</header>
-
-<main>
   <section class="section">
     <div class="container">
-      <div class="section__head">
-        <h1>How placement works</h1>
-        <p class="muted">A straightforward process built for location decision-makers.</p>
-      </div>
-
-      <div class="callout">
-        <div>
-          <h3>Fastest review</h3>
-          <p>Decision-maker contact + placement area + estimated daily traffic.</p>
-        </div>
-        <a class="btn btn--primary" href="contact.html">Request Placement</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container dividerTop">
-      <div class="section__head">
-        <h2>Process overview</h2>
-        <p class="muted">Clear steps with practical criteria, so expectations are aligned before installation.</p>
-      </div>
-
-      <div class="timeline">
-        <div class="tItem">
-          <div class="tBadge">Step 1</div>
-          <div class="tBody">
-            <h3>Placement request</h3>
-            <p class="muted">Venue type, city/state, estimated daily traffic, and preferred placement area.</p>
+      <div class="section__frame">
+        <div class="section__inner">
+          <div class="sectionHead">
+            <div>
+              <div class="kicker">As easy as 1–2–3</div>
+              <h2>Clear process. Minimal friction. Professional execution.</h2>
+              <p>SmartPod manages the full lifecycle—so your team doesn’t need to operate vending.</p>
+            </div>
+            <a class="btn btn--primary" href="contact.html#placement">Start placement request</a>
           </div>
-        </div>
+          <div class="sectionLine"></div>
 
-        <div class="tItem">
-          <div class="tBadge">Step 2</div>
-          <div class="tBody">
-            <h3>Qualification review</h3>
-            <p class="muted">We confirm fit based on visibility, access, power availability, and service coverage.</p>
+          <div class="timeline">
+            <div class="tItem">
+              <div class="tBadge">Step 1</div>
+              <div class="tBody">
+                <h3>Request</h3>
+                <p>Submit venue details and placement preferences. We confirm basics and collect any missing info.</p>
+              </div>
+            </div>
+            <div class="tItem">
+              <div class="tBadge">Step 2</div>
+              <div class="tBody">
+                <h3>Fit review</h3>
+                <p>We review location fit based on traffic, access, power, and servicing logistics, then recommend the best setup.</p>
+              </div>
+            </div>
+            <div class="tItem">
+              <div class="tBadge">Step 3</div>
+              <div class="tBody">
+                <h3>Install</h3>
+                <p>SmartPod coordinates delivery and installation. We keep the setup clean, professional, and aligned with your space.</p>
+              </div>
+            </div>
+            <div class="tItem">
+              <div class="tBadge">Step 4</div>
+              <div class="tBody">
+                <h3>Stock + launch</h3>
+                <p>We load an initial curated mix and confirm the experience is working end-to-end.</p>
+              </div>
+            </div>
+            <div class="tItem">
+              <div class="tBadge">Step 5</div>
+              <div class="tBody">
+                <h3>Service</h3>
+                <p>Ongoing restocking and support. We maintain a reliable experience and adjust the mix based on demand.</p>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="tItem">
-          <div class="tBadge">Step 3</div>
-          <div class="tBody">
-            <h3>Site readiness check</h3>
-            <p class="muted">Footprint, outlet proximity, safe clearance, and access for restock/service visits.</p>
+          <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center">
+            <p style="margin:0;color:rgba(255,255,255,.72)">Questions before you start? See the FAQ or send a message.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class="btn" href="faq.html">View FAQ</a>
+              <a class="btn btn--primary" href="contact.html">Contact</a>
+            </div>
           </div>
-        </div>
 
-        <div class="tItem">
-          <div class="tBadge">Step 4</div>
-          <div class="tBody">
-            <h3>Install + launch</h3>
-            <p class="muted">Delivery, placement, initial stock, and operational validation.</p>
-          </div>
         </div>
-
-        <div class="tItem">
-          <div class="tBadge">Step 5</div>
-          <div class="tBody">
-            <h3>Ongoing operations</h3>
-            <p class="muted">Restock cadence + maintenance response + product optimization over time.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container dividerTop">
-      <div class="section__head">
-        <h2>Responsibilities</h2>
-        <p class="muted">A clean split so your team stays focused on your operation.</p>
-      </div>
-
-      <div class="split">
-        <div class="card">
-          <h3>What the venue provides</h3>
-          <ul class="list">
-            <li>Approved placement area (high visibility)</li>
-            <li>Standard power access near placement area</li>
-            <li>Reasonable access for service visits</li>
-            <li>Point-of-contact for scheduling (preferred)</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>What SmartPod handles</h3>
-          <ul class="list">
-            <li>Installation and initial stocking</li>
-            <li>Inventory management and restocking</li>
-            <li>Maintenance coordination and support</li>
-            <li>Product mix updates based on demand</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="callout" style="margin-top:18px;">
-        <div>
-          <h3>Ready to request placement?</h3>
-          <p>Send venue details for review.</p>
-        </div>
-        <a class="btn btn--primary" href="contact.html">Request Placement</a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container footer__bottom">
-      <p class="muted">© <span id="year"></span> SmartPod USA. All rights reserved.</p>
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footerBrand">
+          <img src="/assets/logo-sp-silver.png" alt="SmartPod USA logo" />
+          <div>
+            <div style="font-weight:950">SmartPod USA</div>
+            <div style="color:rgba(255,255,255,.55);font-weight:800;font-size:12px">Fully Managed Smart Vending</div>
+          </div>
+        </div>
+        <div class="footerLinks">
+          <a href="index.html">Home</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html#placement">Request placement</a>
+        </div>
+      </div>
+      <div class="footerBottom">© <span data-year></span> SmartPod USA.</div>
     </div>
   </footer>
-</main>
 
-<script src="app.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
