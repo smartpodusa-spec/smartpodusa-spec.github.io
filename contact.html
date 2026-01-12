@@ -1,188 +1,222 @@
 <!doctype html>
-<!-- =========================
-FILE: contact.html  (Request Placement)
-========================= -->
-
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Request Placement | SmartPod USA</title>
-  <meta name="description" content="Request SmartPod placement. Share venue details and placement area so we can confirm fit and follow up." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Contact | SmartPod USA</title>
+  <meta name="description" content="Contact SmartPod USA or submit a placement request for fully managed smart vending." />
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-<header class="header">
-  <div class="container header__inner">
-    <a class="brand" href="index.html" aria-label="SmartPod USA home">
-      <span class="brand__mark">SP</span>
-      <span class="brand__name">SmartPod USA</span>
-    </a>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="SmartPod USA home">
+        <img class="brand__logo" src="/assets/logo-sp-gold.png" alt="SmartPod USA logo" />
+        <span class="brand__text">
+          <span class="brand__name">SmartPod USA</span>
+          <span class="brand__tag">Fully Managed Smart Vending</span>
+        </span>
+      </a>
 
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="how-it-works.html">How it works</a>
-      <a href="products.html">Products</a>
-      <a href="faq.html">FAQ</a>
-      <a class="btn btn--cta" href="contact.html" aria-current="page">Request Placement</a>
-    </nav>
+      <nav class="nav" aria-label="Primary">
+        <a href="how-it-works.html">How it works</a>
+        <a href="index.html#solutions">Solutions</a>
+        <a href="index.html#venues">Venues</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-    <button class="menuBtn" type="button" onclick="toggleMenu()">Menu</button>
+      <div class="header__actions">
+        <a class="btn btn--primary" href="#placement">Request placement</a>
+        <button class="btn btn--ghost menuBtn" type="button" data-menu-open>Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer" data-drawer>
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="drawer__top">
+        <div class="footerBrand">
+          <img src="/assets/logo-sp-gold.png" alt="SmartPod USA logo" />
+          <div>
+            <div style="font-weight:950">SmartPod USA</div>
+            <div style="color:rgba(255,255,255,.55);font-weight:800;font-size:12px">Fully Managed Smart Vending</div>
+          </div>
+        </div>
+        <button class="btn btn--ghost" type="button" data-menu-close>Close</button>
+      </div>
+      <div class="drawer__nav">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="#placement">Request placement</a>
+      </div>
+    </div>
   </div>
 
-  <div class="mobileNav" id="mobileNav">
-    <a href="how-it-works.html" onclick="toggleMenu()">How it works</a>
-    <a href="products.html" onclick="toggleMenu()">Products</a>
-    <a href="faq.html" onclick="toggleMenu()">FAQ</a>
-    <a class="btn btn--cta" href="contact.html" onclick="toggleMenu()">Request Placement</a>
-  </div>
-</header>
-
-<main>
   <section class="section">
     <div class="container">
-      <div class="section__head">
-        <h1>Request placement</h1>
-        <p class="muted">Share a few details. We’ll review fit and follow up.</p>
+      <div class="section__frame">
+        <div class="section__inner">
+          <div class="sectionHead">
+            <div>
+              <h2>Contact</h2>
+              <p>Prefer to reach out directly? Send venue details and we’ll coordinate next steps.</p>
+            </div>
+            <span class="badge">Fast response</span>
+          </div>
+          <div class="sectionLine"></div>
+
+          <div class="contactGrid">
+            <div class="contactCard">
+              <h3>Direct contact</h3>
+              <div class="kv">
+                <div class="kvRow">
+                  <b>Website</b>
+                  <span>smartpodusa.com</span>
+                </div>
+                <div class="kvRow">
+                  <b>Email</b>
+                  <span>info@smartpodusa.com</span>
+                </div>
+                <div class="kvRow">
+                  <b>Phone</b>
+                  <span>800 434 3310</span>
+                </div>
+              </div>
+
+              <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+                <a class="btn" href="faq.html">View FAQ</a>
+                <a class="btn btn--primary" href="#placement">Request placement</a>
+              </div>
+              <p class="smallNote">Do not include sensitive information.</p>
+            </div>
+
+            <div class="contactCard">
+              <h3>Fast question</h3>
+
+              <!-- If you are using Formspree, replace ACTION below with your Formspree endpoint -->
+              <form class="form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+                <label>
+                  Name
+                  <input name="name" type="text" placeholder="Full name" required />
+                </label>
+
+                <label>
+                  Email
+                  <input name="email" type="email" placeholder="name@company.com" required />
+                </label>
+
+                <label>
+                  Message
+                  <textarea name="message" placeholder="How can we help?" required></textarea>
+                </label>
+
+                <button class="btn btn--primary" type="submit">Send message</button>
+                <div class="smallNote">Do not include sensitive information.</div>
+              </form>
+            </div>
+          </div>
+
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="contactGrid">
-        <div class="contactCard">
-          <h3>Placement request form</h3>
-          <p class="muted">Provide accurate details for the fastest review.</p>
-          <div class="divider"></div>
-
-          <!-- Replace action with your Formspree endpoint if you use it -->
-          <form class="form" method="POST" action="https://formspree.io/f/xkogdqkz">
-            <div class="grid2">
-              <label>
-                Full name
-                <input name="Name" placeholder="First Last" required />
-              </label>
-              <label>
-                Role / Title
-                <input name="Role" placeholder="Property Manager, Owner, Office Manager" required />
-              </label>
+  <section id="placement" class="section">
+    <div class="container">
+      <div class="section__frame">
+        <div class="section__inner">
+          <div class="sectionHead">
+            <div>
+              <h2>Request placement</h2>
+              <p>Submit details for a placement review. We’ll confirm fit and coordinate next steps.</p>
             </div>
+            <span class="badge">Placement review</span>
+          </div>
+          <div class="sectionLine"></div>
 
+          <!-- Replace ACTION with your placement Formspree endpoint -->
+          <form class="form" method="POST" action="https://formspree.io/f/YOUR_PLACEMENT_FORM_ID">
             <div class="grid2">
               <label>
-                Email
-                <input type="email" name="Email" placeholder="name@company.com" required />
+                Venue / Property name
+                <input name="venue_name" type="text" placeholder="e.g., Riverside Apartments" required />
               </label>
-              <label>
-                Phone (optional)
-                <input name="Phone" placeholder="(optional)" />
-              </label>
-            </div>
 
-            <div class="grid2">
-              <label>
-                Venue name
-                <input name="Venue Name" placeholder="Building / Gym / Office / Hotel name" required />
-              </label>
               <label>
                 Venue type
-                <select name="Venue Type" required>
-                  <option value="">Select…</option>
-                  <option>Apartments / Multifamily</option>
-                  <option>Gym / Fitness</option>
+                <select name="venue_type" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Apartments</option>
+                  <option>Gym</option>
                   <option>Office</option>
                   <option>Hotel</option>
                   <option>Healthcare</option>
                   <option>Other</option>
                 </select>
               </label>
-            </div>
 
-            <label>
-              Venue address (city/state minimum)
-              <input name="Venue Address" placeholder="Street (optional), City, State, ZIP" required />
-            </label>
+              <label>
+                City, State
+                <input name="city_state" type="text" placeholder="e.g., Virginia Beach, VA" required />
+              </label>
 
-            <div class="grid2">
               <label>
-                Estimated daily foot traffic
-                <select name="Estimated Daily Foot Traffic" required>
-                  <option value="">Select…</option>
-                  <option>Under 50/day</option>
-                  <option>50–150/day</option>
-                  <option>150–300/day</option>
-                  <option>300+/day</option>
-                </select>
+                Placement area (optional)
+                <input name="placement_area" type="text" placeholder="e.g., Lobby / Breakroom / Gym entrance" />
               </label>
-              <label>
-                Placement area
-                <input name="Placement Area" placeholder="Lobby, breakroom, gym floor, waiting area" required />
-              </label>
-            </div>
 
-            <div class="grid2">
               <label>
-                Power available near placement?
-                <select name="Power Available" required>
-                  <option value="">Select…</option>
-                  <option>Yes</option>
-                  <option>No / Not sure</option>
-                </select>
+                Contact name
+                <input name="contact_name" type="text" placeholder="Full name" required />
               </label>
+
               <label>
-                Service access
-                <select name="Service Access" required>
-                  <option value="">Select…</option>
-                  <option>Easy access during business hours</option>
-                  <option>Limited access / appointment required</option>
-                  <option>Not sure</option>
-                </select>
+                Contact email
+                <input name="contact_email" type="email" placeholder="name@company.com" required />
+              </label>
+
+              <label>
+                Contact phone (optional)
+                <input name="contact_phone" type="tel" placeholder="(###) ###-####" />
               </label>
             </div>
 
             <label>
               Notes (optional)
-              <textarea name="Notes" placeholder="Anything that helps: photos available, preferred install window, special access instructions, etc."></textarea>
+              <textarea name="notes" placeholder="Hours, access notes, audience details, product preferences, etc."></textarea>
             </label>
 
-            <button class="btn btn--primary btn--block" type="submit">Send request</button>
-            <p class="tiny" style="margin-top:10px;">After submission, we review fit and follow up with next steps.</p>
-          <form class="form" method="POST" action="https://formspree.io/f/xkogdqkz">
-  <input type="hidden" name="_redirect" value="https://www.smartpodusa.com/thanks.html">
-
-  <!-- rest of your fields... -->
+            <button class="btn btn--primary" type="submit">Submit placement request</button>
+            <div class="smallNote">Do not include sensitive information.</div>
           </form>
-        </div>
 
-        <div class="contactCard">
-          <h3>What happens next</h3>
-          <p class="muted">A simple flow designed for location teams.</p>
-          <div class="divider"></div>
-
-          <ol class="list">
-            <li>We review venue details and proposed placement area.</li>
-            <li>We confirm site readiness requirements (space, power, access).</li>
-            <li>We coordinate delivery, install, and initial stocking.</li>
-            <li>SmartPod manages restock and service over time.</li>
-          </ol>
-
-          <div class="divider"></div>
-          <h3>Prefer to share photos?</h3>
-          <p class="muted">A photo of the placement area helps speed qualification (optional).</p>
         </div>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container footer__bottom">
-      <p class="muted">© <span id="year"></span> SmartPod USA. All rights reserved.</p>
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footerBrand">
+          <img src="/assets/logo-sp-silver.png" alt="SmartPod USA logo" />
+          <div>
+            <div style="font-weight:950">SmartPod USA</div>
+            <div style="color:rgba(255,255,255,.55);font-weight:800;font-size:12px">Fully Managed Smart Vending</div>
+          </div>
+        </div>
+        <div class="footerLinks">
+          <a href="index.html">Home</a>
+          <a href="how-it-works.html">How it works</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </div>
+      <div class="footerBottom">© <span data-year></span> SmartPod USA.</div>
     </div>
   </footer>
-</main>
 
-<script src="app.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
