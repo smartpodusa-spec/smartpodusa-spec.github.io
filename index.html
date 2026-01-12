@@ -1,158 +1,147 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SmartPod USA | Premium Smart Vending Placement</title>
-  <meta name="description" content="Premium smart vending placement for apartments, offices, gyms, hotels, and healthcare. Fully managed: install, stock, service, and support." />
-
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SmartPod USA | Fully Managed Smart Vending Placement</title>
+  <meta name="description" content="High-tech smart vending placement for premium locations. We install, stock, and service. Tap-to-pay. Curated product mix." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Top Navigation -->
-  <header class="topbar" id="top">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="SmartPod USA home">
-        <span class="brandMark" aria-hidden="true">SP</span>
+  <!-- NAV -->
+  <header class="navWrap">
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="SmartPod USA Home">
+        <!-- Put your logo files here -->
+        <!-- /assets/logo-sp-gold.png  and  /assets/logo-sp-silver.png -->
+        <img src="/assets/logo-sp-gold.png" alt="SmartPod USA" class="logo" />
         <span class="brandText">
           <span class="brandName">SmartPod USA</span>
           <span class="brandTag">Fully Managed Smart Vending</span>
         </span>
       </a>
 
-      <nav class="navLinks" aria-label="Primary">
+      <div class="navLinks" role="navigation" aria-label="Primary">
         <a href="#how">How it works</a>
         <a href="#solutions">Solutions</a>
         <a href="#venues">Venues</a>
         <a href="#faq">FAQ</a>
-        <a class="btn btnGhost" href="#contact">Contact</a>
-        <a class="btn btnPrimary" href="#placement">Request placement</a>
-      </nav>
+        <a href="#contact">Contact</a>
+        <a class="btn btnGhost" href="#request">Request placement</a>
+      </div>
 
-      <button class="navToggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav">
+      <button class="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
         Menu
       </button>
-    </div>
+    </nav>
 
-    <div class="container mobileNav" id="mobileNav" hidden>
+    <!-- mobile menu -->
+    <div class="navDrawer" hidden>
       <a href="#how">How it works</a>
       <a href="#solutions">Solutions</a>
       <a href="#venues">Venues</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
-      <a class="btn btnPrimary btnBlock" href="#placement">Request placement</a>
+      <a class="btn btnPrimary" href="#request">Request placement</a>
     </div>
   </header>
 
-  <!-- Hero -->
-  <main class="page">
-    <section class="hero">
-      <div class="container heroGrid">
-        <div class="heroCopy">
-          <div class="pill">
-            Premium amenity • Tap-to-pay • Stocked & serviced by SmartPod
+  <!-- HERO -->
+  <main>
+    <section class="section hero">
+      <div class="container">
+        <!-- Optional subtle hero mark (silver, low opacity) -->
+        <img src="/assets/logo-sp-silver.png" alt="" class="heroLogo" aria-hidden="true" />
+
+        <p class="kicker">Premium amenity • Tap-to-pay • Stocked & serviced by SmartPod</p>
+
+        <h1>High-tech smart vending placement for premium locations.</h1>
+
+        <p class="lead">
+          SmartPod installs and operates modern smart vending in apartments, offices, gyms, hotels, and healthcare.
+          We handle placement review, installation, product curation, routine restocking, and service.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="#request">Request placement</a>
+          <a class="btn btnGhost" href="#how">See how it works</a>
+        </div>
+
+        <div class="heroGrid">
+          <div class="card">
+            <h3>Zero staff burden</h3>
+            <p>We manage stocking, service, and support—so your team stays focused.</p>
           </div>
-
-          <h1>
-            High-tech smart vending placement
-            <span class="accent">for premium locations</span>.
-          </h1>
-
-          <p class="lead">
-            SmartPod installs and operates modern smart vending in apartments, offices, gyms, hotels, and healthcare.
-            We handle the entire operation—placement review, installation, product curation, routine restocking, and service.
-          </p>
-
-          <div class="ctaRow">
-            <a class="btn btnPrimary" href="#placement">Request placement</a>
-            <a class="btn btnGhost" href="#how">See how it works</a>
+          <div class="card">
+            <h3>Modern payments</h3>
+            <p>Tap-to-pay, card, and mobile wallet options reduce friction.</p>
           </div>
-
-          <div class="proofRow" aria-label="Key benefits">
-            <div class="proof">
-              <div class="proofTop">Zero staff burden</div>
-              <div class="proofSub">We manage stocking + service</div>
-            </div>
-            <div class="proof">
-              <div class="proofTop">Modern payments</div>
-              <div class="proofSub">Tap / card / mobile wallet</div>
-            </div>
-            <div class="proof">
-              <div class="proofTop">Curated mix</div>
-              <div class="proofSub">Venue-fit products</div>
-            </div>
+          <div class="card">
+            <h3>Curated mix</h3>
+            <p>Everyday favorites plus better-for-you options tuned to your venue.</p>
+          </div>
+          <div class="card">
+            <h3>Placement readiness</h3>
+            <p>Quick checklist ensures a strong fit and smooth servicing logistics.</p>
           </div>
         </div>
 
-        <div class="heroPanel">
-          <div class="panelTop">
-            <div class="panelTitle">Placement readiness</div>
-            <div class="panelSub">Quick checklist for a strong fit</div>
-          </div>
-
-          <div class="panelBody">
-            <ul class="checklist">
-              <li><span class="checkDot"></span> Visible placement zone (lobby / breakroom / common area)</li>
-              <li><span class="checkDot"></span> Standard power available nearby</li>
-              <li><span class="checkDot"></span> Consistent daily foot traffic</li>
-              <li><span class="checkDot"></span> Reasonable access for servicing</li>
-            </ul>
-
-            <div class="miniCallout">
-              <div class="miniCalloutTitle">Fast review</div>
-              <div class="miniCalloutText">Submit details and we’ll confirm fit + next steps.</div>
-            </div>
-
-            <a class="btn btnPrimary btnBlock" href="#placement">Start placement request</a>
-            <a class="btn btnGhost btnBlock" href="#contact">Ask a question</a>
-          </div>
+        <div class="panel">
+          <h3>Quick checklist for a strong fit</h3>
+          <ul class="list">
+            <li>Visible placement zone (lobby / breakroom / common area)</li>
+            <li>Standard power available nearby</li>
+            <li>Consistent daily foot traffic</li>
+            <li>Reasonable access for restocking and service</li>
+          </ul>
+          <p class="muted">
+            Fast review: submit details and we’ll confirm fit and next steps.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- How it works (3 steps) -->
-    <section class="section" id="how">
+    <!-- HOW IT WORKS -->
+    <section class="section sectionLite" id="how">
       <div class="container">
         <div class="sectionHead">
-          <h2>As easy as 1-2-3</h2>
+          <h2>As easy as 1–2–3</h2>
           <p>Clear process. Minimal friction. Professional execution.</p>
         </div>
 
-        <div class="triCards">
-          <article class="mediaCard">
-            <div class="mediaThumb">
-              <!-- Replace with your image if desired -->
-              <div class="mediaPlaceholder">Scan / Tap</div>
+        <div class="steps">
+          <div class="stepCard">
+            <div class="stepNum">1</div>
+            <div>
+              <h3>Access</h3>
+              <p>Users pay quickly with tap, card, or wallet for a smooth experience.</p>
             </div>
-            <h3>Access</h3>
-            <p>Users pay quickly with tap, card, or wallet for a smooth experience.</p>
-          </article>
+          </div>
 
-          <article class="mediaCard">
-            <div class="mediaThumb">
-              <div class="mediaPlaceholder">Grab</div>
+          <div class="stepCard">
+            <div class="stepNum">2</div>
+            <div>
+              <h3>Select</h3>
+              <p>Curated, venue-fit options designed for convenience and repeat use.</p>
             </div>
-            <h3>Select</h3>
-            <p>Curated, venue-fit products designed for convenience and repeat use.</p>
-          </article>
+          </div>
 
-          <article class="mediaCard">
-            <div class="mediaThumb">
-              <div class="mediaPlaceholder">Enjoy</div>
+          <div class="stepCard">
+            <div class="stepNum">3</div>
+            <div>
+              <h3>Done</h3>
+              <p>We restock routinely and maintain a clean, reliable setup.</p>
             </div>
-            <h3>Done</h3>
-            <p>We restock routinely and maintain a clean, reliable setup.</p>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Solutions / Value props -->
+    <!-- SOLUTIONS -->
     <section class="section" id="solutions">
       <div class="container">
         <div class="sectionHead">
@@ -161,39 +150,36 @@
         </div>
 
         <div class="grid2">
-          <article class="card">
+          <div class="card">
             <h3>Fully managed operation</h3>
-            <p>We handle installation, inventory, restocking, service, and support—so your team stays focused.</p>
-          </article>
-
-          <article class="card">
+            <p>We handle installation, inventory, restocking, service, and support.</p>
+          </div>
+          <div class="card">
             <h3>Modern cashless payments</h3>
             <p>Tap-to-pay and card support to reduce friction and improve usability.</p>
-          </article>
-
-          <article class="card">
+          </div>
+          <div class="card">
             <h3>Curated product selection</h3>
-            <p>Everyday favorites plus better-for-you options. Mix tuned to venue type and demand.</p>
-          </article>
-
-          <article class="card">
+            <p>Everyday favorites plus better-for-you options. Mix tuned to venue demand.</p>
+          </div>
+          <div class="card">
             <h3>Professional experience</h3>
-            <p>Clean placement, clear instructions, and consistent presentation that matches premium venues.</p>
-          </article>
+            <p>Clean placement, clear instructions, consistent presentation that fits premium spaces.</p>
+          </div>
         </div>
 
-        <div class="banner">
+        <div class="panelAccent">
           <div>
-            <div class="bannerTitle">Want a specific mix?</div>
-            <div class="bannerText">Send brand + flavor + size preferences. We’ll curate based on availability and venue fit.</div>
+            <h3>Want a specific mix?</h3>
+            <p class="muted">Send brand + flavor + size preferences. We’ll curate based on availability and venue fit.</p>
           </div>
-          <a class="btn btnPrimary" href="#placement">Request placement</a>
+          <a class="btn btnPrimary" href="#request">Request placement</a>
         </div>
       </div>
     </section>
 
-    <!-- Venues -->
-    <section class="section" id="venues">
+    <!-- VENUES -->
+    <section class="section sectionLite" id="venues">
       <div class="container">
         <div class="sectionHead">
           <h2>Great fit for</h2>
@@ -223,14 +209,14 @@
           </div>
           <div class="card">
             <h3>Other venues</h3>
-            <p>We review fit based on traffic and logistics.</p>
+            <p>We review fit based on traffic and servicing logistics.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Placement Form -->
-    <section class="section" id="placement">
+    <!-- REQUEST PLACEMENT -->
+    <section class="section" id="request">
       <div class="container">
         <div class="sectionHead">
           <h2>Request placement</h2>
@@ -238,67 +224,67 @@
         </div>
 
         <div class="formShell">
-          <!-- Replace action="#" with your Formspree or backend endpoint -->
-          <form class="form" action="#" method="POST">
-            <div class="formGrid">
-              <label>
-                Venue / Property name
-                <input name="venue_name" placeholder="e.g., Riverside Apartments" required />
-              </label>
-
-              <label>
-                Venue type
-                <select name="venue_type" required>
-                  <option value="" disabled selected>Select one</option>
-                  <option>Apartments</option>
-                  <option>Gym / Fitness</option>
-                  <option>Office</option>
-                  <option>Hotel</option>
-                  <option>Healthcare</option>
-                  <option>Other</option>
-                </select>
-              </label>
-
-              <label>
-                City, State
-                <input name="city_state" placeholder="e.g., Virginia Beach, VA" required />
-              </label>
-
-              <label>
-                Placement area (optional)
-                <input name="placement_area" placeholder="e.g., Lobby / Breakroom / Gym entrance" />
-              </label>
-
-              <label>
-                Contact name
-                <input name="contact_name" placeholder="Full name" required />
-              </label>
-
-              <label>
-                Contact email
-                <input type="email" name="contact_email" placeholder="name@company.com" required />
-              </label>
-
-              <label>
-                Contact phone (optional)
-                <input name="contact_phone" placeholder="(###) ###-####" />
-              </label>
-
-              <label class="span2">
-                Notes (optional)
-                <textarea name="notes" placeholder="Hours, access notes, audience details, product preferences, etc."></textarea>
-              </label>
+          <!-- Replace action with your Formspree endpoint if you use it -->
+          <form class="formGrid" action="#" method="post">
+            <div class="field">
+              <label for="venue">Venue / Property name</label>
+              <input id="venue" name="venue" placeholder="e.g., Riverside Apartments" required />
             </div>
 
-            <button class="btn btnPrimary btnBlock" type="submit">Submit placement request</button>
-            <div class="formFine">Do not include sensitive information.</div>
+            <div class="field">
+              <label for="type">Venue type</label>
+              <select id="type" name="type" required>
+                <option value="" selected disabled>Select one</option>
+                <option>Apartments</option>
+                <option>Gym</option>
+                <option>Office</option>
+                <option>Hotel</option>
+                <option>Healthcare</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="city">City, State</label>
+              <input id="city" name="city" placeholder="e.g., Virginia Beach, VA" required />
+            </div>
+
+            <div class="field">
+              <label for="area">Placement area (optional)</label>
+              <input id="area" name="area" placeholder="e.g., Lobby / Breakroom / Gym entrance" />
+            </div>
+
+            <div class="field">
+              <label for="name">Contact name</label>
+              <input id="name" name="name" placeholder="Full name" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Contact email</label>
+              <input id="email" name="email" type="email" placeholder="name@company.com" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Contact phone (optional)</label>
+              <input id="phone" name="phone" placeholder="(###) ###-####" />
+            </div>
+
+            <div class="field fieldFull">
+              <label for="notes">Notes (optional)</label>
+              <textarea id="notes" name="notes" rows="5" placeholder="Hours, access notes, audience details, product preferences, etc."></textarea>
+            </div>
+
+            <div class="field fieldFull">
+              <button class="btn btnPrimary" type="submit">Submit placement request</button>
+              <p class="tiny muted" style="margin-top:10px;">Do not include sensitive information.</p>
+            </div>
           </form>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="section" id="faq">
+    <section class="section sectionLite" id="faq">
       <div class="container">
         <div class="sectionHead">
           <h2>FAQ</h2>
@@ -306,106 +292,124 @@
         </div>
 
         <div class="faq">
-          <details>
+          <details class="faqItem">
             <summary>Does it cost the venue to host a machine?</summary>
-            <p>It depends on the placement agreement and site requirements. Submit a request and we’ll confirm options for your venue.</p>
+            <div class="faqBody">
+              <p>We review each location and outline expectations clearly during the placement review. Submit a request and we’ll confirm fit and terms for your venue.</p>
+            </div>
           </details>
 
-          <details>
+          <details class="faqItem">
             <summary>What do you need from the venue?</summary>
-            <p>A suitable placement area, standard access for install/service, and a point of contact for coordination.</p>
+            <div class="faqBody">
+              <p>Typical needs include a visible placement area, nearby standard power, and reasonable access for restocking and service.</p>
+            </div>
           </details>
 
-          <details>
+          <details class="faqItem">
             <summary>Can we request specific products?</summary>
-            <p>Yes. Provide brand/flavor/size preferences and we’ll curate based on availability and venue fit.</p>
+            <div class="faqBody">
+              <p>Yes. Share brand + flavor + size preferences. We curate based on availability and venue fit.</p>
+            </div>
           </details>
 
-          <details>
+          <details class="faqItem">
             <summary>How do you handle service and restocking?</summary>
-            <p>We restock routinely based on demand and maintain a clean, professional presentation.</p>
+            <div class="faqBody">
+              <p>We manage inventory, routine restocking, and service to maintain a consistent, reliable experience.</p>
+            </div>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="container">
-        <div class="contactShell">
-          <div class="contactCopy">
-            <h2>Contact</h2>
-            <p class="muted">
-              Prefer to reach out directly? Send venue details and we’ll coordinate next steps.
-            </p>
+        <div class="sectionHead">
+          <h2>Contact</h2>
+          <p>Prefer to reach out directly? Send venue details and we’ll coordinate next steps.</p>
+        </div>
 
-            <div class="contactList">
-              <div class="contactRow">
-                <div class="contactLabel">Website</div>
-                <div class="contactValue">smartpodusa.com</div>
-              </div>
-              <div class="contactRow">
-                <div class="contactLabel">Email</div>
-                <div class="contactValue">info@smartpodusa.com</div>
-              </div>
-              <div class="contactRow">
-                <div class="contactLabel">Phone</div>
-                <div class="contactValue">800 434 3310</div>
-              </div>
-            </div>
+        <div class="contactGrid">
+          <div class="card contactInfo">
+            <h3>Direct</h3>
+            <p><span class="label">Website:</span> smartpodusa.com</p>
+            <p><span class="label">Email:</span> info@smartpodusa.com</p>
+            <p><span class="label">Phone:</span> 800 434 3310</p>
+            <p class="muted tiny">Business inquiries only.</p>
           </div>
 
-          <div class="contactCard">
-            <div class="contactCardTitle">Fast question</div>
+          <div class="contactShell">
+            <!-- Replace action with your Formspree endpoint if you use it -->
+            <form class="formGrid" action="#" method="post">
+              <div class="field">
+                <label for="cname">Name</label>
+                <input id="cname" name="cname" placeholder="Full name" required />
+              </div>
 
-            <!-- Replace action="#" with your Formspree or backend endpoint -->
-            <form class="form" action="#" method="POST">
-              <label>
-                Name
-                <input name="name" placeholder="Full name" required />
-              </label>
+              <div class="field">
+                <label for="cemail">Email</label>
+                <input id="cemail" name="cemail" type="email" placeholder="name@company.com" required />
+              </div>
 
-              <label>
-                Email
-                <input type="email" name="email" placeholder="name@company.com" required />
-              </label>
+              <div class="field fieldFull">
+                <label for="cmsg">Message</label>
+                <textarea id="cmsg" name="cmsg" rows="5" placeholder="How can we help?" required></textarea>
+              </div>
 
-              <label>
-                Message
-                <textarea name="message" placeholder="How can we help?" required></textarea>
-              </label>
-
-              <button class="btn btnPrimary btnBlock" type="submit">Send message</button>
-              <div class="formFine">Do not include sensitive information.</div>
+              <div class="field fieldFull">
+                <button class="btn btnPrimary" type="submit">Send message</button>
+                <p class="tiny muted" style="margin-top:10px;">Do not include sensitive information.</p>
+              </div>
             </form>
           </div>
         </div>
       </div>
     </section>
-
-    <footer class="footer">
-      <div class="container foot">
-        <div class="footLeft">
-          <div class="brandMini">
-            <span class="brandMark sm" aria-hidden="true">SP</span>
-            <div>
-              <div class="brandName">SmartPod USA</div>
-              <div class="tiny">Premium smart vending placement</div>
-            </div>
-          </div>
-          <div class="tiny">© <span id="year"></span> SmartPod USA. All rights reserved.</div>
-        </div>
-
-        <div class="footLinks">
-          <a href="#how">How it works</a>
-          <a href="#solutions">Solutions</a>
-          <a href="#venues">Venues</a>
-          <a href="#placement">Request placement</a>
-        </div>
-      </div>
-    </footer>
   </main>
 
-  <script src="site.js"></script>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footerRow">
+      <div class="brandMini">
+        <img src="/assets/logo-sp-silver.png" alt="SmartPod USA" class="logoSmall" />
+        <div>
+          <div class="brandName">SmartPod USA</div>
+          <div class="tiny muted">Fully Managed Smart Vending</div>
+        </div>
+      </div>
+
+      <div class="footerLinks">
+        <a href="#how">How it works</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#venues">Venues</a>
+        <a href="#request">Request placement</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Minimal, safe mobile nav
+    const toggle = document.querySelector(".navToggle");
+    const drawer = document.querySelector(".navDrawer");
+    if (toggle && drawer) {
+      toggle.addEventListener("click", () => {
+        const open = drawer.hasAttribute("hidden") === false;
+        if (open) {
+          drawer.setAttribute("hidden", "");
+          toggle.setAttribute("aria-expanded", "false");
+        } else {
+          drawer.removeAttribute("hidden");
+          toggle.setAttribute("aria-expanded", "true");
+        }
+      });
+      drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+        drawer.setAttribute("hidden", "");
+        toggle.setAttribute("aria-expanded", "false");
+      }));
+    }
+  </script>
 </body>
 </html>
