@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Request placement | SmartPod USA</title>
+  <meta name="description" content="Request smart vending placement for your venue." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-theme="silk">
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="SmartPod USA home">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__stack">
+          <span class="brand__name">SmartPod USA</span>
+          <span class="brand__tag">Fully Managed Smart Vending</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a data-nav href="how-it-works.html">How it works</a>
+        <a data-nav href="faq.html">FAQ</a>
+        <a data-nav href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--gold" href="request.html" data-nav>Request placement</a>
+        <button class="btn btn--ghost" id="menuOpen" type="button">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="drawer__top">
+        <div class="drawer__title">Menu</div>
+        <button class="btn" id="menuClose" type="button">Close</button>
+      </div>
+      <nav class="drawer__nav" aria-label="Menu links">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="solutions.html">Solutions</a>
+        <a data-nav href="venues.html">Venues</a>
+        <a data-nav href="how-it-works.html">How it works</a>
+        <a data-nav href="faq.html">FAQ</a>
+        <a data-nav href="contact.html">Contact</a>
+        <a data-nav href="request.html">Request placement</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="section">
+    <div class="container">
+      <div class="kicker">REQUEST PLACEMENT</div>
+      <h1 class="hero__title">A quick request. A <span class="sheen">clean</span> review.</h1>
+      <p class="p">Share venue details. We’ll follow up to confirm fit and next steps.</p>
+
+      <form action="https://formspree.io/f/xkogdqkz" method="POST">
+        <div class="fieldRow">
+          <div>
+            <label for="venue">Venue / Property name</label>
+            <input id="venue" name="venue" required />
+          </div>
+          <div>
+            <label for="type">Venue type</label>
+            <select id="type" name="venue_type" required>
+              <option value="">Select…</option>
+              <option>Apartments</option>
+              <option>Gym / Studio</option>
+              <option>Hotel</option>
+              <option>Office</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="address">Address (or city/area)</label>
+        <input id="address" name="address" required />
+
+        <div class="fieldRow">
+          <div>
+            <label for="contactName">Contact name</label>
+            <input id="contactName" name="contact_name" required />
+          </div>
+          <div>
+            <label for="contactEmail">Contact email</label>
+            <input id="contactEmail" name="contact_email" type="email" required />
+          </div>
+        </div>
+
+        <div class="fieldRow">
+          <div>
+            <label for="contactPhone">Phone (optional)</label>
+            <input id="contactPhone" name="contact_phone" autocomplete="tel" />
+          </div>
+          <div>
+            <label for="placement">Preferred placement area (optional)</label>
+            <input id="placement" name="placement_area" placeholder="Lobby, gym, breakroom, etc." />
+          </div>
+        </div>
+
+        <label for="notes">Notes (optional)</label>
+        <textarea id="notes" name="notes" placeholder="Traffic details, access notes, any preferences."></textarea>
+
+        <div class="formActions">
+          <button class="btn btn--gold" type="submit">Submit request</button>
+          <a class="btn" href="how-it-works.html">How it works</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__row">
+      <div class="footer__left">© <span data-year></span> SmartPod USA. All rights reserved.</div>
+      <div class="footer__links">
+        <a data-nav href="solutions.html">Solutions</a>
+        <a data-nav href="venues.html">Venues</a>
+        <a data-nav href="how-it-works.html">How it works</a>
+        <a data-nav href="faq.html">FAQ</a>
+        <a data-nav href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
