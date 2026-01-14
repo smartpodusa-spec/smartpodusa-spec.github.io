@@ -152,12 +152,12 @@ hr.sep{
 }
 .brand__mark img,
 .brand__logo{
-  max-width:78%;
-  max-height:78%;
-  width:auto;
-  height:auto;
+  width:100% !important;
+  height:100% !important;
   object-fit:contain;
   display:block;
+  padding:6px;              /* creates consistent “inset” */
+  box-sizing:border-box;
 }
 
 .brand__stack{ display:flex; flex-direction:column; line-height:1.05; }
