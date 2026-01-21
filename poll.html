@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SmartPod USA — Product Poll</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#0b0c0f; color:#e9e9ee; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 18px 60px; }
+    h1 { font-size: clamp(26px, 4vw, 44px); margin: 0 0 10px; letter-spacing: -0.02em; }
+    p { margin: 0 0 18px; color: rgba(233,233,238,0.75); line-height: 1.5; }
+    .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.10); border-radius: 18px; padding: 18px; }
+    .frame {
+      width: 100%;
+      height: 900px; /* adjust if needed */
+      border: 0;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+    }
+    .muted { font-size: 12px; color: rgba(233,233,238,0.60); margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Product Poll</h1>
+    <p>Select the items you want stocked at your location. Submissions are recorded (no account required).</p>
+
+    <div class="card">
+      <!-- Replace the src with your Google Form EMBED URL -->
+      <iframe class="frame"
+        src="PASTE_YOUR_GOOGLE_FORM_EMBED_URL_HERE"
+        loading="lazy">
+      </iframe>
+      <div class="muted">If the form doesn’t load, open it in a new tab from your QR code link.</div>
+    </div>
+  </div>
+</body>
+</html>
