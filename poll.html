@@ -5,35 +5,306 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SmartPod USA — Product Poll</title>
   <style>
-    :root { color-scheme: dark; }
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#0b0c0f; color:#e9e9ee; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 18px 60px; }
-    h1 { font-size: clamp(26px, 4vw, 44px); margin: 0 0 10px; letter-spacing: -0.02em; }
-    p { margin: 0 0 18px; color: rgba(233,233,238,0.75); line-height: 1.5; }
-    .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.10); border-radius: 18px; padding: 18px; }
-    .frame {
-      width: 100%;
-      height: 900px; /* adjust if needed */
-      border: 0;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.03);
+    :root{
+      --bg:#0b0f19;
+      --card:#121a2a;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --accent:#f59e0b;
+      --border:rgba(148,163,184,.18);
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --radius:18px;
     }
-    .muted { font-size: 12px; color: rgba(233,233,238,0.60); margin-top: 10px; }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(245,158,11,.18), transparent 55%),
+                  radial-gradient(900px 500px at 95% 0%, rgba(59,130,246,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+    }
+    .wrap{width:min(980px,100%)}
+    header{
+      display:flex; gap:16px; align-items:center; justify-content:space-between;
+      margin-bottom:18px;
+    }
+    .brand{
+      display:flex; gap:12px; align-items:center;
+    }
+    .logo{
+      width:44px; height:44px; border-radius:12px;
+      background: linear-gradient(145deg, rgba(245,158,11,.22), rgba(245,158,11,.05));
+      border:1px solid var(--border);
+      display:grid; place-items:center;
+      box-shadow: var(--shadow);
+    }
+    .brand h1{font-size:18px; margin:0}
+    .brand p{margin:2px 0 0; color:var(--muted); font-size:13px}
+    .card{
+      background: rgba(18,26,42,.92);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-top{
+      padding:22px 22px 12px;
+      border-bottom:1px solid var(--border);
+    }
+    .card-top h2{margin:0; font-size:20px}
+    .card-top .sub{margin:8px 0 0; color:var(--muted); font-size:14px; line-height:1.45}
+    form{padding:18px 22px 22px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 760px){
+      .grid{grid-template-columns:1fr}
+      header{flex-direction:column; align-items:flex-start}
+    }
+    label{display:block; font-size:13px; color:var(--muted); margin:0 0 8px}
+    input[type="text"], input[type="email"], textarea, select{
+      width:100%;
+      background: rgba(2,6,23,.35);
+      border:1px solid var(--border);
+      color:var(--text);
+      border-radius:12px;
+      padding:12px 12px;
+      outline:none;
+    }
+    textarea{min-height:92px; resize:vertical}
+    .section{margin-top:14px}
+    .section-title{display:flex; align-items:center; justify-content:space-between; margin-bottom:8px}
+    .section-title span{font-size:13px; color:var(--muted)}
+    .pills{
+      display:flex; flex-wrap:wrap; gap:10px;
+      padding:12px; border:1px solid var(--border);
+      border-radius:12px; background: rgba(2,6,23,.25);
+    }
+    .pill{
+      position:relative;
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.22);
+      background: rgba(255,255,255,.02);
+      cursor:pointer;
+      user-select:none;
+      transition:.15s transform, .15s border-color;
+      font-size:13px;
+    }
+    .pill:hover{transform: translateY(-1px); border-color: rgba(245,158,11,.35)}
+    .pill input{accent-color: var(--accent)}
+    .actions{
+      display:flex; gap:12px; align-items:center; justify-content:flex-end;
+      margin-top:16px;
+    }
+    button{
+      border:0;
+      border-radius:12px;
+      padding:12px 14px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(245,158,11,.95), rgba(245,158,11,.72));
+      color:#111827;
+    }
+    .btn-ghost{
+      background: transparent;
+      border:1px solid var(--border);
+      color:var(--text);
+    }
+    .status{
+      margin-top:12px;
+      font-size:13px;
+      color:var(--muted);
+      min-height:18px;
+    }
+    .success{color:#86efac}
+    .error{color:#fca5a5}
+    footer{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    a{color:var(--accent); text-decoration:none}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>Product Poll</h1>
-    <p>Select the items you want stocked at your location. Submissions are recorded (no account required).</p>
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- Replace with your SVG/logo if desired -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M7 7h10v10H7z" stroke="rgba(245,158,11,.95)" stroke-width="2"/>
+          </svg>
+        </div>
+        <div>
+          <h1>SmartPod USA</h1>
+          <p>Product & drink request poll</p>
+        </div>
+      </div>
+      <div style="color:var(--muted); font-size:13px">
+        Results go to your Google Sheet (no email required)
+      </div>
+    </header>
 
     <div class="card">
-      <!-- Replace the src with your Google Form EMBED URL -->
-      <iframe class="frame"
-        src="PASTE_YOUR_GOOGLE_FORM_EMBED_URL_HERE"
-        loading="lazy">
-      </iframe>
-      <div class="muted">If the form doesn’t load, open it in a new tab from your QR code link.</div>
+      <div class="card-top">
+        <h2>What would you like us to stock?</h2>
+        <div class="sub">
+          Select as many as you want. Use “Other requests” for specifics (flavor, size, brand).
+        </div>
+      </div>
+
+      <form id="pollForm">
+        <div class="grid">
+          <div>
+            <label for="location">Site / Location</label>
+            <select id="location" name="location" required>
+              <option value="">Select…</option>
+              <option>Lobby</option>
+              <option>Breakroom</option>
+              <option>Fitness Center</option>
+              <option>Other / Not listed</option>
+            </select>
+          </div>
+          <div>
+            <label for="name">Name (optional)</label>
+            <input id="name" name="name" type="text" placeholder="Your name" />
+          </div>
+          <div style="grid-column: 1 / -1;">
+            <label for="email">Email (optional)</label>
+            <input id="email" name="email" type="email" placeholder="you@email.com" />
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">
+            <span>Drinks</span><span>Select multiple</span>
+          </div>
+          <div class="pills" id="drinksGroup">
+            <!-- Drinks (edit freely) -->
+            <label class="pill"><input type="checkbox" value="Water" /> Water</label>
+            <label class="pill"><input type="checkbox" value="Sparkling Water" /> Sparkling Water</label>
+            <label class="pill"><input type="checkbox" value="Diet Soda" /> Diet Soda</label>
+            <label class="pill"><input type="checkbox" value="Regular Soda" /> Regular Soda</label>
+            <label class="pill"><input type="checkbox" value="Iced Coffee" /> Iced Coffee</label>
+            <label class="pill"><input type="checkbox" value="Cold Brew" /> Cold Brew</label>
+            <label class="pill"><input type="checkbox" value="Protein Shake" /> Protein Shake</label>
+            <label class="pill"><input type="checkbox" value="Sports Drink" /> Sports Drink</label>
+            <label class="pill"><input type="checkbox" value="Energy Drink (Zero Sugar)" /> Energy Drink (Zero Sugar)</label>
+            <label class="pill"><input type="checkbox" value="Energy Drink (Regular)" /> Energy Drink (Regular)</label>
+            <label class="pill"><input type="checkbox" value="Tea (Unsweetened)" /> Tea (Unsweetened)</label>
+            <label class="pill"><input type="checkbox" value="Tea (Sweetened)" /> Tea (Sweetened)</label>
+            <label class="pill"><input type="checkbox" value="Juice" /> Juice</label>
+            <label class="pill"><input type="checkbox" value="Kombucha" /> Kombucha</label>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">
+            <span>Snacks</span><span>Select multiple</span>
+          </div>
+          <div class="pills" id="snacksGroup">
+            <!-- Snacks (edit freely) -->
+            <label class="pill"><input type="checkbox" value="Chips" /> Chips</label>
+            <label class="pill"><input type="checkbox" value="Trail Mix" /> Trail Mix</label>
+            <label class="pill"><input type="checkbox" value="Protein Bar" /> Protein Bar</label>
+            <label class="pill"><input type="checkbox" value="Granola Bar" /> Granola Bar</label>
+            <label class="pill"><input type="checkbox" value="Nuts" /> Nuts</label>
+            <label class="pill"><input type="checkbox" value="Beef Jerky" /> Beef Jerky</label>
+            <label class="pill"><input type="checkbox" value="Candy" /> Candy</label>
+            <label class="pill"><input type="checkbox" value="Cookies" /> Cookies</label>
+            <label class="pill"><input type="checkbox" value="Crackers" /> Crackers</label>
+            <label class="pill"><input type="checkbox" value="Popcorn" /> Popcorn</label>
+            <label class="pill"><input type="checkbox" value="Fruit Snacks" /> Fruit Snacks</label>
+            <label class="pill"><input type="checkbox" value="Healthy Chips" /> Healthy Chips</label>
+          </div>
+        </div>
+
+        <div class="section">
+          <label for="other">Other requests (brands, flavors, healthy options)</label>
+          <textarea id="other" name="other" placeholder="Example: Celsius (Arctic Vibe), Quest chips, Fairlife protein, etc."></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn-ghost" type="reset">Reset</button>
+          <button class="btn-primary" type="submit">Submit request</button>
+        </div>
+
+        <div id="status" class="status"></div>
+      </form>
     </div>
+
+    <footer>
+      Tip: You can create a dashboard in Google Sheets (charts + pivot tables) for site-specific demand.
+    </footer>
   </div>
+
+  <script>
+    const WEB_APP_URL = https://script.google.com/macros/s/AKfycbzqLRlPPMRPtSCtSE03qkFUhKWXqOkzyC94qoMj3xrF0Nhp4qsCLjPxRpdsdCGIr8kxFg/exec; // <-- paste Apps Script Web App URL
+
+    function getCheckedValues(containerId) {
+      const container = document.getElementById(containerId);
+      const checks = container.querySelectorAll('input[type="checkbox"]:checked');
+      return Array.from(checks).map(x => x.value);
+    }
+
+    const form = document.getElementById('pollForm');
+    const statusEl = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusEl.textContent = "Submitting…";
+      statusEl.className = "status";
+
+      const payload = {
+        location: document.getElementById('location').value,
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        drinks: getCheckedValues('drinksGroup'),
+        snacks: getCheckedValues('snacksGroup'),
+        other: document.getElementById('other').value
+      };
+
+      if (!payload.location) {
+        statusEl.textContent = "Please select a site/location.";
+        statusEl.className = "status error";
+        return;
+      }
+
+      try {
+        const res = await fetch(WEB_APP_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+
+        const json = await res.json().catch(() => ({}));
+
+        if (res.ok && json.ok) {
+          statusEl.textContent = "Submitted. Thank you.";
+          statusEl.className = "status success";
+          form.reset();
+        } else {
+          statusEl.textContent = "Submission failed. Please try again.";
+          statusEl.className = "status error";
+        }
+      } catch (err) {
+        statusEl.textContent = "Network error. Please try again.";
+        statusEl.className = "status error";
+      }
+    });
+  </script>
 </body>
 </html>
