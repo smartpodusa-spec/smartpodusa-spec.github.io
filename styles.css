@@ -545,3 +545,13 @@ input:focus, textarea:focus, select:focus{
   .section{ padding:58px 0; }
   .fieldRow{ grid-template-columns:1fr; }
 }
+
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+.brand-link:hover h1 {
+  text-decoration: underline;
+}
+
