@@ -16,8 +16,8 @@
     <div class="container header__inner">
       <a class="brand" href="index.html" aria-label="SmartPod USA home">
         <span class="brand__mark" aria-hidden="true">
-  <img src="assets/logo-sp.svg" alt="SmartPod logo" class="brand__logo" />
-</span>
+          <img src="assets/logo-sp.svg" alt="SmartPod logo" class="brand__logo" />
+        </span>
 
         <span class="brand__stack">
           <span class="brand__name">SmartPod USA</span>
@@ -25,12 +25,11 @@
         </span>
       </a>
 
-      <!-- Top nav (Solutions/Venues removed from top) -->
+      <!-- Simplified top nav -->
       <nav class="nav" aria-label="Primary">
+        <a data-nav href="venues.html">Venues</a>
         <a data-nav href="how-it-works.html">How it works</a>
         <a data-nav href="faq.html">FAQ</a>
-        <a data-nav href="contact.html">Contact</a>
-        <a data-nav href="poll.html">Product Poll</a>
       </nav>
 
       <div class="header__actions">
@@ -52,13 +51,13 @@
 
       <nav class="drawer__nav" aria-label="Menu links">
         <a data-nav href="index.html">Home</a>
-        <a data-nav href="solutions.html">Solutions</a>
         <a data-nav href="venues.html">Venues</a>
         <a data-nav href="how-it-works.html">How it works</a>
         <a data-nav href="faq.html">FAQ</a>
         <a data-nav href="poll.html">Product Poll</a>
-        <a data-nav href="contact.html">Contact</a>
         <a data-nav href="request.html">Request placement</a>
+        <!-- Contact removed as a primary page; keep if you still want it -->
+        <!-- <a data-nav href="contact.html">Contact</a> -->
       </nav>
 
       <div class="drawer__foot">
@@ -78,65 +77,71 @@
           </h1>
 
           <p class="hero__sub">
-            We install, curate, restock, and service—so your location adds 24/7 convenience without staff workload.
+            A clean, cashless snack + beverage amenity—installed and managed end-to-end for your location.
           </p>
 
+          <!-- One primary CTA + one secondary -->
           <div class="hero__cta">
             <a class="btn btn--gold" href="request.html">Request placement</a>
-            <a class="btn" href="how-it-works.html">How it works</a>
+            <a class="btn" href="venues.html">See venues</a>
           </div>
 
           <ul class="bullets" aria-label="Key points">
-            <li>Hands-off operations</li>
-            <li>Cashless + secure</li>
-            <li>Curated product mix</li>
-            <li>Ongoing service + optimization</li>
+            <li>Hands-off for staff</li>
+            <li>Cashless checkout</li>
+            <li>Curated mix</li>
+            <li>Ongoing restock + support</li>
           </ul>
         </div>
 
+        <!-- Remove “View solutions” to avoid redundant path -->
         <aside class="panel">
           <div class="panel__k">WHY SMARTPOD</div>
           <h3>Clean, premium amenity</h3>
           <p>
-            A reliable on-site option that supports residents, guests, and staff with simple access.
+            A reliable on-site option for residents, guests, and staff—without adding tasks to your team.
           </p>
           <ul>
             <li>Professional placement + signage</li>
-            <li>Restocking + support included</li>
-            <li>Product mix tailored to fit</li>
+            <li>Stocking + support included</li>
+            <li>Mix tailored to your venue</li>
           </ul>
           <div style="margin-top:14px;">
-            <a class="btn btn--gold" href="solutions.html">View solutions</a>
+            <a class="btn btn--gold" href="request.html">Request placement</a>
           </div>
         </aside>
       </div>
     </section>
 
+    <!-- Replace redundant ops cards with “Built for…” venue-fit section -->
     <section class="section">
       <div class="container">
-        <h2 class="h2">Built for premium locations.</h2>
-        <p class="p">One consistent experience—without adding tasks to your team.</p>
+        <h2 class="h2">Built for premium, high-traffic spaces.</h2>
+        <p class="p">We confirm fit (traffic, access, power, servicing path), then manage the rest.</p>
 
         <div class="grid2">
           <div class="card">
-            <h3>Installation</h3>
-            <p>We coordinate placement, access, and setup for a clean finish.</p>
+            <h3>Apartments</h3>
+            <p>Resident amenity in lobbies, gyms, and clubrooms.</p>
           </div>
           <div class="card">
-            <h3>Stocking</h3>
-            <p>We restock and adjust inventory to match demand.</p>
+            <h3>Offices</h3>
+            <p>Breakroom convenience without added staff workload.</p>
           </div>
           <div class="card">
-            <h3>Service</h3>
-            <p>We handle maintenance and support to keep it reliable.</p>
+            <h3>Gyms + studios</h3>
+            <p>Fast checkout and curated, performance-friendly mix.</p>
           </div>
           <div class="card">
-            <h3>Optimization</h3>
-            <p>We refine the assortment based on usage and feedback.</p>
+            <h3>Hotels</h3>
+            <p>Guest-friendly access with consistent stocking and service.</p>
           </div>
         </div>
 
-      
+        <!-- Single CTA at end of section -->
+        <div style="margin-top:18px;">
+          <a class="btn btn--gold" href="request.html">Request placement</a>
+        </div>
       </div>
     </section>
   </main>
@@ -145,11 +150,12 @@
     <div class="container footer__row">
       <div class="footer__left">© <span data-year></span> SmartPod USA. All rights reserved.</div>
       <div class="footer__links">
-        <a data-nav href="solutions.html">Solutions</a>
         <a data-nav href="venues.html">Venues</a>
         <a data-nav href="how-it-works.html">How it works</a>
         <a data-nav href="faq.html">FAQ</a>
-        <a data-nav href="contact.html">Contact</a>
+        <a data-nav href="request.html">Request placement</a>
+        <!-- Optional: keep Product Poll in footer only -->
+        <a data-nav href="poll.html">Product Poll</a>
       </div>
     </div>
   </footer>
