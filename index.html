@@ -31,17 +31,38 @@
       <a href="faq.html">FAQ</a>
     </nav>
 
-    <!-- Header CTA REMOVED on homepage -->
-    <button class="btn btn--ghost" id="menuOpen">Menu</button>
+    <button class="btn btn--ghost" id="menuOpen" type="button">Menu</button>
   </div>
 </header>
+
+<!-- Drawer -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="drawer__top">
+      <div class="drawer__title">SmartPod USA</div>
+      <button class="btn" id="menuClose" type="button">Close</button>
+    </div>
+
+    <nav class="drawer__nav">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="venues.html">Venues</a>
+      <a data-nav href="how-it-works.html">How it works</a>
+      <a data-nav href="faq.html">FAQ</a>
+      <a data-nav href="poll.html">Product Poll</a>
+      <a data-nav href="request.html">Request placement</a>
+    </nav>
+
+    <div class="drawer__foot">
+      Minimal, fully managed, venue-first placement.
+    </div>
+  </div>
+</div>
 
 <main>
 
 <!-- HERO -->
 <section class="hero">
   <div class="container hero__grid">
-
     <div>
       <div class="kicker">DIRECT PLACEMENT • FULLY MANAGED</div>
 
@@ -53,7 +74,7 @@
         A clean, cashless snack and beverage amenity—installed and managed end-to-end.
       </p>
 
-      <!-- CTA #1 (KEEP) -->
+      <!-- CTA #1 -->
       <div class="hero__cta">
         <a class="btn btn--gold" href="request.html">Request placement</a>
         <a class="btn" href="venues.html">See venues</a>
@@ -62,25 +83,63 @@
       <ul class="bullets">
         <li>Hands-off for staff</li>
         <li>Cashless checkout</li>
-        <li>Curated mix</li>
+        <li>Curated product mix</li>
         <li>Ongoing restock + support</li>
       </ul>
     </div>
 
-    <!-- SIDE PANEL (INFO ONLY, CTA REMOVED) -->
     <aside class="panel">
       <div class="panel__k">WHY SMARTPOD</div>
       <h3>Clean, premium amenity</h3>
       <p>
-        A reliable on-site option for residents, guests, and staff—without added workload.
+        A reliable on-site option for residents, guests, and staff—without adding workload.
       </p>
       <ul>
-        <li>Professional placement + signage</li>
-        <li>Stocking + support included</li>
-        <li>Mix tailored to your venue</li>
+        <li>Professional placement</li>
+        <li>Stocking and service included</li>
+        <li>Tailored to your audience</li>
       </ul>
     </aside>
+  </div>
+</section>
 
+<!-- NEW SECTION -->
+<section class="section section--soft">
+  <div class="container">
+    <h2 class="h2">A managed amenity—without operational burden.</h2>
+    <p class="p">
+      We coordinate placement, stocking, and ongoing support so your team doesn’t take on new responsibilities.
+    </p>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Placement & fit</h3>
+        <p>
+          Traffic flow, access, power, and servicing path are confirmed before installation.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Stocking & curation</h3>
+        <p>
+          Snack and beverage selections are tailored to your audience and refined over time.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Service & reliability</h3>
+        <p>
+          Restocking, maintenance, and support are handled directly by SmartPod.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Payments & access</h3>
+        <p>
+          Cashless checkout with clear pricing and intuitive user experience.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -89,29 +148,29 @@
   <div class="container">
     <h2 class="h2">Built for premium, high-traffic spaces.</h2>
     <p class="p">
-      We confirm fit (traffic, access, power, servicing path), then manage the rest.
+      We confirm fit, then manage everything from install through ongoing service.
     </p>
 
     <div class="grid2">
       <div class="card">
         <h3>Apartments</h3>
-        <p>Resident amenity in lobbies, gyms, and clubrooms.</p>
+        <p>Resident amenity for lobbies, gyms, and clubrooms.</p>
       </div>
       <div class="card">
         <h3>Offices</h3>
-        <p>Breakroom convenience without staff workload.</p>
+        <p>Breakroom convenience without staff oversight.</p>
       </div>
       <div class="card">
-        <h3>Gyms + studios</h3>
-        <p>Fast checkout with performance-friendly mix.</p>
+        <h3>Gyms & studios</h3>
+        <p>Fast checkout with performance-friendly options.</p>
       </div>
       <div class="card">
         <h3>Hotels</h3>
-        <p>Guest-friendly access with consistent service.</p>
+        <p>Guest-friendly access with consistent stocking.</p>
       </div>
     </div>
 
-    <!-- CTA #2 (KEEP – FINAL DECISION CTA) -->
+    <!-- CTA #2 -->
     <div style="margin-top:20px;">
       <a class="btn btn--gold" href="request.html">Request placement</a>
     </div>
@@ -135,4 +194,3 @@
 <script src="site.js"></script>
 </body>
 </html>
-
