@@ -11,38 +11,39 @@
       --muted:#94a3b8;
       --text:#e5e7eb;
       --accent:#f59e0b;
+      --accent2:#60a5fa;
       --border:rgba(148,163,184,.18);
       --shadow:0 20px 60px rgba(0,0,0,.35);
       --radius:18px;
+      --field: rgba(2,6,23,.35);
     }
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background: radial-gradient(1200px 600px at 20% -10%, rgba(245,158,11,.18), transparent 55%),
-                  radial-gradient(900px 500px at 95% 0%, rgba(59,130,246,.14), transparent 55%),
+                  radial-gradient(900px 500px at 95% 0%, rgba(96,165,250,.14), transparent 55%),
                   var(--bg);
       color:var(--text);
       min-height:100vh;
       display:flex;
-      align-items:center;
+      align-items:flex-start;
       justify-content:center;
       padding:28px;
     }
-    .wrap{width:min(980px,100%)}
+    .wrap{width:min(1040px,100%)}
     header{
       display:flex; gap:16px; align-items:center; justify-content:space-between;
       margin-bottom:18px;
     }
-    .brand{
-      display:flex; gap:12px; align-items:center;
-    }
+    .brand{display:flex; gap:12px; align-items:center;}
     .logo{
-      width:44px; height:44px; border-radius:12px;
+      width:46px; height:46px; border-radius:14px;
       background: linear-gradient(145deg, rgba(245,158,11,.22), rgba(245,158,11,.05));
       border:1px solid var(--border);
       display:grid; place-items:center;
       box-shadow: var(--shadow);
+      overflow:hidden;
     }
     .brand h1{font-size:18px; margin:0}
     .brand p{margin:2px 0 0; color:var(--muted); font-size:13px}
@@ -54,25 +55,21 @@
       overflow:hidden;
     }
     .card-top{
-      padding:22px 22px 12px;
+      padding:22px 22px 14px;
       border-bottom:1px solid var(--border);
     }
     .card-top h2{margin:0; font-size:20px}
-    .card-top .sub{margin:8px 0 0; color:var(--muted); font-size:14px; line-height:1.45}
+    .card-top .sub{margin:10px 0 0; color:var(--muted); font-size:14px; line-height:1.45}
     form{padding:18px 22px 22px}
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-    @media (max-width: 760px){
+    .grid{display:grid; grid-template-columns: 1fr 1fr; gap:14px;}
+    @media (max-width: 860px){
       .grid{grid-template-columns:1fr}
       header{flex-direction:column; align-items:flex-start}
     }
     label{display:block; font-size:13px; color:var(--muted); margin:0 0 8px}
     input[type="text"], input[type="email"], textarea, select{
       width:100%;
-      background: rgba(2,6,23,.35);
+      background: var(--field);
       border:1px solid var(--border);
       color:var(--text);
       border-radius:12px;
@@ -80,13 +77,80 @@
       outline:none;
     }
     textarea{min-height:92px; resize:vertical}
-    .section{margin-top:14px}
-    .section-title{display:flex; align-items:center; justify-content:space-between; margin-bottom:8px}
-    .section-title span{font-size:13px; color:var(--muted)}
+    .toolbar{
+      display:flex; gap:10px; align-items:center; justify-content:space-between;
+      margin-top:14px;
+      padding:12px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background: rgba(2,6,23,.22);
+      flex-wrap:wrap;
+    }
+    .toolbar .left{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .toolbar .right{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.22);
+      background: rgba(255,255,255,.02);
+      font-size:12px;
+      color:var(--muted);
+    }
+    .btn{
+      border:0;
+      border-radius:12px;
+      padding:10px 12px;
+      font-weight:600;
+      cursor:pointer;
+      background: transparent;
+      border:1px solid var(--border);
+      color:var(--text);
+      font-size:13px;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(245,158,11,.95), rgba(245,158,11,.72));
+      color:#111827;
+      border:0;
+    }
+    .sections{margin-top:14px; display:grid; gap:12px;}
+    details{
+      border:1px solid var(--border);
+      border-radius:14px;
+      background: rgba(2,6,23,.20);
+      overflow:hidden;
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      padding:14px 14px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px;
+      user-select:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    .sum-left{display:flex; flex-direction:column; gap:4px}
+    .sum-title{font-size:14px; color:var(--text); font-weight:700}
+    .sum-sub{font-size:12px; color:var(--muted)}
+    .sum-meta{
+      display:flex; align-items:center; gap:10px;
+      font-size:12px; color:var(--muted);
+      white-space:nowrap;
+    }
+    .count-pill{
+      border:1px solid rgba(148,163,184,.22);
+      border-radius:999px;
+      padding:6px 10px;
+      background: rgba(255,255,255,.02);
+      color:var(--muted);
+    }
+    .section-body{
+      padding:0 14px 14px;
+      border-top:1px solid var(--border);
+    }
     .pills{
       display:flex; flex-wrap:wrap; gap:10px;
-      padding:12px; border:1px solid var(--border);
-      border-radius:12px; background: rgba(2,6,23,.25);
+      padding-top:12px;
     }
     .pill{
       position:relative;
@@ -99,28 +163,18 @@
       user-select:none;
       transition:.15s transform, .15s border-color;
       font-size:13px;
+      color:var(--text);
     }
     .pill:hover{transform: translateY(-1px); border-color: rgba(245,158,11,.35)}
     .pill input{accent-color: var(--accent)}
+    .muted-help{color:var(--muted); font-size:12px; margin-top:10px; line-height:1.45}
+    .section-actions{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end;
+      padding-top:12px;
+    }
     .actions{
       display:flex; gap:12px; align-items:center; justify-content:flex-end;
       margin-top:16px;
-    }
-    button{
-      border:0;
-      border-radius:12px;
-      padding:12px 14px;
-      font-weight:600;
-      cursor:pointer;
-    }
-    .btn-primary{
-      background: linear-gradient(135deg, rgba(245,158,11,.95), rgba(245,158,11,.72));
-      color:#111827;
-    }
-    .btn-ghost{
-      background: transparent;
-      border:1px solid var(--border);
-      color:var(--text);
     }
     .status{
       margin-top:12px;
@@ -136,6 +190,7 @@
       font-size:12px;
     }
     a{color:var(--accent); text-decoration:none}
+    .divider{height:1px;background:var(--border);margin:14px 0}
   </style>
 </head>
 <body>
@@ -143,9 +198,10 @@
     <header>
       <div class="brand">
         <div class="logo" aria-hidden="true">
-          <!-- Replace with your SVG/logo if desired -->
+          <!-- Optional: replace with your logo image -->
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
             <path d="M7 7h10v10H7z" stroke="rgba(245,158,11,.95)" stroke-width="2"/>
+            <path d="M4 12h3M17 12h3M12 4v3M12 17v3" stroke="rgba(96,165,250,.85)" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
         <div>
@@ -153,28 +209,32 @@
           <p>Product & drink request poll</p>
         </div>
       </div>
-      <div style="color:var(--muted); font-size:13px">
-        Results go to your Google Sheet (no email required)
-      </div>
+      <div class="chip">Results saved to your Google Sheet</div>
     </header>
 
     <div class="card">
       <div class="card-top">
         <h2>What would you like us to stock?</h2>
         <div class="sub">
-          Select as many as you want. Use “Other requests” for specifics (flavor, size, brand).
+          Select all items you would buy at this location. Use “Other requests” for specific brands/flavors/sizes or dietary needs.
         </div>
       </div>
 
       <form id="pollForm">
         <div class="grid">
           <div>
-            <label for="location">Site / Location</label>
+            <label for="site">Site / Property (required)</label>
+            <input id="site" name="site" type="text" placeholder="Example: Bayview Apartments" required />
+          </div>
+          <div>
+            <label for="location">Placement area (required)</label>
             <select id="location" name="location" required>
               <option value="">Select…</option>
               <option>Lobby</option>
               <option>Breakroom</option>
               <option>Fitness Center</option>
+              <option>Mailroom</option>
+              <option>Leasing Office</option>
               <option>Other / Not listed</option>
             </select>
           </div>
@@ -182,64 +242,39 @@
             <label for="name">Name (optional)</label>
             <input id="name" name="name" type="text" placeholder="Your name" />
           </div>
-          <div style="grid-column: 1 / -1;">
+          <div>
             <label for="email">Email (optional)</label>
             <input id="email" name="email" type="email" placeholder="you@email.com" />
           </div>
         </div>
 
-        <div class="section">
-          <div class="section-title">
-            <span>Drinks</span><span>Select multiple</span>
+        <div class="toolbar">
+          <div class="left">
+            <span class="chip">Search items</span>
+            <input id="search" type="text" placeholder="Type to filter (e.g., Celsius, chips, protein)..." style="width:min(520px,100%);"/>
           </div>
-          <div class="pills" id="drinksGroup">
-            <!-- Drinks (edit freely) -->
-            <label class="pill"><input type="checkbox" value="Water" /> Water</label>
-            <label class="pill"><input type="checkbox" value="Sparkling Water" /> Sparkling Water</label>
-            <label class="pill"><input type="checkbox" value="Diet Soda" /> Diet Soda</label>
-            <label class="pill"><input type="checkbox" value="Regular Soda" /> Regular Soda</label>
-            <label class="pill"><input type="checkbox" value="Iced Coffee" /> Iced Coffee</label>
-            <label class="pill"><input type="checkbox" value="Cold Brew" /> Cold Brew</label>
-            <label class="pill"><input type="checkbox" value="Protein Shake" /> Protein Shake</label>
-            <label class="pill"><input type="checkbox" value="Sports Drink" /> Sports Drink</label>
-            <label class="pill"><input type="checkbox" value="Energy Drink (Zero Sugar)" /> Energy Drink (Zero Sugar)</label>
-            <label class="pill"><input type="checkbox" value="Energy Drink (Regular)" /> Energy Drink (Regular)</label>
-            <label class="pill"><input type="checkbox" value="Tea (Unsweetened)" /> Tea (Unsweetened)</label>
-            <label class="pill"><input type="checkbox" value="Tea (Sweetened)" /> Tea (Sweetened)</label>
-            <label class="pill"><input type="checkbox" value="Juice" /> Juice</label>
-            <label class="pill"><input type="checkbox" value="Kombucha" /> Kombucha</label>
+          <div class="right">
+            <button class="btn" type="button" id="expandAll">Expand all</button>
+            <button class="btn" type="button" id="collapseAll">Collapse all</button>
+            <button class="btn" type="button" id="clearAll">Clear selections</button>
           </div>
         </div>
 
-        <div class="section">
-          <div class="section-title">
-            <span>Snacks</span><span>Select multiple</span>
-          </div>
-          <div class="pills" id="snacksGroup">
-            <!-- Snacks (edit freely) -->
-            <label class="pill"><input type="checkbox" value="Chips" /> Chips</label>
-            <label class="pill"><input type="checkbox" value="Trail Mix" /> Trail Mix</label>
-            <label class="pill"><input type="checkbox" value="Protein Bar" /> Protein Bar</label>
-            <label class="pill"><input type="checkbox" value="Granola Bar" /> Granola Bar</label>
-            <label class="pill"><input type="checkbox" value="Nuts" /> Nuts</label>
-            <label class="pill"><input type="checkbox" value="Beef Jerky" /> Beef Jerky</label>
-            <label class="pill"><input type="checkbox" value="Candy" /> Candy</label>
-            <label class="pill"><input type="checkbox" value="Cookies" /> Cookies</label>
-            <label class="pill"><input type="checkbox" value="Crackers" /> Crackers</label>
-            <label class="pill"><input type="checkbox" value="Popcorn" /> Popcorn</label>
-            <label class="pill"><input type="checkbox" value="Fruit Snacks" /> Fruit Snacks</label>
-            <label class="pill"><input type="checkbox" value="Healthy Chips" /> Healthy Chips</label>
-          </div>
-        </div>
+        <div class="sections" id="sections"></div>
+
+        <div class="divider"></div>
 
         <div class="section">
-          <label for="other">Other requests (brands, flavors, healthy options)</label>
-          <textarea id="other" name="other" placeholder="Example: Celsius (Arctic Vibe), Quest chips, Fairlife protein, etc."></textarea>
+          <label for="other">Other requests (brands, flavors, sizes, dietary needs)</label>
+          <textarea id="other" name="other" placeholder="Example: Celsius (Arctic Vibe), Quest chips, Fairlife Core Power 26g, low-sugar snacks, gluten-free options, etc."></textarea>
+          <div class="muted-help">
+            Optional: include dietary preferences (low sugar, high protein, vegan, gluten-free), and preferred sizes (12 oz can, 16.9 oz bottle, etc.).
+          </div>
         </div>
 
         <div class="actions">
-          <button class="btn-ghost" type="reset">Reset</button>
-          <button class="btn-primary" type="submit">Submit request</button>
+          <button class="btn" type="reset">Reset</button>
+          <button class="btn primary" type="submit">Submit request</button>
         </div>
 
         <div id="status" class="status"></div>
@@ -247,41 +282,458 @@
     </div>
 
     <footer>
-      Tip: You can create a dashboard in Google Sheets (charts + pivot tables) for site-specific demand.
+      Tip: In Google Sheets, create a pivot table by category to see top requested items by site/location.
     </footer>
   </div>
 
   <script>
-    const WEB_APP_URL = https://script.google.com/macros/s/AKfycbzqLRlPPMRPtSCtSE03qkFUhKWXqOkzyC94qoMj3xrF0Nhp4qsCLjPxRpdsdCGIr8kxFg/exec; // <-- paste Apps Script Web App URL
+    // 1) PASTE YOUR APPS SCRIPT WEB APP URL HERE:
+    const WEB_APP_URL = "YOUR_WEB_APP_URL_HERE";
 
-    function getCheckedValues(containerId) {
-      const container = document.getElementById(containerId);
-      const checks = container.querySelectorAll('input[type="checkbox"]:checked');
-      return Array.from(checks).map(x => x.value);
+    // 2) Product catalog (common vending + smart cooler demand)
+    // Keep names consistent for clean reporting in Google Sheets.
+    const CATALOG = [
+      {
+        key: "energy_zero",
+        title: "Energy drinks (Zero / Low Sugar)",
+        subtitle: "High demand; separate from regular for clean trend reporting",
+        items: [
+          "Celsius",
+          "Alani Nu",
+          "Ghost Energy",
+          "Prime Energy",
+          "Monster Zero Ultra",
+          "Reign Total Body Fuel",
+          "Bang (Zero Sugar)",
+          "Rockstar Pure Zero",
+          "Red Bull Sugarfree",
+          "ZOA Energy",
+          "Other zero-sugar energy"
+        ]
+      },
+      {
+        key: "energy_regular",
+        title: "Energy drinks (Regular)",
+        subtitle: "Classic options (often best sellers in industrial/warehouse sites)",
+        items: [
+          "Red Bull (Original)",
+          "Red Bull (Flavored)",
+          "Monster Energy (Original)",
+          "Monster (Flavored)",
+          "Rockstar Original",
+          "NOS Energy",
+          "Full Throttle",
+          "Other regular energy"
+        ]
+      },
+      {
+        key: "soda_regular",
+        title: "Soda (Regular)",
+        subtitle: "Core vending staples",
+        items: [
+          "Coca-Cola",
+          "Pepsi",
+          "Sprite",
+          "Dr Pepper",
+          "Mountain Dew",
+          "Fanta",
+          "Root Beer",
+          "Ginger Ale",
+          "Other regular soda"
+        ]
+      },
+      {
+        key: "soda_zero",
+        title: "Soda (Diet / Zero)",
+        subtitle: "Office and healthcare locations often prefer zero",
+        items: [
+          "Diet Coke",
+          "Coke Zero",
+          "Diet Pepsi",
+          "Pepsi Zero",
+          "Sprite Zero",
+          "Dr Pepper Zero",
+          "Other diet/zero soda"
+        ]
+      },
+      {
+        key: "water",
+        title: "Water",
+        subtitle: "Always stocked; add premium options if demand exists",
+        items: [
+          "Bottled Water (16–20 oz)",
+          "Smartwater",
+          "Essentia / Alkaline Water",
+          "Electrolyte Water",
+          "Flavored Water (still)",
+          "Other water"
+        ]
+      },
+      {
+        key: "sparkling",
+        title: "Sparkling water",
+        subtitle: "Popular in offices, gyms, and apartment lobbies",
+        items: [
+          "LaCroix",
+          "Bubly",
+          "Waterloo",
+          "Spindrift",
+          "AHA",
+          "Other sparkling water"
+        ]
+      },
+      {
+        key: "sports_functional",
+        title: "Sports & functional drinks",
+        subtitle: "Hydration + performance drinks",
+        items: [
+          "Gatorade",
+          "Gatorade Zero",
+          "Powerade",
+          "BodyArmor",
+          "BodyArmor Lyte",
+          "Propel",
+          "Vitaminwater",
+          "Electrolit",
+          "Prime Hydration",
+          "Other sports/functional drink"
+        ]
+      },
+      {
+        key: "coffee_tea",
+        title: "Coffee & tea (ready-to-drink)",
+        subtitle: "Great upsell category; strong morning demand",
+        items: [
+          "Starbucks Frappuccino",
+          "Starbucks Cold Brew",
+          "Dunkin’ Iced Coffee",
+          "La Colombe Cold Brew",
+          "Canned Coffee (other)",
+          "Sweet Tea",
+          "Unsweetened Tea",
+          "Green Tea",
+          "Yerba Mate",
+          "Other coffee/tea"
+        ]
+      },
+      {
+        key: "protein_drinks",
+        title: "Protein & meal-replacement drinks",
+        subtitle: "High margin; popular in gyms and healthcare",
+        items: [
+          "Fairlife Core Power",
+          "Fairlife Nutrition Plan",
+          "Muscle Milk",
+          "Premier Protein",
+          "Orgain Protein",
+          "OWYN (plant-based)",
+          "Ensure / Boost",
+          "Other protein drink"
+        ]
+      },
+      {
+        key: "juice",
+        title: "Juice & smoothies",
+        subtitle: "Family-friendly / apartment locations",
+        items: [
+          "Orange Juice",
+          "Apple Juice",
+          "Cranberry Juice",
+          "Lemonade",
+          "Naked Juice / Smoothies",
+          "Other juice/smoothie"
+        ]
+      },
+      {
+        key: "chips",
+        title: "Chips & salty snacks",
+        subtitle: "Top vending sellers; include baked + better-for-you",
+        items: [
+          "Lay’s",
+          "Doritos",
+          "Cheetos",
+          "Ruffles",
+          "Fritos",
+          "Pringles",
+          "Pretzels",
+          "Popcorn",
+          "Baked Chips",
+          "Pita Chips",
+          "Other chips/salty snack"
+        ]
+      },
+      {
+        key: "bars",
+        title: "Bars (protein, granola, meal bars)",
+        subtitle: "Strong demand in offices and gyms",
+        items: [
+          "Quest Protein Bar",
+          "RXBAR",
+          "KIND Bar",
+          "Clif Bar",
+          "Nature Valley",
+          "Nutri-Grain",
+          "Larabar",
+          "Other bar"
+        ]
+      },
+      {
+        key: "nuts_jerky",
+        title: "Nuts, trail mix & jerky",
+        subtitle: "High-protein snack category",
+        items: [
+          "Mixed Nuts",
+          "Almonds",
+          "Cashews",
+          "Peanuts",
+          "Trail Mix",
+          "Beef Jerky",
+          "Turkey Jerky",
+          "Other nuts/jerky"
+        ]
+      },
+      {
+        key: "candy",
+        title: "Candy & chocolate",
+        subtitle: "Classic vending staples",
+        items: [
+          "Snickers",
+          "Reese’s",
+          "Kit Kat",
+          "Twix",
+          "M&M’s",
+          "Skittles",
+          "Starburst",
+          "Gummies",
+          "Other candy"
+        ]
+      },
+      {
+        key: "cookies_pastries",
+        title: "Cookies, pastries & sweet snacks",
+        subtitle: "Add variety for higher conversion",
+        items: [
+          "Oreo",
+          "Chips Ahoy!",
+          "Famous Amos",
+          "Rice Krispies Treat",
+          "Brownies",
+          "Muffins / Pastries",
+          "Other cookies/pastries"
+        ]
+      },
+      {
+        key: "better_for_you",
+        title: "Better-for-you snacks",
+        subtitle: "Great for healthcare and wellness-focused sites",
+        items: [
+          "Low-sugar snacks",
+          "Keto snacks",
+          "Gluten-free snacks",
+          "Vegan snacks",
+          "Dried fruit",
+          "Fruit cups",
+          "Yogurt snacks",
+          "Other better-for-you snack"
+        ]
+      },
+      {
+        key: "gum_mints",
+        title: "Gum & mints",
+        subtitle: "Small-ticket add-ons (high margin)",
+        items: [
+          "Mint gum",
+          "Fruit gum",
+          "Mints (peppermint)",
+          "Mints (breath strips)",
+          "Other gum/mints"
+        ]
+      },
+      {
+        key: "fresh_optional",
+        title: "Fresh / premium cooler items (optional)",
+        subtitle: "Select only if you would buy chilled fresh items here",
+        items: [
+          "Fresh sandwich",
+          "Wrap",
+          "Salad",
+          "Yogurt cup",
+          "Fresh fruit",
+          "Overnight oats",
+          "Hard-boiled eggs",
+          "Hummus & pretzel pack",
+          "Cheese & crackers pack",
+          "Other fresh item"
+        ]
+      }
+    ];
+
+    // --- UI rendering ---
+    const sectionsEl = document.getElementById('sections');
+    const searchEl = document.getElementById('search');
+
+    function escapeHtml(str){
+      return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[s]));
+    }
+
+    function renderCatalog(){
+      sectionsEl.innerHTML = CATALOG.map((cat, idx) => {
+        const pills = cat.items.map(item => {
+          const safe = escapeHtml(item);
+          return `<label class="pill" data-item="${safe.toLowerCase()}" data-cat="${cat.key}">
+                    <input type="checkbox" name="${cat.key}" value="${safe}" />
+                    <span>${safe}</span>
+                  </label>`;
+        }).join("");
+
+        return `<details ${idx < 2 ? "open" : ""} data-section="${cat.key}">
+                  <summary>
+                    <div class="sum-left">
+                      <div class="sum-title">${escapeHtml(cat.title)}</div>
+                      <div class="sum-sub">${escapeHtml(cat.subtitle)}</div>
+                    </div>
+                    <div class="sum-meta">
+                      <span class="count-pill"><span id="count-${cat.key}">0</span> selected</span>
+                    </div>
+                  </summary>
+                  <div class="section-body">
+                    <div class="pills">${pills}</div>
+                    <div class="section-actions">
+                      <button class="btn" type="button" data-select-all="${cat.key}">Select all</button>
+                      <button class="btn" type="button" data-clear="${cat.key}">Clear</button>
+                    </div>
+                  </div>
+                </details>`;
+      }).join("");
+
+      attachSectionHandlers();
+      updateAllCounts();
+    }
+
+    function attachSectionHandlers(){
+      // per-category select/clear
+      sectionsEl.querySelectorAll('[data-select-all]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-select-all');
+          sectionsEl.querySelectorAll(`input[name="${key}"]`).forEach(cb => cb.checked = true);
+          updateCount(key);
+        });
+      });
+
+      sectionsEl.querySelectorAll('[data-clear]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-clear');
+          sectionsEl.querySelectorAll(`input[name="${key}"]`).forEach(cb => cb.checked = false);
+          updateCount(key);
+        });
+      });
+
+      // update count on change
+      sectionsEl.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        cb.addEventListener('change', () => updateCount(cb.name));
+      });
+    }
+
+    function updateCount(key){
+      const checked = sectionsEl.querySelectorAll(`input[name="${key}"]:checked`).length;
+      const el = document.getElementById(`count-${key}`);
+      if (el) el.textContent = String(checked);
+    }
+
+    function updateAllCounts(){
+      CATALOG.forEach(cat => updateCount(cat.key));
+    }
+
+    // search filter across all items
+    function applySearchFilter(q){
+      const query = q.trim().toLowerCase();
+      const pills = sectionsEl.querySelectorAll('.pill');
+      if (!query){
+        pills.forEach(p => p.style.display = "");
+        return;
+      }
+      pills.forEach(p => {
+        const item = (p.getAttribute('data-item') || "");
+        p.style.display = item.includes(query) ? "" : "none";
+      });
+    }
+
+    // top toolbar buttons
+    document.getElementById('expandAll').addEventListener('click', () => {
+      sectionsEl.querySelectorAll('details').forEach(d => d.open = true);
+    });
+    document.getElementById('collapseAll').addEventListener('click', () => {
+      sectionsEl.querySelectorAll('details').forEach(d => d.open = false);
+    });
+    document.getElementById('clearAll').addEventListener('click', () => {
+      sectionsEl.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+      updateAllCounts();
+    });
+
+    searchEl.addEventListener('input', (e) => applySearchFilter(e.target.value));
+
+    // --- Submission ---
+    function getCheckedValuesByCategory(){
+      const out = {};
+      CATALOG.forEach(cat => {
+        const checked = Array.from(sectionsEl.querySelectorAll(`input[name="${cat.key}"]:checked`))
+          .map(cb => cb.value);
+        out[cat.key] = checked;
+      });
+      return out;
+    }
+
+    function flattenSelections(selectionsByCat){
+      // Creates a clean object: { "Energy drinks (Zero/Low Sugar)": ["Celsius", ...], ... }
+      const out = {};
+      CATALOG.forEach(cat => {
+        out[cat.title] = selectionsByCat[cat.key] || [];
+      });
+      return out;
     }
 
     const form = document.getElementById('pollForm');
     const statusEl = document.getElementById('status');
+
+    form.addEventListener('reset', () => {
+      setTimeout(() => {
+        updateAllCounts();
+        applySearchFilter(searchEl.value || "");
+        statusEl.textContent = "";
+        statusEl.className = "status";
+      }, 0);
+    });
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       statusEl.textContent = "Submitting…";
       statusEl.className = "status";
 
-      const payload = {
-        location: document.getElementById('location').value,
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        drinks: getCheckedValues('drinksGroup'),
-        snacks: getCheckedValues('snacksGroup'),
-        other: document.getElementById('other').value
-      };
-
-      if (!payload.location) {
-        statusEl.textContent = "Please select a site/location.";
+      const site = document.getElementById('site').value.trim();
+      const location = document.getElementById('location').value;
+      if (!site || !location) {
+        statusEl.textContent = "Please enter the site/property and select a placement area.";
         statusEl.className = "status error";
         return;
       }
+
+      if (!WEB_APP_URL || WEB_APP_URL.includes("YOUR_WEB_APP_URL_HERE")) {
+        statusEl.textContent = "Setup error: WEB_APP_URL is not set in poll.html.";
+        statusEl.className = "status error";
+        return;
+      }
+
+      const selectionsByCat = getCheckedValuesByCategory();
+      const flattened = flattenSelections(selectionsByCat);
+
+      const payload = {
+        site,
+        location,
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        selections: flattened, // object by category
+        other: document.getElementById('other').value.trim()
+      };
 
       try {
         const res = await fetch(WEB_APP_URL, {
@@ -305,6 +757,9 @@
         statusEl.className = "status error";
       }
     });
+
+    // Initial render
+    renderCatalog();
   </script>
 </body>
 </html>
