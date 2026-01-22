@@ -556,3 +556,103 @@ input:focus, textarea:focus, select:focus{
 }
 
 
+
+
+
+
+/* ===== Steps (Home – How it works at a glance) ===== */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.step {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 22px;
+  position: relative;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.step:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 158, 11, 0.35);
+  background: rgba(255,255,255,0.04);
+}
+
+.step__icon {
+  width: 42px;
+  height: 42px;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.step__icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 1.6;
+}
+
+.step h3 {
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+
+.step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.step::before {
+  content: attr(data-step);
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.35);
+}
+
+@media (min-width: 980px) {
+  .steps.steps--timeline {
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+  }
+
+  .steps.steps--timeline::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: 54px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(245,158,11,0.0),
+      rgba(245,158,11,0.35),
+      rgba(245,158,11,0.0)
+    );
+  }
+}
+
+/* Inline link */
+.link {
+  color: rgba(245, 158, 11, 0.95);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.35);
+}
+.link:hover {
+  border-bottom-color: rgba(245, 158, 11, 0.7);
+}
+
