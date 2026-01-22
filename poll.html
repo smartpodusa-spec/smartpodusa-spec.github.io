@@ -709,12 +709,12 @@
         statusEl.className = "status error";
         return;
       }
+if (!WEB_APP_URL || WEB_APP_URL.includes("https://script.google.com/macros/s/AKfycbzqLRlPPMRPtSCtSE03qkFUhKWXqOkzyC94qoMj3xrF0Nhp4qsCLjPxRpdsdCGIr8kxFg/exec")) {
+  statusEl.textContent = "Setup error: WEB_APP_URL is not set in poll.html.";
+  ...
+  return;
+}
 
-      if (!WEB_APP_URL || WEB_APP_URL.includes("https://script.google.com/macros/s/AKfycbzqLRlPPMRPtSCtSE03qkFUhKWXqOkzyC94qoMj3xrF0Nhp4qsCLjPxRpdsdCGIr8kxFg/exec")) {
-        statusEl.textContent = "Setup error: WEB_APP_URL is not set in poll.html.";
-        statusEl.className = "status error";
-        return;
-      }
 
       const selectionsByCat = getCheckedValuesByCategory();
       const flattened = flattenSelections(selectionsByCat);
