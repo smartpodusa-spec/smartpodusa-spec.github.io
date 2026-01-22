@@ -37,16 +37,9 @@
       margin-bottom:18px;
     }
     .brand{display:flex; gap:12px; align-items:center;}
-    .logo{
-      width:46px; height:46px; border-radius:14px;
-      background: linear-gradient(145deg, rgba(245,158,11,.22), rgba(245,158,11,.05));
-      border:1px solid var(--border);
-      display:grid; place-items:center;
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
     .brand h1{font-size:18px; margin:0}
     .brand p{margin:2px 0 0; color:var(--muted); font-size:13px}
+
     .card{
       background: rgba(18,26,42,.92);
       border:1px solid var(--border);
@@ -77,6 +70,7 @@
       outline:none;
     }
     textarea{min-height:92px; resize:vertical}
+
     .toolbar{
       display:flex; gap:10px; align-items:center; justify-content:space-between;
       margin-top:14px;
@@ -113,6 +107,7 @@
       color:#111827;
       border:0;
     }
+
     .sections{margin-top:14px; display:grid; gap:12px;}
     details{
       border:1px solid var(--border);
@@ -172,6 +167,7 @@
       display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end;
       padding-top:12px;
     }
+
     .actions{
       display:flex; gap:12px; align-items:center; justify-content:flex-end;
       margin-top:16px;
@@ -184,12 +180,6 @@
     }
     .success{color:#86efac}
     .error{color:#fca5a5}
-    footer{
-      margin-top:12px;
-      color:var(--muted);
-      font-size:12px;
-    }
-    a{color:var(--accent); text-decoration:none}
     .divider{height:1px;background:var(--border);margin:14px 0}
   </style>
 </head>
@@ -202,7 +192,6 @@
           <p>Product & drink request poll</p>
         </div>
       </div>
-  
     </header>
 
     <div class="card">
@@ -273,292 +262,50 @@
         <div id="status" class="status"></div>
       </form>
     </div>
-
-    <footer>
-    
-    </footer>
   </div>
 
   <script>
-    // 1) PASTE YOUR APPS SCRIPT WEB APP URL HERE:
+    // 1) Your Apps Script Web App URL (keep the quotes)
     const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzqLRlPPMRPtSCtSE03qkFUhKWXqOkzyC94qoMj3xrF0Nhp4qsCLjPxRpdsdCGIr8kxFg/exec";
 
-    // 2) Product catalog (common vending + smart cooler demand)
-    // Keep names consistent for clean reporting in Google Sheets.
+    // 2) Catalog
     const CATALOG = [
-      {
-        key: "energy_zero",
-        title: "Energy drinks (Zero / Low Sugar)",
-        subtitle: "High demand; separate from regular for clean trend reporting",
-        items: [
-          "Celsius",
-          "Alani Nu",
-          "Ghost Energy",
-          "Prime Energy",
-          "Monster Zero Ultra",
-          "Reign Total Body Fuel",
-          "Bang (Zero Sugar)",
-          "Rockstar Pure Zero",
-          "Red Bull Sugarfree",
-          "ZOA Energy",
-          "Other zero-sugar energy"
-        ]
-      },
-      {
-        key: "energy_regular",
-        title: "Energy drinks (Regular)",
-        subtitle: "Classic options (often best sellers in industrial/warehouse sites)",
-        items: [
-          "Red Bull (Original)",
-          "Red Bull (Flavored)",
-          "Monster Energy (Original)",
-          "Monster (Flavored)",
-          "Rockstar Original",
-          "NOS Energy",
-          "Full Throttle",
-          "Other regular energy"
-        ]
-      },
-      {
-        key: "soda_regular",
-        title: "Soda (Regular)",
-        subtitle: "Core vending staples",
-        items: [
-          "Coca-Cola",
-          "Pepsi",
-          "Sprite",
-          "Dr Pepper",
-          "Mountain Dew",
-          "Fanta",
-          "Root Beer",
-          "Ginger Ale",
-          "Other regular soda"
-        ]
-      },
-      {
-        key: "soda_zero",
-        title: "Soda (Diet / Zero)",
-        subtitle: "Office and healthcare locations often prefer zero",
-        items: [
-          "Diet Coke",
-          "Coke Zero",
-          "Diet Pepsi",
-          "Pepsi Zero",
-          "Sprite Zero",
-          "Dr Pepper Zero",
-          "Other diet/zero soda"
-        ]
-      },
-      {
-        key: "water",
-        title: "Water",
-        subtitle: "Always stocked; add premium options if demand exists",
-        items: [
-          "Bottled Water (16–20 oz)",
-          "Smartwater",
-          "Essentia / Alkaline Water",
-          "Electrolyte Water",
-          "Flavored Water (still)",
-          "Other water"
-        ]
-      },
-      {
-        key: "sparkling",
-        title: "Sparkling water",
-        subtitle: "Popular in offices, gyms, and apartment lobbies",
-        items: [
-          "LaCroix",
-          "Bubly",
-          "Waterloo",
-          "Spindrift",
-          "AHA",
-          "Other sparkling water"
-        ]
-      },
-      {
-        key: "sports_functional",
-        title: "Sports & functional drinks",
-        subtitle: "Hydration + performance drinks",
-        items: [
-          "Gatorade",
-          "Gatorade Zero",
-          "Powerade",
-          "BodyArmor",
-          "BodyArmor Lyte",
-          "Propel",
-          "Vitaminwater",
-          "Electrolit",
-          "Prime Hydration",
-          "Other sports/functional drink"
-        ]
-      },
-      {
-        key: "coffee_tea",
-        title: "Coffee & tea (ready-to-drink)",
-        subtitle: "Great upsell category; strong morning demand",
-        items: [
-          "Starbucks Frappuccino",
-          "Starbucks Cold Brew",
-          "Dunkin’ Iced Coffee",
-          "La Colombe Cold Brew",
-          "Canned Coffee (other)",
-          "Sweet Tea",
-          "Unsweetened Tea",
-          "Green Tea",
-          "Yerba Mate",
-          "Other coffee/tea"
-        ]
-      },
-      {
-        key: "protein_drinks",
-        title: "Protein & meal-replacement drinks",
-        subtitle: "High margin; popular in gyms and healthcare",
-        items: [
-          "Fairlife Core Power",
-          "Fairlife Nutrition Plan",
-          "Muscle Milk",
-          "Premier Protein",
-          "Orgain Protein",
-          "OWYN (plant-based)",
-          "Ensure / Boost",
-          "Other protein drink"
-        ]
-      },
-      {
-        key: "juice",
-        title: "Juice & smoothies",
-        subtitle: "Family-friendly / apartment locations",
-        items: [
-          "Orange Juice",
-          "Apple Juice",
-          "Cranberry Juice",
-          "Lemonade",
-          "Naked Juice / Smoothies",
-          "Other juice/smoothie"
-        ]
-      },
-      {
-        key: "chips",
-        title: "Chips & salty snacks",
-        subtitle: "Top vending sellers; include baked + better-for-you",
-        items: [
-          "Lay’s",
-          "Doritos",
-          "Cheetos",
-          "Ruffles",
-          "Fritos",
-          "Pringles",
-          "Pretzels",
-          "Popcorn",
-          "Baked Chips",
-          "Pita Chips",
-          "Other chips/salty snack"
-        ]
-      },
-      {
-        key: "bars",
-        title: "Bars (protein, granola, meal bars)",
-        subtitle: "Strong demand in offices and gyms",
-        items: [
-          "Quest Protein Bar",
-          "RXBAR",
-          "KIND Bar",
-          "Clif Bar",
-          "Nature Valley",
-          "Nutri-Grain",
-          "Larabar",
-          "Other bar"
-        ]
-      },
-      {
-        key: "nuts_jerky",
-        title: "Nuts, trail mix & jerky",
-        subtitle: "High-protein snack category",
-        items: [
-          "Mixed Nuts",
-          "Almonds",
-          "Cashews",
-          "Peanuts",
-          "Trail Mix",
-          "Beef Jerky",
-          "Turkey Jerky",
-          "Other nuts/jerky"
-        ]
-      },
-      {
-        key: "candy",
-        title: "Candy & chocolate",
-        subtitle: "Classic vending staples",
-        items: [
-          "Snickers",
-          "Reese’s",
-          "Kit Kat",
-          "Twix",
-          "M&M’s",
-          "Skittles",
-          "Starburst",
-          "Gummies",
-          "Other candy"
-        ]
-      },
-      {
-        key: "cookies_pastries",
-        title: "Cookies, pastries & sweet snacks",
-        subtitle: "Add variety for higher conversion",
-        items: [
-          "Oreo",
-          "Chips Ahoy!",
-          "Famous Amos",
-          "Rice Krispies Treat",
-          "Brownies",
-          "Muffins / Pastries",
-          "Other cookies/pastries"
-        ]
-      },
-      {
-        key: "better_for_you",
-        title: "Better-for-you snacks",
-        subtitle: "Great for healthcare and wellness-focused sites",
-        items: [
-          "Low-sugar snacks",
-          "Keto snacks",
-          "Gluten-free snacks",
-          "Vegan snacks",
-          "Dried fruit",
-          "Fruit cups",
-          "Yogurt snacks",
-          "Other better-for-you snack"
-        ]
-      },
-      {
-        key: "gum_mints",
-        title: "Gum & mints",
-        subtitle: "Small-ticket add-ons (high margin)",
-        items: [
-          "Mint gum",
-          "Fruit gum",
-          "Mints (peppermint)",
-          "Mints (breath strips)",
-          "Other gum/mints"
-        ]
-      },
-      {
-        key: "fresh_optional",
-        title: "Fresh / premium cooler items (optional)",
-        subtitle: "Select only if you would buy chilled fresh items here",
-        items: [
-          "Fresh sandwich",
-          "Wrap",
-          "Salad",
-          "Yogurt cup",
-          "Fresh fruit",
-          "Overnight oats",
-          "Hard-boiled eggs",
-          "Hummus & pretzel pack",
-          "Cheese & crackers pack",
-          "Other fresh item"
-        ]
-      }
+      { key:"energy_zero", title:"Energy drinks (Zero / Low Sugar)", subtitle:"High demand; separate from regular for clean trend reporting",
+        items:["Celsius","Alani Nu","Ghost Energy","Prime Energy","Monster Zero Ultra","Reign Total Body Fuel","Bang (Zero Sugar)","Rockstar Pure Zero","Red Bull Sugarfree","ZOA Energy","Other zero-sugar energy"] },
+      { key:"energy_regular", title:"Energy drinks (Regular)", subtitle:"Classic options (often best sellers in industrial/warehouse sites)",
+        items:["Red Bull (Original)","Red Bull (Flavored)","Monster Energy (Original)","Monster (Flavored)","Rockstar Original","NOS Energy","Full Throttle","Other regular energy"] },
+      { key:"soda_regular", title:"Soda (Regular)", subtitle:"Core vending staples",
+        items:["Coca-Cola","Pepsi","Sprite","Dr Pepper","Mountain Dew","Fanta","Root Beer","Ginger Ale","Other regular soda"] },
+      { key:"soda_zero", title:"Soda (Diet / Zero)", subtitle:"Office and healthcare locations often prefer zero",
+        items:["Diet Coke","Coke Zero","Diet Pepsi","Pepsi Zero","Sprite Zero","Dr Pepper Zero","Other diet/zero soda"] },
+      { key:"water", title:"Water", subtitle:"Always stocked; add premium options if demand exists",
+        items:["Bottled Water (16–20 oz)","Smartwater","Essentia / Alkaline Water","Electrolyte Water","Flavored Water (still)","Other water"] },
+      { key:"sparkling", title:"Sparkling water", subtitle:"Popular in offices, gyms, and apartment lobbies",
+        items:["LaCroix","Bubly","Waterloo","Spindrift","AHA","Other sparkling water"] },
+      { key:"sports_functional", title:"Sports & functional drinks", subtitle:"Hydration + performance drinks",
+        items:["Gatorade","Gatorade Zero","Powerade","BodyArmor","BodyArmor Lyte","Propel","Vitaminwater","Electrolit","Prime Hydration","Other sports/functional drink"] },
+      { key:"coffee_tea", title:"Coffee & tea (ready-to-drink)", subtitle:"Great upsell category; strong morning demand",
+        items:["Starbucks Frappuccino","Starbucks Cold Brew","Dunkin’ Iced Coffee","La Colombe Cold Brew","Canned Coffee (other)","Sweet Tea","Unsweetened Tea","Green Tea","Yerba Mate","Other coffee/tea"] },
+      { key:"protein_drinks", title:"Protein & meal-replacement drinks", subtitle:"High margin; popular in gyms and healthcare",
+        items:["Fairlife Core Power","Fairlife Nutrition Plan","Muscle Milk","Premier Protein","Orgain Protein","OWYN (plant-based)","Ensure / Boost","Other protein drink"] },
+      { key:"juice", title:"Juice & smoothies", subtitle:"Family-friendly / apartment locations",
+        items:["Orange Juice","Apple Juice","Cranberry Juice","Lemonade","Naked Juice / Smoothies","Other juice/smoothie"] },
+      { key:"chips", title:"Chips & salty snacks", subtitle:"Top vending sellers; include baked + better-for-you",
+        items:["Lay’s","Doritos","Cheetos","Ruffles","Fritos","Pringles","Pretzels","Popcorn","Baked Chips","Pita Chips","Other chips/salty snack"] },
+      { key:"bars", title:"Bars (protein, granola, meal bars)", subtitle:"Strong demand in offices and gyms",
+        items:["Quest Protein Bar","RXBAR","KIND Bar","Clif Bar","Nature Valley","Nutri-Grain","Larabar","Other bar"] },
+      { key:"nuts_jerky", title:"Nuts, trail mix & jerky", subtitle:"High-protein snack category",
+        items:["Mixed Nuts","Almonds","Cashews","Peanuts","Trail Mix","Beef Jerky","Turkey Jerky","Other nuts/jerky"] },
+      { key:"candy", title:"Candy & chocolate", subtitle:"Classic vending staples",
+        items:["Snickers","Reese’s","Kit Kat","Twix","M&M’s","Skittles","Starburst","Gummies","Other candy"] },
+      { key:"cookies_pastries", title:"Cookies, pastries & sweet snacks", subtitle:"Add variety for higher conversion",
+        items:["Oreo","Chips Ahoy!","Famous Amos","Rice Krispies Treat","Brownies","Muffins / Pastries","Other cookies/pastries"] },
+      { key:"better_for_you", title:"Better-for-you snacks", subtitle:"Great for healthcare and wellness-focused sites",
+        items:["Low-sugar snacks","Keto snacks","Gluten-free snacks","Vegan snacks","Dried fruit","Fruit cups","Yogurt snacks","Other better-for-you snack"] },
+      { key:"gum_mints", title:"Gum & mints", subtitle:"Small-ticket add-ons (high margin)",
+        items:["Mint gum","Fruit gum","Mints (peppermint)","Mints (breath strips)","Other gum/mints"] },
+      { key:"fresh_optional", title:"Fresh / premium cooler items (optional)", subtitle:"Select only if you would buy chilled fresh items here",
+        items:["Fresh sandwich","Wrap","Salad","Yogurt cup","Fresh fruit","Overnight oats","Hard-boiled eggs","Hummus & pretzel pack","Cheese & crackers pack","Other fresh item"] }
     ];
 
     // --- UI rendering ---
@@ -572,10 +319,11 @@
     function renderCatalog(){
       sectionsEl.innerHTML = CATALOG.map((cat, idx) => {
         const pills = cat.items.map(item => {
-          const safe = escapeHtml(item);
-          return `<label class="pill" data-item="${safe.toLowerCase()}" data-cat="${cat.key}">
-                    <input type="checkbox" name="${cat.key}" value="${safe}" />
-                    <span>${safe}</span>
+          const safeText = escapeHtml(item);
+          const dataItem = item.toLowerCase(); // use raw item for searching (no HTML entities)
+          return `<label class="pill" data-item="${escapeHtml(dataItem)}" data-cat="${cat.key}">
+                    <input type="checkbox" name="${cat.key}" value="${safeText}" />
+                    <span>${safeText}</span>
                   </label>`;
         }).join("");
 
@@ -601,10 +349,10 @@
 
       attachSectionHandlers();
       updateAllCounts();
+      applySearchFilter(searchEl.value || "");
     }
 
     function attachSectionHandlers(){
-      // per-category select/clear
       sectionsEl.querySelectorAll('[data-select-all]').forEach(btn => {
         btn.addEventListener('click', () => {
           const key = btn.getAttribute('data-select-all');
@@ -621,7 +369,6 @@
         });
       });
 
-      // update count on change
       sectionsEl.querySelectorAll('input[type="checkbox"]').forEach(cb => {
         cb.addEventListener('change', () => updateCount(cb.name));
       });
@@ -637,9 +384,8 @@
       CATALOG.forEach(cat => updateCount(cat.key));
     }
 
-    // search filter across all items
     function applySearchFilter(q){
-      const query = q.trim().toLowerCase();
+      const query = (q || "").trim().toLowerCase();
       const pills = sectionsEl.querySelectorAll('.pill');
       if (!query){
         pills.forEach(p => p.style.display = "");
@@ -651,7 +397,7 @@
       });
     }
 
-    // top toolbar buttons
+    // toolbar buttons
     document.getElementById('expandAll').addEventListener('click', () => {
       sectionsEl.querySelectorAll('details').forEach(d => d.open = true);
     });
@@ -669,19 +415,14 @@
     function getCheckedValuesByCategory(){
       const out = {};
       CATALOG.forEach(cat => {
-        const checked = Array.from(sectionsEl.querySelectorAll(`input[name="${cat.key}"]:checked`))
-          .map(cb => cb.value);
-        out[cat.key] = checked;
+        out[cat.key] = Array.from(sectionsEl.querySelectorAll(`input[name="${cat.key}"]:checked`)).map(cb => cb.value);
       });
       return out;
     }
 
     function flattenSelections(selectionsByCat){
-      // Creates a clean object: { "Energy drinks (Zero/Low Sugar)": ["Celsius", ...], ... }
       const out = {};
-      CATALOG.forEach(cat => {
-        out[cat.title] = selectionsByCat[cat.key] || [];
-      });
+      CATALOG.forEach(cat => { out[cat.title] = selectionsByCat[cat.key] || []; });
       return out;
     }
 
@@ -704,27 +445,29 @@
 
       const site = document.getElementById('site').value.trim();
       const location = document.getElementById('location').value;
+
       if (!site || !location) {
         statusEl.textContent = "Please enter the site/property and select a placement area.";
         statusEl.className = "status error";
         return;
       }
-if (!WEB_APP_URL || WEB_APP_URL.includes("https://script.google.com/macros/s/AKfycbzqLRlPPMRPtSCtSE03qkFUhKWXqOkzyC94qoMj3xrF0Nhp4qsCLjPxRpdsdCGIr8kxFg/exec")) {
-  statusEl.textContent = "Setup error: WEB_APP_URL is not set in poll.html.";
-  ...
-  return;
-}
 
+      // FIXED: do NOT block when WEB_APP_URL is set.
+      // Only block if it's empty or still a placeholder.
+      if (!WEB_APP_URL || !/^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test(WEB_APP_URL)) {
+        statusEl.textContent = "Setup error: WEB_APP_URL is missing or invalid.";
+        statusEl.className = "status error";
+        return;
+      }
 
-      const selectionsByCat = getCheckedValuesByCategory();
-      const flattened = flattenSelections(selectionsByCat);
+      const flattened = flattenSelections(getCheckedValuesByCategory());
 
       const payload = {
         site,
         location,
         name: document.getElementById('name').value.trim(),
         email: document.getElementById('email').value.trim(),
-        selections: flattened, // object by category
+        selections: flattened,
         other: document.getElementById('other').value.trim()
       };
 
@@ -735,14 +478,16 @@ if (!WEB_APP_URL || WEB_APP_URL.includes("https://script.google.com/macros/s/AKf
           body: JSON.stringify(payload)
         });
 
-        const json = await res.json().catch(() => ({}));
+        const text = await res.text();
+        let json = {};
+        try { json = JSON.parse(text); } catch {}
 
         if (res.ok && json.ok) {
           statusEl.textContent = "Submitted. Thank you.";
           statusEl.className = "status success";
           form.reset();
         } else {
-          statusEl.textContent = "Submission failed. Please try again.";
+          statusEl.textContent = "Submission failed. " + (json.error ? String(json.error) : "Please try again.");
           statusEl.className = "status error";
         }
       } catch (err) {
@@ -751,7 +496,7 @@ if (!WEB_APP_URL || WEB_APP_URL.includes("https://script.google.com/macros/s/AKf
       }
     });
 
-    // Initial render
+    // render sections (required for Expand/Collapse to work)
     renderCatalog();
   </script>
 </body>
