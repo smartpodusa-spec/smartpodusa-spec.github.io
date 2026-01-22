@@ -4,162 +4,134 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SmartPod USA | Fully Managed Smart Vending</title>
-  <meta name="description" content="SmartPod USA provides fully managed smart vending for premium locations. We install, stock, service, and optimize." />
+  <meta name="description" content="SmartPod USA provides fully managed smart vending for premium locations." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body data-theme="onyx">
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="SmartPod USA home">
-        <span class="brand__mark" aria-hidden="true">
-          <img src="assets/logo-sp.svg" alt="SmartPod logo" class="brand__logo" />
-        </span>
+<body data-theme="onyx" class="home">
 
-        <span class="brand__stack">
-          <span class="brand__name">SmartPod USA</span>
-          <span class="brand__tag">Fully Managed Smart Vending</span>
-        </span>
-      </a>
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="SmartPod USA home">
+      <span class="brand__mark">
+        <img src="assets/logo-sp.svg" alt="SmartPod logo" class="brand__logo" />
+      </span>
+      <span class="brand__stack">
+        <span class="brand__name">SmartPod USA</span>
+        <span class="brand__tag">Fully Managed Smart Vending</span>
+      </span>
+    </a>
 
-      <!-- Simplified top nav -->
-      <nav class="nav" aria-label="Primary">
-        <a data-nav href="venues.html">Venues</a>
-        <a data-nav href="how-it-works.html">How it works</a>
-        <a data-nav href="faq.html">FAQ</a>
-      </nav>
+    <nav class="nav">
+      <a href="venues.html">Venues</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
 
-      <div class="header__actions">
-        <a class="btn btn--gold" href="request.html" data-nav>Request placement</a>
-        <button class="btn btn--ghost" id="menuOpen" type="button">Menu</button>
+    <!-- Header CTA REMOVED on homepage -->
+    <button class="btn btn--ghost" id="menuOpen">Menu</button>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero__grid">
+
+    <div>
+      <div class="kicker">DIRECT PLACEMENT • FULLY MANAGED</div>
+
+      <h1 class="hero__title">
+        Premium smart vending for <span class="sheen">modern</span> spaces.
+      </h1>
+
+      <p class="hero__sub">
+        A clean, cashless snack and beverage amenity—installed and managed end-to-end.
+      </p>
+
+      <!-- CTA #1 (KEEP) -->
+      <div class="hero__cta">
+        <a class="btn btn--gold" href="request.html">Request placement</a>
+        <a class="btn" href="venues.html">See venues</a>
+      </div>
+
+      <ul class="bullets">
+        <li>Hands-off for staff</li>
+        <li>Cashless checkout</li>
+        <li>Curated mix</li>
+        <li>Ongoing restock + support</li>
+      </ul>
+    </div>
+
+    <!-- SIDE PANEL (INFO ONLY, CTA REMOVED) -->
+    <aside class="panel">
+      <div class="panel__k">WHY SMARTPOD</div>
+      <h3>Clean, premium amenity</h3>
+      <p>
+        A reliable on-site option for residents, guests, and staff—without added workload.
+      </p>
+      <ul>
+        <li>Professional placement + signage</li>
+        <li>Stocking + support included</li>
+        <li>Mix tailored to your venue</li>
+      </ul>
+    </aside>
+
+  </div>
+</section>
+
+<!-- VENUES -->
+<section class="section">
+  <div class="container">
+    <h2 class="h2">Built for premium, high-traffic spaces.</h2>
+    <p class="p">
+      We confirm fit (traffic, access, power, servicing path), then manage the rest.
+    </p>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Apartments</h3>
+        <p>Resident amenity in lobbies, gyms, and clubrooms.</p>
+      </div>
+      <div class="card">
+        <h3>Offices</h3>
+        <p>Breakroom convenience without staff workload.</p>
+      </div>
+      <div class="card">
+        <h3>Gyms + studios</h3>
+        <p>Fast checkout with performance-friendly mix.</p>
+      </div>
+      <div class="card">
+        <h3>Hotels</h3>
+        <p>Guest-friendly access with consistent service.</p>
       </div>
     </div>
-  </header>
 
-  <!-- Drawer -->
-  <div class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
-      <div class="drawer__top">
-        <div>
-          <div class="drawer__title">SmartPod USA</div>
-        </div>
-        <button class="btn" id="menuClose" type="button">Close</button>
-      </div>
-
-      <nav class="drawer__nav" aria-label="Menu links">
-        <a data-nav href="index.html">Home</a>
-        <a data-nav href="venues.html">Venues</a>
-        <a data-nav href="how-it-works.html">How it works</a>
-        <a data-nav href="faq.html">FAQ</a>
-        <a data-nav href="poll.html">Product Poll</a>
-        <a data-nav href="request.html">Request placement</a>
-        <!-- Contact removed as a primary page; keep if you still want it -->
-        <!-- <a data-nav href="contact.html">Contact</a> -->
-      </nav>
-
-      <div class="drawer__foot">
-        Minimal, fully managed, venue-first placement.
-      </div>
+    <!-- CTA #2 (KEEP – FINAL DECISION CTA) -->
+    <div style="margin-top:20px;">
+      <a class="btn btn--gold" href="request.html">Request placement</a>
     </div>
   </div>
+</section>
 
-  <main>
-    <section class="hero">
-      <div class="container hero__grid">
-        <div>
-          <div class="kicker">DIRECT PLACEMENT • FULLY MANAGED</div>
+</main>
 
-          <h1 class="hero__title">
-            Premium smart vending for <span class="sheen">modern</span> spaces.
-          </h1>
-
-          <p class="hero__sub">
-            A clean, cashless snack + beverage amenity—installed and managed end-to-end for your location.
-          </p>
-
-          <!-- One primary CTA + one secondary -->
-          <div class="hero__cta">
-            <a class="btn btn--gold" href="request.html">Request placement</a>
-            <a class="btn" href="venues.html">See venues</a>
-          </div>
-
-          <ul class="bullets" aria-label="Key points">
-            <li>Hands-off for staff</li>
-            <li>Cashless checkout</li>
-            <li>Curated mix</li>
-            <li>Ongoing restock + support</li>
-          </ul>
-        </div>
-
-        <!-- Remove “View solutions” to avoid redundant path -->
-        <aside class="panel">
-          <div class="panel__k">WHY SMARTPOD</div>
-          <h3>Clean, premium amenity</h3>
-          <p>
-            A reliable on-site option for residents, guests, and staff—without adding tasks to your team.
-          </p>
-          <ul>
-            <li>Professional placement + signage</li>
-            <li>Stocking + support included</li>
-            <li>Mix tailored to your venue</li>
-          </ul>
-          <div style="margin-top:14px;">
-            <a class="btn btn--gold" href="request.html">Request placement</a>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Replace redundant ops cards with “Built for…” venue-fit section -->
-    <section class="section">
-      <div class="container">
-        <h2 class="h2">Built for premium, high-traffic spaces.</h2>
-        <p class="p">We confirm fit (traffic, access, power, servicing path), then manage the rest.</p>
-
-        <div class="grid2">
-          <div class="card">
-            <h3>Apartments</h3>
-            <p>Resident amenity in lobbies, gyms, and clubrooms.</p>
-          </div>
-          <div class="card">
-            <h3>Offices</h3>
-            <p>Breakroom convenience without added staff workload.</p>
-          </div>
-          <div class="card">
-            <h3>Gyms + studios</h3>
-            <p>Fast checkout and curated, performance-friendly mix.</p>
-          </div>
-          <div class="card">
-            <h3>Hotels</h3>
-            <p>Guest-friendly access with consistent stocking and service.</p>
-          </div>
-        </div>
-
-        <!-- Single CTA at end of section -->
-        <div style="margin-top:18px;">
-          <a class="btn btn--gold" href="request.html">Request placement</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__row">
-      <div class="footer__left">© <span data-year></span> SmartPod USA. All rights reserved.</div>
-      <div class="footer__links">
-        <a data-nav href="venues.html">Venues</a>
-        <a data-nav href="how-it-works.html">How it works</a>
-        <a data-nav href="faq.html">FAQ</a>
-        <a data-nav href="request.html">Request placement</a>
-        <!-- Optional: keep Product Poll in footer only -->
-        <a data-nav href="poll.html">Product Poll</a>
-      </div>
+<footer class="footer">
+  <div class="container footer__row">
+    <div>© <span data-year></span> SmartPod USA. All rights reserved.</div>
+    <div class="footer__links">
+      <a href="venues.html">Venues</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="poll.html">Product Poll</a>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script src="site.js"></script>
+<script src="site.js"></script>
 </body>
 </html>
