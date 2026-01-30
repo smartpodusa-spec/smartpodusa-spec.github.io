@@ -1,67 +1,148 @@
 <!doctype html>
+<!-- =========================
+FILE: products.html
+========================= -->
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SmartPod USA — Product Poll</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Keep your existing styles.css or inline styles -->
+  <title>Products | SmartPod USA</title>
+  <meta name="description" content="SmartPod stocks curated snacks, drinks, protein options, and grab-and-go favorites. Submit product preferences for your location." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body data-theme="onyx">
+<body>
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="SmartPod USA home">
+      <span class="brand__mark">SP</span>
+      <span class="brand__name">SmartPod USA</span>
+    </a>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="index.html">
-        <span class="brand__name">SmartPod USA</span>
-        <span class="brand__tag">Product &amp; drink request poll</span>
-      </a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="how-it-works.html">How it works</a>
+      <a href="products.html" aria-current="page">Products</a>
+      <a href="faq.html">FAQ</a>
+      <a class="btn btn--cta" href="contact.html">Request Placement</a>
+    </nav>
 
-      <nav class="nav">
-        <a href="venues.html">Venues</a>
-        <a href="how-it-works.html">How it works</a>
-        <a href="faq.html">FAQ</a>
-        <a href="product-poll.html" aria-current="page">Product poll</a>
-      </nav>
+    <button class="menuBtn" type="button" onclick="toggleMenu()">Menu</button>
+  </div>
 
-      <a class="btn btn--gold" href="request.html">Request placement</a>
-    </div>
-  </header>
+  <div class="mobileNav" id="mobileNav">
+    <a href="how-it-works.html" onclick="toggleMenu()">How it works</a>
+    <a href="products.html" onclick="toggleMenu()">Products</a>
+    <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+    <a class="btn btn--cta" href="contact.html" onclick="toggleMenu()">Request Placement</a>
+  </div>
+</header>
 
-  <!-- MAIN -->
-  <main class="section">
+<main>
+  <section class="section">
     <div class="container">
+      <div class="section__head">
+        <h1>Products your customers actually want</h1>
+        <p class="muted">We stock popular snacks, drinks, protein options, and grab-and-go favorites. Product mix can be tailored by venue type and demand.</p>
+      </div>
 
-      <div class="card">
-        <div class="card-top">
-          <h2>What would you like us to stock?</h2>
-          <p class="sub">
-            Select all items you would buy at this location. Use “Other requests”
-            for specific brands, flavors, sizes, or dietary needs.
-          </p>
+      <div class="grid3">
+        <div class="card">
+          <h3>Drinks</h3>
+          <p>Water, electrolyte, coffee/energy, and everyday favorites (where appropriate).</p>
+        </div>
+        <div class="card">
+          <h3>Snacks</h3>
+          <p>Sweet + salty staples, plus better-for-you options.</p>
+        </div>
+        <div class="card">
+          <h3>Protein</h3>
+          <p>Bars and shakes for busy schedules and gym settings.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div>
+          <h3>Want a specific mix?</h3>
+          <p>Send preferences below (brand + flavor + size helps).</p>
+        </div>
+        <a class="btn btn--primary" href="contact.html">Request Placement</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUGGESTION FORM -->
+  <section class="section section--alt">
+    <div class="container dividerTop">
+      <div class="section__head">
+        <h2>Submit product preferences</h2>
+        <p class="muted">For venues with SmartPod installed (or in review). One request can include multiple items.</p>
+      </div>
+
+      <!-- IMPORTANT:
+           This is a basic mailto form by default. If you use Formspree or another service,
+           replace the action="" with your endpoint and remove "mailto:" approach.
+      -->      
+<form class="form" method="POST" action="https://formspree.io/f/xkogdqkz">
+        <div class="grid2">
+          <label>
+            Product type
+            <select name="Product Type">
+              <option>Drinks</option>
+              <option>Snacks</option>
+              <option>Protein</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>
+            Category
+            <input name="Category" placeholder="e.g., Water / Hydration, Energy, Chips, Bars" />
+          </label>
         </div>
 
-        <form id="pollForm">
-          <!-- YOUR EXISTING POLL CONTENT STAYS HERE -->
-          <!-- (inputs, sections, JS logic unchanged) -->
-        </form>
-      </div>
+        <label>
+          Suggested item(s)
+          <textarea name="Suggested Items" placeholder="Example: Celsius Peach Vibe 12oz; Fairlife Core Power 26g; Quest Chili Lime Tortilla Chips"></textarea>
+        </label>
 
+        <div class="grid2">
+          <label>
+            Venue (optional)
+            <input name="Venue" placeholder="Gym / Hotel / Office / Apartments (optional)" />
+          </label>
+
+          <label>
+            Location (optional)
+            <input name="City/State" placeholder="City, State (optional)" />
+          </label>
+        </div>
+
+        <button class="btn btn--primary btn--block" type="submit">Send preferences</button>
+
+        <p class="tiny" style="margin-top:10px;">
+          If you want QR stickers for on-site requests, use the private print page (not linked publicly).
+        </p>
+  <form class="form" method="POST" action="https://formspree.io/f/xkogdqkz">
+  <input type="hidden" name="_redirect" value="https://www.smartpodusa.com/thanks.html">
+
+  <!-- rest of your fields... -->
+      </form>
     </div>
-  </main>
+  </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer__row">
+    <div class="container footer__bottom">
+      <p class="muted">© <span id="year"></span> SmartPod USA. All rights reserved.</p>
+    </div>
+  </footer>
+</main>
 
-      <!-- Bottom left -->
-      <div class="footer__left">
-        © 2026 SmartPod USA. All rights reserved.
-      </div>
-
-      <!-- Bottom right (correct order) -->
-      <div class="footer__links">
-        <a href="index.html">Home</a>
-        <a href="venues.html">Venues</a>
+<script src="app.js"></script>
+</body>
+</html>
