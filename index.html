@@ -21,17 +21,16 @@
       </span>
       <span class="brand__stack">
         <span class="brand__name">SmartPod USA</span>
-        <span class="brand__tag">Fully Managed Smart Vending</span>
+        <span class="brand__tag">Fully Managed Smart Micro-Markets</span>
       </span>
     </a>
 
-    <nav class="nav">
-      <a href="venues.html">Venues</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="faq.html">FAQ</a>
-    </nav>
+    <!-- Top center links removed -->
 
-    <button class="btn btn--ghost" id="menuOpen" type="button">Menu</button>
+    <div class="header__actions">
+      <button class="btn btn--ghost" id="menuOpen" type="button">Menu</button>
+      <a class="btn btn--gold" href="request.html" data-nav>Request placement</a>
+    </div>
   </div>
 </header>
 
@@ -48,7 +47,8 @@
       <a data-nav href="venues.html">Venues</a>
       <a data-nav href="how-it-works.html">How it works</a>
       <a data-nav href="faq.html">FAQ</a>
-      <a data-nav href="poll.html">Product Poll</a>
+      <a data-nav href="product-poll.html">Product poll</a>
+      <a data-nav href="contact.html">Contact</a>
       <a data-nav href="request.html">Request placement</a>
     </nav>
 
@@ -60,154 +60,151 @@
 
 <main>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container hero__grid">
-    <div>
-      <div class="kicker">DIRECT PLACEMENT • FULLY MANAGED</div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <div class="kicker">DIRECT PLACEMENT • FULLY MANAGED</div>
 
-      <h1 class="hero__title">
-        Premium smart vending for <span class="sheen">modern</span> spaces.
-      </h1>
+        <h1 class="hero__title">
+          Premium smart vending for <span class="sheen">modern</span> spaces.
+        </h1>
 
-      <p class="hero__sub">
-        A clean, cashless snack and beverage amenity—installed and managed end-to-end.
-      </p>
+        <p class="hero__sub">
+          A clean, cashless snack and beverage amenity—installed and managed end-to-end.
+        </p>
 
-      <!-- CTA #1 -->
-      <div class="hero__cta">
-        <a class="btn btn--gold" href="request.html">Request placement</a>
-        <a class="btn" href="venues.html">See venues</a>
+        <div class="hero__cta">
+          <a class="btn btn--gold" href="request.html">Request placement</a>
+          <a class="btn" href="venues.html">See venues</a>
+        </div>
+
+        <ul class="bullets">
+          <li>Hands-off for staff</li>
+          <li>Cashless checkout</li>
+          <li>Curated product mix</li>
+          <li>Ongoing restock + support</li>
+        </ul>
       </div>
 
-      <ul class="bullets">
-        <li>Hands-off for staff</li>
-        <li>Cashless checkout</li>
-        <li>Curated product mix</li>
-        <li>Ongoing restock + support</li>
-      </ul>
+      <aside class="panel">
+        <div class="panel__k">WHY SMARTPOD</div>
+        <h3>Clean, premium amenity</h3>
+        <p>
+          A reliable on-site option for residents, guests, and staff—without adding workload.
+        </p>
+        <ul>
+          <li>Professional placement</li>
+          <li>Stocking and service included</li>
+          <li>Tailored to your audience</li>
+        </ul>
+      </aside>
     </div>
-
-    <aside class="panel">
-      <div class="panel__k">WHY SMARTPOD</div>
-      <h3>Clean, premium amenity</h3>
-      <p>
-        A reliable on-site option for residents, guests, and staff—without adding workload.
-      </p>
-      <ul>
-        <li>Professional placement</li>
-        <li>Stocking and service included</li>
-        <li>Tailored to your audience</li>
-      </ul>
-    </aside>
-  </div>
-</section>
-
+  </section>
 
   <section class="section section--soft">
-  <div class="container">
-    <h2 class="h2">Simple, self-serve experience.</h2>
-    <p class="p">
-      A fast, intuitive flow designed for everyday use—no cashier, no friction.
-    </p>
+    <div class="container">
+      <h2 class="h2">Simple, self-serve experience.</h2>
+      <p class="p">
+        A fast, intuitive flow designed for everyday use—no cashier, no friction.
+      </p>
 
-    <div class="steps steps--timeline">
-      <div class="step" data-step="1">
-        <div class="step__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M12 3v18M5 8c0-2.8 3-5 7-5M7 11c0-1.7 2-3 5-3" />
-            <rect x="2" y="6" width="20" height="12" rx="2" />
-          </svg>
+      <div class="steps steps--timeline">
+        <div class="step" data-step="1">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 3v18M5 8c0-2.8 3-5 7-5M7 11c0-1.7 2-3 5-3" />
+              <rect x="2" y="6" width="20" height="12" rx="2" />
+            </svg>
+          </div>
+          <h3>Tap or swipe</h3>
+          <p>Start your session using a card, phone, or digital wallet.</p>
         </div>
-        <h3>Tap or swipe</h3>
-        <p>Start your session using a card, phone, or digital wallet.</p>
+
+        <div class="step" data-step="2">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M6 7h12l-1 14H7L6 7z" />
+              <path d="M9 7a3 3 0 0 1 6 0" />
+            </svg>
+          </div>
+          <h3>Grab items</h3>
+          <p>Take what you want—snacks and drinks are automatically tracked.</p>
+        </div>
+
+        <div class="step" data-step="3">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M5 12l4 4L19 6" />
+              <rect x="2" y="3" width="20" height="18" rx="2" />
+            </svg>
+          </div>
+          <h3>Auto checkout</h3>
+          <p>Walk away—your purchase is completed automatically.</p>
+        </div>
       </div>
 
-      <div class="step" data-step="2">
-        <div class="step__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M6 7h12l-1 14H7L6 7z" />
-            <path d="M9 7a3 3 0 0 1 6 0" />
-          </svg>
-        </div>
-        <h3>Grab items</h3>
-        <p>Take what you want—snacks and drinks are automatically tracked.</p>
-      </div>
+      <p class="p" style="margin-top:14px;">
+        Want the details? <a href="how-it-works.html" class="link">See how it works</a>.
+      </p>
+    </div>
+  </section>
 
-      <div class="step" data-step="3">
-        <div class="step__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M5 12l4 4L19 6" />
-            <rect x="2" y="3" width="20" height="18" rx="2" />
-          </svg>
+  <section class="section section--soft">
+    <div class="container">
+      <h2 class="h2">A managed amenity—without operational burden.</h2>
+      <p class="p">
+        We coordinate placement, stocking, and ongoing support so your team doesn’t take on new responsibilities.
+      </p>
+
+      <div class="grid2">
+        <div class="card">
+          <h3>Placement & fit</h3>
+          <p>
+            Traffic flow, access, power, and servicing path are confirmed before installation.
+          </p>
         </div>
-        <h3>Auto checkout</h3>
-        <p>Walk away—your purchase is completed automatically.</p>
+
+        <div class="card">
+          <h3>Stocking & curation</h3>
+          <p>
+            Snack and beverage selections are tailored to your audience and refined over time.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Service & reliability</h3>
+          <p>
+            Restocking, maintenance, and support are handled directly by SmartPod.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Payments & access</h3>
+          <p>
+            Cashless checkout with clear pricing and intuitive user experience.
+          </p>
+        </div>
       </div>
     </div>
-
-    <p class="p" style="margin-top:14px;">
-      Want the details? <a href="how-it-works.html" class="link">See how it works</a>.
-    </p>
-  </div>
-</section>
-
-
-  
-<!-- NEW SECTION -->
-<section class="section section--soft">
-  <div class="container">
-    <h2 class="h2">A managed amenity—without operational burden.</h2>
-    <p class="p">
-      We coordinate placement, stocking, and ongoing support so your team doesn’t take on new responsibilities.
-    </p>
-
-    <div class="grid2">
-      <div class="card">
-        <h3>Placement & fit</h3>
-        <p>
-          Traffic flow, access, power, and servicing path are confirmed before installation.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Stocking & curation</h3>
-        <p>
-          Snack and beverage selections are tailored to your audience and refined over time.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Service & reliability</h3>
-        <p>
-          Restocking, maintenance, and support are handled directly by SmartPod.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Payments & access</h3>
-        <p>
-          Cashless checkout with clear pricing and intuitive user experience.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
+  </section>
 
 </main>
 
-
-  <footer class="footer">
+<footer class="footer">
   <div class="container footer__row">
     <div>© <span data-year></span> SmartPod USA. All rights reserved.</div>
     <div class="footer__links">
-      
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="venues.html">Venues</a>
+      <a data-nav href="how-it-works.html">How it works</a>
+      <a data-nav href="faq.html">FAQ</a>
+      <a data-nav href="product-poll.html">Product poll</a>
+      <a data-nav href="contact.html">Contact</a>
+      <a data-nav href="request.html">Request placement</a>
     </div>
   </div>
 </footer>
-
-
 
 <script src="site.js"></script>
 </body>
