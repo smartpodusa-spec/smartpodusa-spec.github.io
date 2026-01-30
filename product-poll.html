@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">  
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -183,31 +183,18 @@
     .divider{height:1px;background:var(--border);margin:14px 0}
   </style>
 </head>
-
-  
 <body>
   <div class="wrap">
+    <header>
+   <div class="brand">
+  <a href="https://smartpodusa.com" class="brand-link">
+    <h1>SmartPod USA</h1>
+    <p>Product & drink request poll</p>
+  </a>
+</div>
 
+    </header>
 
-
-
-
-
-
-
-
-    
-</nav>
-      </div>
-    </div>
-
-    <!-- keep your existing card below -->
-    <div class="card">
-
-
-      
-
-    
     <div class="card">
       <div class="card-top">
         <h2>What would you like us to stock?</h2>
@@ -513,48 +500,5 @@
     // render sections (required for Expand/Collapse to work)
     renderCatalog();
   </script>
-
-  <!-- existing poll JS above -->
-  <script>
-    // renderCatalog(), form submit, etc.
-  </script>
-
-  <!-- drawer menu JS (ADD THIS) -->
-  <script>
-    const drawer = document.getElementById('drawer');
-    const openBtn = document.getElementById('menuOpen');
-    const closeBtn = document.getElementById('menuClose');
-
-    function openDrawer(){
-      drawer.classList.add('is-open');
-      drawer.setAttribute('aria-hidden','false');
-    }
-    function closeDrawer(){
-      drawer.classList.remove('is-open');
-      drawer.setAttribute('aria-hidden','true');
-    }
-
-    openBtn?.addEventListener('click', openDrawer);
-    closeBtn?.addEventListener('click', closeDrawer);
-
-    // click outside panel closes
-    drawer?.addEventListener('click', (e) => {
-      if (e.target === drawer) closeDrawer();
-    });
-
-    // esc closes
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeDrawer();
-    });
-
-    // close after link click
-    drawer?.querySelectorAll('a')
-      .forEach(a => a.addEventListener('click', closeDrawer));
-  </script>
-</body>
-
-
-
-    
 </body>
 </html>
