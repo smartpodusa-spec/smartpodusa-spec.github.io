@@ -4,107 +4,160 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FAQ | SmartPod USA</title>
-  <meta name="description" content="SmartPod FAQ: costs, placement, requirements, and operations." />
+  <meta name="description" content="Clear answers about SmartPod USA’s fully managed smart micro-market service, placement requirements, and ongoing support." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body data-theme="onyx">
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="SmartPod USA home">
-        <span class="brand__mark" aria-hidden="true">
-  <img src="assets/logo-sp.svg" alt="SmartPod logo" class="brand__logo" />
-</span>
+<body data-theme="silk">
 
-        <span class="brand__stack">
-          <span class="brand__name">SmartPod USA</span>
-          <span class="brand__tag">Fully Managed Smart Vending</span>
-        </span>
-      </a>
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="SmartPod USA home">
+      <span class="brand__mark" aria-hidden="true">
+        <img src="assets/logo-sp.svg" alt="SmartPod logo" class="brand__logo" />
+      </span>
+      <span class="brand__stack">
+        <span class="brand__name">SmartPod USA</span>
+        <span class="brand__tag">Fully Managed Smart Micro-Markets</span>
+      </span>
+    </a>
 
-      <nav class="nav" aria-label="Primary">
-        <a data-nav href="how-it-works.html">How it works</a>
-        <a data-nav href="faq.html">FAQ</a>
-        <a data-nav href="contact.html">Contact</a>
-      </nav>
+    <!-- Top center nav intentionally removed -->
 
-      <div class="header__actions">
-        <a class="btn btn--gold" href="request.html" data-nav>Request placement</a>
-        <button class="btn btn--ghost" id="menuOpen" type="button">Menu</button>
-      </div>
-    </div>
-  </header>
-
-  <div class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
-      <div class="drawer__top">
-        <div class="drawer__title">Menu</div>
-        <button class="btn" id="menuClose" type="button">Close</button>
-      </div>
-      <nav class="drawer__nav" aria-label="Menu links">
-        <a data-nav href="index.html">Home</a>
-        <a data-nav href="solutions.html">Solutions</a>
-        <a data-nav href="venues.html">Venues</a>
-        <a data-nav href="how-it-works.html">How it works</a>
-        <a data-nav href="faq.html">FAQ</a>
-        <a data-nav href="contact.html">Contact</a>
-        <a data-nav href="request.html">Request placement</a>
-      </nav>
+    <div class="header__actions">
+      <button class="btn btn--ghost" id="menuOpen" type="button">Menu</button>
+      <a class="btn btn--gold" href="request.html" data-nav>Request placement</a>
     </div>
   </div>
+</header>
 
-  <main class="section">
-    <div class="container">
-      <div class="kicker">FAQ</div>
-      <h1 class="hero__title">Clear answers. <span class="sheen">No clutter.</span></h1>
-      <p class="p">If something is venue-specific, we confirm details during placement review.</p>
-
-      <div class="faq">
-        <details open>
-          <summary>Does it cost the venue to host a machine?</summary>
-          <p>Terms vary by venue and service scope; we confirm during the fit review.</p>
-        </details>
-        <details>
-          <summary>What do you need from the location?</summary>
-          <p>Basic access, power (if needed), and a servicing path; details confirmed during review.</p>
-        </details>
-        <details>
-          <summary>How do you decide what to stock?</summary>
-          <p>We start with a curated baseline, then adjust based on demand and feedback.</p>
-        </details>
-        <details>
-          <summary>Do you handle maintenance and support?</summary>
-          <p>Yes. We handle servicing and support as part of managed operations.</p>
-        </details>
-        <details>
-          <summary>Can a location request specific items?</summary>
-          <p>Yes. Add preferences in the placement request form, and we’ll review during fit.</p>
-        </details>
-      </div>
-
-      <div class="formActions">
-        <a class="btn btn--gold" href="request.html">Request placement</a>
-        <a class="btn" href="contact.html">Contact</a>
-      </div>
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="drawer__top">
+      <div class="drawer__title">Menu</div>
+      <button class="btn" id="menuClose" type="button">Close</button>
     </div>
-  </main>
+    <nav class="drawer__nav" aria-label="Menu links">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="venues.html">Venues</a>
+      <a data-nav href="how-it-works.html">How it works</a>
+      <a data-nav href="faq.html">FAQ</a>
+      <a data-nav href="product-poll.html">Product poll</a>
+      <a data-nav href="contact.html">Contact</a>
+      <a data-nav href="request.html">Request placement</a>
+    </nav>
+  </div>
+</div>
 
-  <footer class="footer">
-    <div class="container footer__row">
-      <div class="footer__left">© <span data-year></span> SmartPod USA. All rights reserved.</div>
-      <div class="footer__links">
-        <a data-nav href="solutions.html">Solutions</a>
-        <a data-nav href="venues.html">Venues</a>
-        <a data-nav href="how-it-works.html">How it works</a>
-        <a data-nav href="faq.html">FAQ</a>
-        <a data-nav href="contact.html">Contact</a>
-      </div>
+<main class="section">
+  <div class="container">
+    <div class="kicker">FAQ</div>
+    <h1 class="hero__title">Clear answers. No <span class="sheen">clutter</span>.</h1>
+    <p class="p p--muted">
+      If something is venue-specific, we confirm details during placement review.
+    </p>
+
+    <div class="faq">
+
+      <details>
+        <summary>Does it cost the venue to host a SmartPod?</summary>
+        <p class="p">
+          In many cases, no. Terms vary by venue type, traffic, and service scope. Final details are confirmed during fit review.
+        </p>
+      </details>
+
+      <details>
+        <summary>What does SmartPod USA manage?</summary>
+        <p class="p">
+          We handle installation coordination, stocking, maintenance, monitoring, and ongoing optimization.
+        </p>
+      </details>
+
+      <details>
+        <summary>What does the location need to provide?</summary>
+        <p class="p">
+          Typically a suitable footprint, standard power access, and a clear servicing path. Final requirements are reviewed before installation.
+        </p>
+      </details>
+
+      <details>
+        <summary>How do you decide what products to stock?</summary>
+        <p class="p">
+          Product mix is tailored to venue type, traffic patterns, and preferences. Inventory is adjusted over time based on demand.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can locations request specific items?</summary>
+        <p class="p">
+          Yes. We welcome feedback and item requests, subject to availability and performance.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do you handle maintenance and technical support?</summary>
+        <p class="p">
+          Yes. All maintenance, service, and technical support are handled by SmartPod USA.
+        </p>
+      </details>
+
+      <details>
+        <summary>What size equipment do you install?</summary>
+        <p class="p">
+          We deploy multiple unit sizes depending on space, traffic, and power. Final unit selection is confirmed during fit review.
+        </p>
+      </details>
+
+      <details>
+        <summary>What are the typical space and clearance requirements?</summary>
+        <p class="p">
+          Requirements vary by unit type. We review footprint, clearance, and access to ensure proper placement.
+        </p>
+      </details>
+
+      <details>
+        <summary>What power is required?</summary>
+        <p class="p">
+          Standard electrical power is usually sufficient. Exact requirements are confirmed prior to installation.
+        </p>
+      </details>
+
+      <details>
+        <summary>Who handles delivery and setup?</summary>
+        <p class="p">
+          SmartPod USA coordinates delivery, placement, and setup. No staff involvement is required.
+        </p>
+      </details>
+
     </div>
-  </footer>
 
-  <script src="site.js"></script>
+    <div class="formActions">
+      <a class="btn btn--gold" href="request.html">Request placement</a>
+      <a class="btn" href="contact.html">Contact</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer__row">
+    <div class="footer__left">
+      © <span data-year></span> SmartPod USA. All rights reserved.
+    </div>
+    <div class="footer__links">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="venues.html">Venues</a>
+      <a data-nav href="how-it-works.html">How it works</a>
+      <a data-nav href="faq.html">FAQ</a>
+      <a data-nav href="product-poll.html">Product poll</a>
+      <a data-nav href="contact.html">Contact</a>
+      <a data-nav href="request.html">Request placement</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
 </body>
 </html>
