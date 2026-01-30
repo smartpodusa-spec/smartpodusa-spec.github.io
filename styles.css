@@ -826,39 +826,3 @@ input:focus, textarea:focus, select:focus{
 
 
 
-/* Footer */
-.footer{
-  margin-top:18px;
-  border:1px solid var(--border);
-  border-radius: var(--radius);
-  background: rgba(18,26,42,.92);
-  box-shadow: var(--shadow);
-  padding:14px 16px;
-}
-.footer__row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-.footer__left{
-  font-size:13px;
-  color:var(--muted);
-}
-.footer__links{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  font-size:13px;
-}
-.footer__links a{
-  color: var(--muted);
-  text-decoration:none;
-  border-bottom:1px solid transparent;
-}
-.footer__links a:hover{
-  color: var(--text);
-  border-bottom-color: rgba(245,158,11,.35);
-}
-
