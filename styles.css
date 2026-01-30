@@ -671,3 +671,33 @@ input:focus, textarea:focus, select:focus{
 .link:hover {
   border-bottom-color: rgba(245, 158, 11, 0.7);
 }
+
+
+
+/* === Remove gold frame on mobile (contact + all pages) === */
+@media (max-width: 768px) {
+
+  /* Kill any borders or outlines */
+  main,
+  .section,
+  .container,
+  .page,
+  .wrap {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Kill decorative pseudo-elements used as frames */
+  main::before,
+  main::after,
+  .section::before,
+  .section::after,
+  .container::before,
+  .container::after,
+  .page::before,
+  .page::after {
+    display: none !important;
+    content: none !important;
+  }
+}
