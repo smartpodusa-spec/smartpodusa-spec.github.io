@@ -549,5 +549,48 @@
     // render sections (required for Expand/Collapse to work)
     renderCatalog();
   </script>
+
+  <!-- existing poll JS above -->
+  <script>
+    // renderCatalog(), form submit, etc.
+  </script>
+
+  <!-- drawer menu JS (ADD THIS) -->
+  <script>
+    const drawer = document.getElementById('drawer');
+    const openBtn = document.getElementById('menuOpen');
+    const closeBtn = document.getElementById('menuClose');
+
+    function openDrawer(){
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden','false');
+    }
+    function closeDrawer(){
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden','true');
+    }
+
+    openBtn?.addEventListener('click', openDrawer);
+    closeBtn?.addEventListener('click', closeDrawer);
+
+    // click outside panel closes
+    drawer?.addEventListener('click', (e) => {
+      if (e.target === drawer) closeDrawer();
+    });
+
+    // esc closes
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeDrawer();
+    });
+
+    // close after link click
+    drawer?.querySelectorAll('a')
+      .forEach(a => a.addEventListener('click', closeDrawer));
+  </script>
+</body>
+
+
+
+    
 </body>
 </html>
