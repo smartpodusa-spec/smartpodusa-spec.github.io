@@ -656,3 +656,10 @@ input:focus, textarea:focus, select:focus{
   border-bottom-color: rgba(245, 158, 11, 0.7);
 }
 
+/* SmartPod USA logo visibility + color control */
+.brand__logo {
+  height: 40px;
+  width: auto;
+  filter: brightness(1.25) contrast(1.15);
+}
+
