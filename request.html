@@ -3,140 +3,209 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Request placement | SmartPod USA</title>
- <meta name="description" content="Request placement for a fully managed food and beverage amenity. We handle installation, stocking, service, and optimization." />
+  <title>SmartPod USA | Fully Managed Smart Vending</title>
+  <meta name="description" content="SmartPod USA provides fully managed smart vending for premium locations." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body data-theme="silk">
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="SmartPod USA home">
-        <span class="brand__mark" aria-hidden="true">
-          <img src="assets/logo-sp.svg" alt="SmartPod logo" class="brand__logo" />
-        </span>
+<body data-theme="onyx" class="home">
 
-        <span class="brand__stack">
-          <span class="brand__name">SmartPod USA</span>
-          <span class="brand__tag">Fully Managed Smart Micro-Markets</span>
-        </span>
-      </a>
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="SmartPod USA home">
+      <span class="brand__mark">
+        <img src="assets/logo-sp.svg" alt="SmartPod logo" class="brand__logo" />
+      </span>
+      <span class="brand__stack">
+        <span class="brand__name">SmartPod USA</span>
+        <span class="brand__tag">Fully Managed Smart Micro-Markets</span>
+      </span>
+    </a>
 
-      <!-- Top right links order: Menu, Request placement -->
-      <div class="header__actions">
-        <button class="btn btn--ghost" id="menuOpen" type="button">Menu</button>
-        <a class="btn btn--gold" href="request.html" data-nav>Request placement</a>
-      </div>
-    </div>
-  </header>
+    <!-- Top center links removed -->
 
-  <div class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
-      <div class="drawer__top">
-        <div class="drawer__title">Menu</div>
-        <button class="btn" id="menuClose" type="button">Close</button>
-      </div>
-
-      <!-- Drawer menu order (unchanged unless you want it): -->
-      <nav class="drawer__nav" aria-label="Menu links">
-        <a data-nav href="index.html">Home</a>
-        <a data-nav href="venues.html">Venues</a>
-        <a data-nav href="how-it-works.html">How it works</a>
-        <a data-nav href="faq.html">FAQ</a>
-        <a data-nav href="product-poll.html">Product poll</a>
-        <a data-nav href="contact.html">Contact</a>
-        <a data-nav href="request.html">Request placement</a>
-      </nav>
+    <div class="header__actions">
+      <button class="btn btn--ghost" id="menuOpen" type="button">Menu</button>
+      <a class="btn btn--gold" href="request.html" data-nav>Request placement</a>
     </div>
   </div>
+</header>
 
-  <main class="section">
+<!-- Drawer -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="drawer__top">
+      <div class="drawer__title">SmartPod USA</div>
+      <button class="btn" id="menuClose" type="button">Close</button>
+    </div>
+
+    <nav class="drawer__nav">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="venues.html">Venues</a>
+      <a data-nav href="how-it-works.html">How it works</a>
+      <a data-nav href="faq.html">FAQ</a>
+      <a data-nav href="product-poll.html">Product poll</a>
+      <a data-nav href="contact.html">Contact</a>
+      <a data-nav href="request.html">Request placement</a>
+    </nav>
+
+    <div class="drawer__foot">
+      Minimal, fully managed, venue-first placement.
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <div class="kicker">DIRECT PLACEMENT • FULLY MANAGED</div>
+
+        <h1 class="hero__title">
+          Premium smart vending for <span class="sheen">modern</span> spaces.
+        </h1>
+
+        <p class="hero__sub">
+          A clean, cashless snack and beverage amenity—installed and managed end-to-end.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--gold" href="request.html">Request placement</a>
+          <a class="btn" href="venues.html">See venues</a>
+        </div>
+
+        <ul class="bullets">
+          <li>Hands-off for staff</li>
+          <li>Cashless checkout</li>
+          <li>Curated product mix</li>
+          <li>Ongoing restock + support</li>
+        </ul>
+      </div>
+
+      <aside class="panel">
+        <div class="panel__k">WHY SMARTPOD</div>
+        <h3>Clean, premium amenity</h3>
+        <p>
+          A reliable on-site option for residents, guests, and staff—without adding workload.
+        </p>
+        <ul>
+          <li>Professional placement</li>
+          <li>Stocking and service included</li>
+          <li>Tailored to your audience</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--soft">
     <div class="container">
-      <div class="kicker">REQUEST PLACEMENT</div>
-      <h1 class="hero__title">A quick request. A <span class="sheen">clean</span> review.</h1>
-
-      <p class="p p--muted">
-        We currently serve locations in Virginia Beach, Norfolk, Chesapeake, and Suffolk, Virginia.
-        Requests outside our current service area may not be eligible.
+      <h2 class="h2">Simple, self-serve experience.</h2>
+      <p class="p">
+        A fast, intuitive flow designed for everyday use—no cashier, no friction.
       </p>
 
-      <p class="p">Share venue details. We’ll follow up to confirm fit and next steps.</p>
-
-      <form action="https://formspree.io/f/xkogdqkz" method="POST">
-        <div class="fieldRow">
-          <div>
-            <label for="venue">Venue / Property name</label>
-            <input id="venue" name="venue" required />
+      <div class="steps steps--timeline">
+        <div class="step" data-step="1">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 3v18M5 8c0-2.8 3-5 7-5M7 11c0-1.7 2-3 5-3" />
+              <rect x="2" y="6" width="20" height="12" rx="2" />
+            </svg>
           </div>
-          <div>
-            <label for="type">Venue type</label>
-            <select id="type" name="venue_type" required>
-              <option value="">Select…</option>
-              <option>Apartments</option>
-              <option>Gym / Studio</option>
-              <option>Hotel</option>
-              <option>Office</option>
-              <option>Other</option>
-            </select>
-          </div>
+          <h3>Tap or swipe</h3>
+          <p>Start your session using a card, phone, or digital wallet.</p>
         </div>
 
-        <label for="address">Address (or city/area)</label>
-        <input id="address" name="address" required />
-
-        <div class="fieldRow">
-          <div>
-            <label for="contactName">Contact name</label>
-            <input id="contactName" name="contact_name" required />
+        <div class="step" data-step="2">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M6 7h12l-1 14H7L6 7z" />
+              <path d="M9 7a3 3 0 0 1 6 0" />
+            </svg>
           </div>
-          <div>
-            <label for="contactEmail">Contact email</label>
-            <input id="contactEmail" name="contact_email" type="email" required />
-          </div>
+          <h3>Grab items</h3>
+          <p>Take what you want—snacks and drinks are automatically tracked.</p>
         </div>
 
-        <div class="fieldRow">
-          <div>
-            <label for="contactPhone">Phone (optional)</label>
-            <input id="contactPhone" name="contact_phone" autocomplete="tel" />
+        <div class="step" data-step="3">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M5 12l4 4L19 6" />
+              <rect x="2" y="3" width="20" height="18" rx="2" />
+            </svg>
           </div>
-          <div>
-            <label for="placement">Preferred placement area (optional)</label>
-            <input id="placement" name="placement_area" placeholder="Lobby, gym, breakroom, etc." />
-          </div>
+          <h3>Auto checkout</h3>
+          <p>Walk away—your purchase is completed automatically.</p>
         </div>
+      </div>
 
-        <label for="notes">Notes (optional)</label>
-        <textarea id="notes" name="notes" placeholder="Traffic details, access notes, any preferences."></textarea>
-
-        <div class="formActions">
-          <button class="btn btn--gold" type="submit">Submit request</button>
-          <a class="btn" href="how-it-works.html">How it works</a>
-        </div>
-      </form>
+      <p class="p" style="margin-top:14px;">
+        Want the details? <a href="how-it-works.html" class="link">See how it works</a>.
+      </p>
     </div>
-  </main>
+  </section>
 
-  <footer class="footer">
-    <div class="container footer__row">
-      <div class="footer__left">© <span data-year></span> SmartPod USA. All rights reserved.</div>
+  <section class="section section--soft">
+    <div class="container">
+      <h2 class="h2">A managed amenity—without operational burden.</h2>
+      <p class="p">
+        We coordinate placement, stocking, and ongoing support so your team doesn’t take on new responsibilities.
+      </p>
 
-      <!-- Bottom right links order: Home, Venues, How it works, FAQ, Product , Contact, Request placement -->
-      <div class="footer__links">
-        <a data-nav href="index.html">Home</a>
-        <a data-nav href="venues.html">Venues</a>
-        <a data-nav href="how-it-works.html">How it works</a>
-        <a data-nav href="faq.html">FAQ</a>
-        <a data-nav href="product-poll.html">Product poll </a>
-        <a data-nav href="contact.html">Contact</a>
-        <a data-nav href="request.html">Request placement</a>
+      <div class="grid2">
+        <div class="card">
+          <h3>Placement & fit</h3>
+          <p>
+            Traffic flow, access, power, and servicing path are confirmed before installation.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Stocking & curation</h3>
+          <p>
+            Snack and beverage selections are tailored to your audience and refined over time.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Service & reliability</h3>
+          <p>
+            Restocking, maintenance, and support are handled directly by SmartPod.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Payments & access</h3>
+          <p>
+            Cashless checkout with clear pricing and intuitive user experience.
+          </p>
+        </div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="site.js"></script>
+</main>
+
+<footer class="footer">
+  <div class="container footer__row">
+    <div>© <span data-year></span> SmartPod USA. All rights reserved.</div>
+    <div class="footer__links">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="venues.html">Venues</a>
+      <a data-nav href="how-it-works.html">How it works</a>
+      <a data-nav href="faq.html">FAQ</a>
+      <a data-nav href="product-poll.html">Product poll</a>
+      <a data-nav href="contact.html">Contact</a>
+      <a data-nav href="request.html">Request placement</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
 </body>
 </html>
