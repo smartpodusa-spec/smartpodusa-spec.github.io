@@ -299,6 +299,71 @@ hr.sep{
 
 
 
+
+
+/* Poll header layout (keeps menu on top-right; no under-logo nav) */
+.pollHeader{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:18px;
+}
+.pollHeader__actions{display:flex; gap:10px; align-items:center}
+
+/* Drawer */
+.drawer{
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,.55);
+  display:none;
+  align-items:flex-start;
+  justify-content:flex-end;
+  padding:18px;
+  z-index:999;
+}
+.drawer.is-open{display:flex;}
+.drawer__panel{
+  width:min(360px, 92vw);
+  background: rgba(18,26,42,.98);
+  border:1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+.drawer__top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 14px;
+  border-bottom:1px solid var(--border);
+}
+.drawer__title{font-weight:700}
+.drawer__nav{display:grid; gap:4px; padding:10px;}
+.drawer__nav a{
+  padding:10px 10px;
+  border-radius:10px;
+  color: var(--text);
+  text-decoration:none;
+  border:1px solid transparent;
+}
+.drawer__nav a:hover{
+  border-color: rgba(245,158,11,.30);
+  background: rgba(255,255,255,.03);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ---------- Hero ---------- */
 .hero{
   padding:78px 0 58px;
