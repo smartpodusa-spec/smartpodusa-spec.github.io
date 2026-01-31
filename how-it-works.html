@@ -10,16 +10,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Page-only spacing tweaks (keeps your colors + tone) -->
   <style>
-    /* Reduce extra vertical gaps without touching styles.css */
     .hiw-intro { padding-bottom: 10px; }
     .hiw-intro .lead { margin: 10px 0 0; }
     .hiw-section-tight { padding-top: 18px; }
     .hiw-after-faqgap { margin-top: 14px; }
     .hiw-h2 { font-size: 28px; line-height: 1.15; margin: 0 0 8px; }
     .hiw-h2 + .p { margin-top: 0; }
-    .hiw-step-note { margin-top: 12px; }
+    .hiw-step-note { margin-top: 12px; opacity: .85; }
+    .hiw-divider { margin: 18px 0 6px; font-weight: 600; letter-spacing: .02em; }
   </style>
 </head>
 
@@ -28,7 +27,7 @@
 <header class="header">
   <div class="container header__inner">
     <a class="brand" href="index.html" aria-label="SmartPod USA home">
-      <span class="brand__mark" aria-hidden="true">
+      <span class="brand__mark">
         <img src="assets/logo-sp.svg" alt="SmartPod logo" class="brand__logo" />
       </span>
       <span class="brand__stack">
@@ -39,45 +38,23 @@
 
     <div class="header__actions">
       <button class="btn btn--ghost" id="menuOpen" type="button">Menu</button>
-      <a class="btn btn--gold" href="request.html" data-nav>Request placement</a>
+      <a class="btn btn--gold" href="request.html">Request placement</a>
     </div>
   </div>
 </header>
 
-<!-- Drawer -->
-<div class="drawer" id="drawer" aria-hidden="true">
-  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
-    <div class="drawer__top">
-      <div class="drawer__title">Menu</div>
-      <button class="btn" id="menuClose" type="button">Close</button>
-    </div>
-
-    <!-- Correct order -->
-    <nav class="drawer__nav" aria-label="Menu links">
-      <a data-nav href="index.html">Home</a>
-      <a data-nav href="venues.html">Venues</a>
-      <a data-nav href="how-it-works.html">How it works</a>
-      <a data-nav href="faq.html">FAQ</a>
-      <a data-nav href="product-poll.html">Product poll</a>
-      <a data-nav href="contact.html">Contact</a>
-      <a data-nav href="request.html">Request placement</a>
-    </nav>
-  </div>
-</div>
-
 <main>
 
-  <!-- INTRO (tightened bottom spacing) -->
+  <!-- INTRO -->
   <section class="section hiw-intro">
     <div class="container">
       <div class="kicker">HOW IT WORKS</div>
 
-      <h1 class="hero__title" style="margin:10px 0 10px;">
+      <h1 class="hero__title" style="margin:10px 0;">
         Two simple parts: self-serve checkout + fully managed operations.
       </h1>
 
-      <!-- Reduced space below this line -->
-      <p class="p lead" style="max-width: 72ch;">
+      <p class="p lead" style="max-width:72ch;">
         Guests get a fast, intuitive experience. Your team gets a hands-off, fully managed amenity.
       </p>
     </div>
@@ -86,6 +63,9 @@
   <!-- PART 1 -->
   <section class="section section--soft hiw-section-tight">
     <div class="container">
+
+      <div class="hiw-divider">Guests experience</div>
+
       <h2 class="hiw-h2">Simple, self-serve experience.</h2>
       <p class="p">
         A fast, intuitive flow designed for everyday use—no cashier, no friction.
@@ -93,91 +73,77 @@
 
       <div class="steps steps--timeline" style="margin-top:14px;">
         <div class="step" data-step="1">
-          <div class="step__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M12 3v18M5 8c0-2.8 3-5 7-5M7 11c0-1.7 2-3 5-3" />
-              <rect x="2" y="6" width="20" height="12" rx="2" />
-            </svg>
-          </div>
           <h3>Tap or swipe</h3>
           <p>Start your session using a card, phone, or digital wallet.</p>
         </div>
 
         <div class="step" data-step="2">
-          <div class="step__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M6 7h12l-1 14H7L6 7z" />
-              <path d="M9 7a3 3 0 0 1 6 0" />
-            </svg>
-          </div>
           <h3>Grab items</h3>
           <p>Take what you want—snacks and drinks are automatically tracked.</p>
         </div>
 
         <div class="step" data-step="3">
-          <div class="step__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M5 12l4 4L19 6" />
-              <rect x="2" y="3" width="20" height="18" rx="2" />
-            </svg>
-          </div>
           <h3>Auto checkout</h3>
           <p>Walk away—your purchase is completed automatically.</p>
         </div>
       </div>
 
-      <!-- Reduced gap before next section -->
-      <p class="p hiw-step-note">
-  
-      </p>
     </div>
   </section>
 
-  <!-- PART 2 (reduced gap from the section above) -->
+  <!-- PART 2 -->
   <section class="section section--soft">
     <div class="container hiw-after-faqgap">
 
+      <div class="hiw-divider">Your team gets</div>
+
       <h2 class="hiw-h2"><span class="sheen">Simple</span> process. Managed operations.</h2>
 
-      <p class="p" style="max-width: 78ch;">
+      <p class="p" style="max-width:78ch;">
         We handle everything beyond checkout—so your team doesn’t take on new responsibilities.
       </p>
 
-      <p class="p" style="max-width: 88ch;">
-        From initial review to ongoing service, SmartPod operates as a fully managed amenity. Installation, stocking,
-        monitoring, and support are coordinated end-to-end to ensure a consistent, reliable experience for your location.
+      <p class="p" style="max-width:88ch;">
+        From initial review to ongoing service, SmartPod operates as a fully managed amenity.
+        Installation, stocking, monitoring, and support are coordinated end-to-end.
       </p>
 
       <div class="grid2" style="margin-top:14px;">
         <div class="card">
           <h3>1) Request placement</h3>
           <p>
-            Submit venue details and preferred placement area. Our team reviews foot traffic, visibility,
-            and use case to ensure the location is a strong fit.
+            Submit venue details and preferred placement area. We review foot traffic,
+            visibility, and use case to confirm fit.
           </p>
         </div>
 
         <div class="card">
           <h3>2) Fit review</h3>
           <p>
-            We confirm access, power availability, servicing path, and placement logistics to ensure clean
-            installation and minimal disruption to your space.
+            We confirm access, power availability, servicing path, and placement logistics
+            to ensure clean installation and minimal disruption.
           </p>
         </div>
 
         <div class="card">
           <h3>3) Installation</h3>
           <p>
-            Once approved, we schedule delivery and complete setup. Equipment is installed, tested, and ready for use—
-            no staff training required.
+            Once approved, we schedule delivery and complete setup. Equipment is installed,
+            tested, and ready for use—no on-site staff training or daily management required.
+          </p>
+          <p class="hiw-step-note">
+            No long-term obligation required to start. Performance reviewed after launch.
           </p>
         </div>
 
         <div class="card">
           <h3>4) Stocking & ongoing service</h3>
           <p>
-            We manage product selection, restocking, and performance optimization. Inventory is adjusted over time based
-            on demand, usage patterns, and location feedback.
+            We manage product selection, restocking, and performance optimization.
+            Inventory adapts over time based on demand and usage patterns.
+          </p>
+          <p class="hiw-step-note">
+            Secure payments, monitored inventory, and remote support included.
           </p>
         </div>
       </div>
@@ -194,23 +160,19 @@
 
 <footer class="footer">
   <div class="container footer__row">
-    <!-- Bottom left -->
     <div class="footer__left">© 2026 SmartPod USA. All rights reserved.</div>
-
-    <!-- Bottom right (correct order) -->
     <div class="footer__links">
-      <a data-nav href="index.html">Home</a>
-      <a data-nav href="venues.html">Venues</a>
-      <a data-nav href="how-it-works.html">How it works</a>
-      <a data-nav href="faq.html">FAQ</a>
-      <a data-nav href="product-poll.html">Product poll</a>
-      <a data-nav href="contact.html">Contact</a>
-      <a data-nav href="request.html">Request placement</a>
+      <a href="index.html">Home</a>
+      <a href="venues.html">Venues</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="product-poll.html">Product poll</a>
+      <a href="contact.html">Contact</a>
+      <a href="request.html">Request placement</a>
     </div>
   </div>
 </footer>
 
-<!-- Required for Menu button + drawer to work -->
 <script src="site.js"></script>
 </body>
 </html>
