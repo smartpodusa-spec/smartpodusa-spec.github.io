@@ -701,3 +701,26 @@ input:focus, textarea:focus, select:focus{
     content: none !important;
   }
 }
+
+
+
+
+
+
+.bg-grid{
+  background-color:#070708;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size:120px 120px;
+}
+.bg-brushed{
+  background:
+    linear-gradient(180deg, #0b0b0c 0%, #070708 100%),
+    url("/assets/textures/brushed-obsidian.png");
+  background-repeat:no-repeat, repeat;
+  background-size:cover, 700px 700px;
+  background-blend-mode:overlay;
+}
+
+
