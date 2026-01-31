@@ -777,5 +777,10 @@ body.home .hero{
     linear-gradient(180deg, #0b0d11 0%, #07080a 100%);
 }
 
+body.home .panel{
+  background: rgba(16, 18, 22, 0.75);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
 
 
