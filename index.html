@@ -3,15 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SmartPod USA | Fully Managed Smart Vending</title>
-  <meta name="description" content="SmartPod USA provides fully managed smart vending for premium locations." />
+  <title>SmartPod USA | Fully Managed Smart Micro-Markets</title>
+  <meta name="description" content="SmartPod USA provides fully managed smart micro-markets: professional placement, cashless checkout, stocking, and ongoing service—at no cost to the venue when eligible." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page-only tweaks (no changes required in styles.css) -->
+  <style>
+    .home-heroNote{ margin: 10px 0 0; opacity:.9; max-width:72ch; }
+    .home-proof{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .home-proof .card{ padding:16px; }
+    @media (max-width: 980px){ .home-proof{ grid-template-columns:1fr 1fr; } }
+    @media (max-width: 520px){ .home-proof{ grid-template-columns:1fr; } }
+    .hero__title{ margin-bottom:10px; }
+    .hero__sub{ margin-top:0; }
+  </style>
 </head>
 
-<body data-theme="onyx" class="home">
+<body data-theme="onyx" class="home" data-bg="carbon">
 
 <header class="header">
   <div class="container header__inner">
@@ -24,8 +35,6 @@
         <span class="brand__tag">Fully Managed Smart Micro-Markets</span>
       </span>
     </a>
-
-    <!-- Top center links removed -->
 
     <div class="header__actions">
       <button class="btn btn--ghost" id="menuOpen" type="button">Menu</button>
@@ -42,7 +51,7 @@
       <button class="btn" id="menuClose" type="button">Close</button>
     </div>
 
-    <nav class="drawer__nav">
+    <nav class="drawer__nav" aria-label="Menu links">
       <a data-nav href="index.html">Home</a>
       <a data-nav href="venues.html">Venues</a>
       <a data-nav href="how-it-works.html">How it works</a>
@@ -63,13 +72,21 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container hero__grid">
+
       <div>
         <div class="kicker">DIRECT PLACEMENT • FULLY MANAGED</div>
 
         <h1 class="hero__title">
-          A fully managed smart cooler <span class="sheen">amenity</span> for apartments, gyms, offices, and hotels.
+          A premium, fully managed smart cooler <span class="sheen">amenity</span> for apartments, gyms, offices, and hotels.
+        </h1>
+
         <p class="hero__sub">
-          Cashless, professionally stocked, and serviced—without adding staff or overhead..
+          Cashless checkout, curated products, and ongoing service—without adding staff workload.
+        </p>
+
+        <!-- Flyer reassurance (only keep if true) -->
+        <p class="p home-heroNote">
+          No long-term obligation required to start. Performance reviewed after launch.
         </p>
 
         <div class="hero__cta">
@@ -77,12 +94,25 @@
           <a class="btn" href="venues.html">See venues</a>
         </div>
 
-        <ul class="bullets">
-          <li>Hands-off for staff</li>
-          <li>Cashless checkout</li>
-          <li>Curated product mix</li>
-          <li>Ongoing restock + support</li>
-        </ul>
+        <!-- Proof cards (replaces basic bullets; still concise) -->
+        <div class="home-proof" aria-label="Key benefits">
+          <div class="card">
+            <h3>No staff burden</h3>
+            <p>We handle stocking, maintenance, and support end-to-end.</p>
+          </div>
+          <div class="card">
+            <h3>Cashless + simple</h3>
+            <p>Tap, grab, and go—clear pricing and intuitive checkout.</p>
+          </div>
+          <div class="card">
+            <h3>Tailored assortment</h3>
+            <p>Curated snack and beverage mix refined over time.</p>
+          </div>
+          <div class="card">
+            <h3>Fit-first placement</h3>
+            <p>We confirm access, power, traffic flow, and service path.</p>
+          </div>
+        </div>
       </div>
 
       <aside class="panel">
@@ -92,51 +122,51 @@
           A reliable on-site option for residents, guests, and staff—without adding workload.
         </p>
         <ul>
-          <li>Professional placement</li>
+          <li>Professional placement and setup</li>
           <li>Stocking and service included</li>
-          <li>Tailored to your audience</li>
+          <li>Selections aligned to your audience</li>
         </ul>
+        <p class="p" style="margin-top:12px; opacity:.85;">
+          Secure payments, monitored inventory, and remote support included.
+        </p>
       </aside>
+
     </div>
   </section>
 
-
-
+  <!-- OPERATIONS -->
   <section class="section section--soft">
     <div class="container">
       <h2 class="h2">A managed amenity—without operational burden.</h2>
-      <p class="p">
-        We coordinate placement, stocking, and ongoing support so your team doesn’t take on new responsibilities.
+      <p class="p" style="max-width:78ch;">
+        We coordinate placement, stocking, monitoring, and support so your team doesn’t take on new responsibilities.
       </p>
 
-      <div class="grid2">
+      <div class="grid2" style="margin-top:14px;">
         <div class="card">
           <h3>Placement & fit</h3>
-          <p>
-            Traffic flow, access, power, and servicing path are confirmed before installation.
-          </p>
+          <p>Traffic flow, access, power, and servicing path are confirmed before installation.</p>
         </div>
 
         <div class="card">
           <h3>Stocking & curation</h3>
-          <p>
-            Snack and beverage selections are tailored to your audience and refined over time.
-          </p>
+          <p>Snack and beverage selections are tailored to your audience and refined over time.</p>
         </div>
 
         <div class="card">
           <h3>Service & reliability</h3>
-          <p>
-            Restocking, maintenance, and support are handled directly by SmartPod.
-          </p>
+          <p>Restocking, maintenance, and support are handled directly by SmartPod.</p>
         </div>
 
         <div class="card">
           <h3>Payments & access</h3>
-          <p>
-            Cashless checkout with clear pricing and intuitive user experience.
-          </p>
+          <p>Cashless checkout with clear pricing and an intuitive user experience.</p>
         </div>
+      </div>
+
+      <div class="formActions" style="margin-top:16px;">
+        <a class="btn btn--gold" href="request.html">Request placement</a>
+        <a class="btn" href="how-it-works.html">How it works</a>
       </div>
     </div>
   </section>
