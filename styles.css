@@ -57,6 +57,85 @@ body[data-theme="onyx"]::before{
     radial-gradient(900px 540px at 55% 20%, rgba(242,162,73,.08), transparent 60%);
 }
 
+/* =========================================================
+   Page background patterns (per-page via body[data-theme])
+   Usage (per page):
+     <body data-theme="obsidian">
+     <body data-theme="grid">
+     <body data-theme="carbon">
+   Requires: your base file already has body::before configured
+   (position fixed/absolute, inset:0, z-index, pointer-events:none, etc.)
+   ========================================================= */
+
+/* Brushed Obsidian — safest, timeless (soft directional grain) */
+body[data-theme="obsidian"]::before{
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.70)),
+    /* brushed grain (very subtle, directional) */
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,.030) 0px,
+      rgba(255,255,255,.030) 1px,
+      transparent 1px,
+      transparent 6px),
+    /* gentle depth vignette */
+    radial-gradient(1100px 650px at 50% 15%, rgba(255,255,255,.035), transparent 62%);
+}
+
+/* Architectural Grid — most SmartPod aligned (quiet system grid) */
+body[data-theme="grid"]::before{
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.30), rgba(0,0,0,.72)),
+    /* major grid */
+    repeating-linear-gradient(0deg,
+      rgba(255,255,255,.028) 0px,
+      rgba(255,255,255,.028) 1px,
+      transparent 1px,
+      transparent 120px),
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,.028) 0px,
+      rgba(255,255,255,.028) 1px,
+      transparent 1px,
+      transparent 120px),
+    /* minor grid */
+    repeating-linear-gradient(0deg,
+      rgba(255,255,255,.014) 0px,
+      rgba(255,255,255,.014) 1px,
+      transparent 1px,
+      transparent 24px),
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,.014) 0px,
+      rgba(255,255,255,.014) 1px,
+      transparent 1px,
+      transparent 24px),
+    /* subtle highlight */
+    radial-gradient(900px 540px at 55% 18%, rgba(242,162,73,.06), transparent 60%);
+}
+
+/* Carbon Weave — most premium/tech (subtle crosshatch weave) */
+body[data-theme="carbon"]::before{
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.34), rgba(0,0,0,.74)),
+    /* weave direction 1 */
+    repeating-linear-gradient(45deg,
+      rgba(255,255,255,.020) 0px,
+      rgba(255,255,255,.020) 2px,
+      transparent 2px,
+      transparent 10px),
+    /* weave direction 2 */
+    repeating-linear-gradient(135deg,
+      rgba(255,255,255,.020) 0px,
+      rgba(255,255,255,.020) 2px,
+      transparent 2px,
+      transparent 10px),
+    /* depth + warmth (keep minimal) */
+    radial-gradient(900px 540px at 55% 20%, rgba(242,162,73,.07), transparent 60%);
+}
+
+
+
+
+
+
 /* Lattice: faint geometric grid (gold sparks very minimal) */
 body[data-theme="lattice"]::before{
   background:
@@ -706,21 +785,5 @@ input:focus, textarea:focus, select:focus{
 
 
 
-
-.bg-grid{
-  background-color:#070708;
-  background-image:
-    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-  background-size:120px 120px;
-}
-.bg-brushed{
-  background:
-    linear-gradient(180deg, #0b0b0c 0%, #070708 100%),
-    url("/assets/textures/brushed-obsidian.png");
-  background-repeat:no-repeat, repeat;
-  background-size:cover, 700px 700px;
-  background-blend-mode:overlay;
-}
 
 
