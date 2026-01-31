@@ -763,15 +763,17 @@ input:focus, textarea:focus, select:focus{
 }
 
 
-.home-hero {
+body.home .hero{
   background: radial-gradient(
       circle at center,
       rgba(255,255,255,0.04) 0%,
       rgba(0,0,0,0.85) 60%
     ),
     linear-gradient(180deg, #0f1115 0%, #08090b 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
-
 
 
 
