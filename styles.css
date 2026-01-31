@@ -762,25 +762,5 @@ input:focus, textarea:focus, select:focus{
   }
 }
 
-body.home .hero{
-  background:
-    radial-gradient(
-      60% 40% at 50% 20%,
-      rgba(255, 215, 160, 0.06),
-      transparent 70%
-    ),
-    radial-gradient(
-      circle at center,
-      rgba(255,255,255,0.04) 0%,
-      rgba(0,0,0,0.9) 65%
-    ),
-    linear-gradient(180deg, #0b0d11 0%, #07080a 100%);
-}
-
-body.home .panel{
-  background: rgba(16, 18, 22, 0.75);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,0.08);
-}
 
 
